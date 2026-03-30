@@ -26,6 +26,8 @@ class PageGeneratorEngine:
         pages = []
 
         for c in clusters:
+            if c.get("suppressed"):
+                continue
             for scenario, debt_payment in self.SCENARIOS:
                 if len(pages) >= max_pages:
                     break
@@ -43,13 +45,17 @@ class PageGeneratorEngine:
                     "scenario": scenario,
                     "intent": c["intent"],
                     "template": c.get("template", "decision_heavy"),
+                    "layout": c.get("layout", []),
                     "title": title,
                     "source_query": c.get("query"),
                     "calculator": decision.evaluate(salary, rent, scenario=scenario, debt_payment=debt_payment, city_costs=city_costs),
+                    "cluster_id": c.get("cluster_id"),
                     "created_at": now_iso(),
                 }
-                page["uniqueness_score"] = uniq.score(page, pages)
-                if page["uniqueness_score"] < threshold:
+                uniq_eval = uniq.evaluate(page, pages)
+                page["uniqueness_score"] = uniq_eval["score"]
+                page["uniqueness"] = uniq_eval
+                if uniq_eval["blocked"] or page["uniqueness_score"] < threshold:
                     continue
                 pages.append(page)
                 Path(ROOT / "pages" / f"{slug}.json").write_text(json.dumps(page, indent=2))
