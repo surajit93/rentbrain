@@ -1,0 +1,9 @@
+{
+  "required": [
+    "calculator",
+    "numeric_outputs",
+    "scenario_variation",
+    "internal_links>=3"
+  ],
+  "title_pattern": "Can I afford ${rent} rent in {city} on ${salary} salary after tax?"
+}

@@ -1,0 +1,9 @@
+{
+  "cost_components": {
+    "utilities": 220,
+    "transport": 350,
+    "groceries": 450,
+    "insurance": 160,
+    "misc": 300
+  }
+}

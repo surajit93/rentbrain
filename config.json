@@ -1,0 +1,66 @@
+{
+  "project": "rent-decision-platform",
+  "market": "US",
+  "targets": {
+    "monthly_organic_traffic": 600000,
+    "timeline_months": [
+      12,
+      18
+    ]
+  },
+  "constraints": {
+    "max_pages": 3000,
+    "initial_pages_range": [
+      300,
+      500
+    ],
+    "min_uniqueness": 0.75,
+    "min_indexing_rate_to_scale": 0.7,
+    "stop_indexing_rate": 0.65,
+    "min_ctr_to_scale": 0.045,
+    "prune_zero_impressions_days": 60
+  },
+  "serp_rules": {
+    "allow_if_any": [
+      "reddit_present",
+      "quora_present",
+      "forum_present",
+      "weak_blog_present"
+    ],
+    "deny_if_any": [
+      "high_authority_domains_ge_2",
+      "google_native_tools_dominate",
+      "strong_calculator_present"
+    ],
+    "high_authority_domains": [
+      "zillow.com",
+      "nerdwallet.com",
+      "bankrate.com"
+    ]
+  },
+  "execution_loop": [
+    "strategy_engine",
+    "serp_eligibility_engine",
+    "serp_intelligence_engine",
+    "keyword_engine",
+    "cluster_priority_engine",
+    "template_engine",
+    "page_generator_engine",
+    "analytics_engine",
+    "regression_engine",
+    "pruning_engine",
+    "ctr_optimization_engine",
+    "authority_content_engine",
+    "distribution_engine"
+  ],
+  "paths": {
+    "data": "data",
+    "indexes": "indexes",
+    "instructions": "instructions",
+    "templates": "templates",
+    "pages": "pages",
+    "authority_pages": "authority_pages",
+    "embeds": "embeds",
+    "logs": "logs"
+  }
+}

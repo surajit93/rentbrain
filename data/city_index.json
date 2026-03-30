@@ -1,0 +1,39 @@
+{
+  "cities": [
+    {
+      "city": "Austin",
+      "state": "TX",
+      "population": 974447,
+      "median_rent": 1800,
+      "median_salary": 72000
+    },
+    {
+      "city": "Phoenix",
+      "state": "AZ",
+      "population": 1624569,
+      "median_rent": 1650,
+      "median_salary": 68000
+    },
+    {
+      "city": "Tampa",
+      "state": "FL",
+      "population": 403364,
+      "median_rent": 1700,
+      "median_salary": 65000
+    },
+    {
+      "city": "Raleigh",
+      "state": "NC",
+      "population": 482295,
+      "median_rent": 1600,
+      "median_salary": 70000
+    },
+    {
+      "city": "Columbus",
+      "state": "OH",
+      "population": 913175,
+      "median_rent": 1450,
+      "median_salary": 62000
+    }
+  ]
+}

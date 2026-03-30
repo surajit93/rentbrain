@@ -1,0 +1,11 @@
+{
+  "count_target": [
+    20,
+    30
+  ],
+  "required": [
+    "citations",
+    "structured_data",
+    "analysis_depth"
+  ]
+}

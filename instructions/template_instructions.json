@@ -1,0 +1,8 @@
+{
+  "variants": [
+    "decision_heavy",
+    "breakdown_heavy",
+    "risk_heavy"
+  ],
+  "min_structure_variance": 0.75
+}

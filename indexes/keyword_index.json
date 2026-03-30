@@ -1,0 +1,139 @@
+{
+  "keywords": [
+    {
+      "query": "can i afford $1800 rent in Austin on $72000 salary after tax",
+      "city": "Austin",
+      "state": "TX",
+      "salary": 72000,
+      "rent": 1800,
+      "intent": "affordability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1800 rent in Austin on $72000 salary after tax",
+      "city": "Austin",
+      "state": "TX",
+      "salary": 72000,
+      "rent": 1800,
+      "intent": "survivability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1800 rent in Austin on $72000 salary after tax",
+      "city": "Austin",
+      "state": "TX",
+      "salary": 72000,
+      "rent": 1800,
+      "intent": "salary_sufficiency",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax",
+      "city": "Phoenix",
+      "state": "AZ",
+      "salary": 68000,
+      "rent": 1650,
+      "intent": "affordability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax",
+      "city": "Phoenix",
+      "state": "AZ",
+      "salary": 68000,
+      "rent": 1650,
+      "intent": "survivability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax",
+      "city": "Phoenix",
+      "state": "AZ",
+      "salary": 68000,
+      "rent": 1650,
+      "intent": "salary_sufficiency",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax",
+      "city": "Tampa",
+      "state": "FL",
+      "salary": 65000,
+      "rent": 1700,
+      "intent": "affordability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax",
+      "city": "Tampa",
+      "state": "FL",
+      "salary": 65000,
+      "rent": 1700,
+      "intent": "survivability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax",
+      "city": "Tampa",
+      "state": "FL",
+      "salary": 65000,
+      "rent": 1700,
+      "intent": "salary_sufficiency",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax",
+      "city": "Raleigh",
+      "state": "NC",
+      "salary": 70000,
+      "rent": 1600,
+      "intent": "affordability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax",
+      "city": "Raleigh",
+      "state": "NC",
+      "salary": 70000,
+      "rent": 1600,
+      "intent": "survivability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax",
+      "city": "Raleigh",
+      "state": "NC",
+      "salary": 70000,
+      "rent": 1600,
+      "intent": "salary_sufficiency",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax",
+      "city": "Columbus",
+      "state": "OH",
+      "salary": 62000,
+      "rent": 1450,
+      "intent": "affordability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax",
+      "city": "Columbus",
+      "state": "OH",
+      "salary": 62000,
+      "rent": 1450,
+      "intent": "survivability",
+      "fragmentation_score": 0.8
+    },
+    {
+      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax",
+      "city": "Columbus",
+      "state": "OH",
+      "salary": 62000,
+      "rent": 1450,
+      "intent": "salary_sufficiency",
+      "fragmentation_score": 0.8
+    }
+  ]
+}

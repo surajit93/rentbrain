@@ -1,0 +1,13 @@
+{
+  "slug": "rent-benchmark-04",
+  "title": "US Rent Benchmark Report #4",
+  "structured_data": {
+    "@type": "Report",
+    "name": "rent-benchmark-04"
+  },
+  "citations": [
+    "BLS",
+    "Census"
+  ],
+  "analysis_depth": "high"
+}

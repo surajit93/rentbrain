@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "slug",
+    "city",
+    "state",
+    "salary",
+    "rent",
+    "scenario",
+    "title",
+    "uniqueness_score"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "rent": {
+      "type": "number"
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "uniqueness_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}
