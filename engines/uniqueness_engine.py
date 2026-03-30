@@ -5,8 +5,24 @@ from collections import Counter
 
 
 class UniquenessEngine:
+    SYNONYM_MAP = {
+        "affordability": "afford",
+        "affordable": "afford",
+        "survivability": "survive",
+        "survival": "survive",
+        "salary_sufficiency": "salary",
+        "sufficiency": "salary",
+        "roommates": "shared",
+        "family": "household",
+        "alone": "solo",
+        "risk": "risk",
+    }
+
+    def _normalize_token(self, token: str) -> str:
+        return self.SYNONYM_MAP.get(token, token)
+
     def _embed(self, text: str) -> Counter:
-        tokens = [t.strip(".,$-!?():;'").lower() for t in text.split() if t.strip()]
+        tokens = [self._normalize_token(t.strip(".,$-!?():;'").lower()) for t in text.split() if t.strip()]
         bow = Counter(t for t in tokens if len(t) > 2)
         for token in tokens:
             if len(token) >= 3:
@@ -31,6 +47,9 @@ class UniquenessEngine:
             ptxt = f"{page.get('title','')} {page.get('city','')} {page.get('state','')} {page.get('scenario','')} {page.get('intent','')} {page.get('rent','')} {page.get('salary','')}"
             sim = self._cosine(cvec, self._embed(ptxt))
             max_similarity = max(max_similarity, sim)
+
+        if max_similarity >= 0.9:
+            return 0.0
 
         templates = {p.get("template") for p in existing_pages}
         structural_diversity = 1.0 if candidate.get("template") not in templates else 0.65
