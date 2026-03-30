@@ -19,6 +19,7 @@ from .internal_linking_engine import InternalLinkingEngine
 from .crawl_budget_engine import CrawlBudgetEngine
 from .embed_engine import EmbedEngine
 from .backlink_engine import BacklinkEngine
+from .data_quality_engine import DataQualityEngine
 
 
 class StrategyEngine:
@@ -28,12 +29,14 @@ class StrategyEngine:
     def _seed_queries(self):
         cities = load_json("data/city_index.json").get("cities", [])
         queries = []
-        for c in cities:
-            queries.append({"query": f"can i afford {c['median_rent']} rent in {c['city']} on {c['median_salary']} salary"})
-            queries.append({"query": f"{c['city']} rent calculator reddit"})
+        for c in cities[:40]:
+            queries.append({"query": f"can i afford {c['median_rent']} rent in {c['city']} on {c['median_salary']} salary", "city": c["city"], "state": c["state"]})
+            queries.append({"query": f"{c['city']} rent calculator reddit", "city": c["city"], "state": c["state"]})
         return queries
 
     def _expand_winners(self, clusters: list[dict], perf: dict):
+        if not perf.get("decision_allowed"):
+            return [], []
         by_slug = {p["slug"]: p for p in perf.get("pages", [])}
         winners = []
         for c in clusters:
@@ -42,29 +45,58 @@ class StrategyEngine:
             if not cluster_pages:
                 continue
             avg_ctr = sum(by_slug[s].get("ctr", 0) for s in cluster_pages) / max(len(cluster_pages), 1)
-            if avg_ctr >= 0.04:
+            avg_impr = sum(by_slug[s].get("impressions", 0) for s in cluster_pages) / max(len(cluster_pages), 1)
+            if avg_ctr >= 0.04 and avg_impr >= 20:
                 winners.append(c)
         expansions = []
         for winner in winners:
-            for i in range(10):
+            for i in range(6):
                 exp = dict(winner)
-                exp["salary"] = winner["salary"] + (i * 1000)
-                exp["rent"] = winner["rent"] + (i * 25)
+                exp["salary"] = winner["salary"] + (i * 1200)
+                exp["rent"] = winner["rent"] + (i * 35)
                 expansions.append(exp)
         return winners, expansions
 
     def run(self, cycles: int = 2):
-        state = {"version": 2, "started_at": now_iso(), "cycles": []}
+        state = {"version": 3, "started_at": now_iso(), "cycles": []}
+
+        data_quality = DataQualityEngine().run()
+        if not data_quality.get("valid"):
+            state["status"] = "blocked_data_quality"
+            state["data_quality"] = data_quality
+            state["last_run"] = now_iso()
+            save_json("indexes/strategy.json", state)
+            return state
+
         pages = load_json("indexes/page_index.json").get("pages", [])
+        control = {
+            "block_fake_signals": True,
+            "block_scale_without_analytics": True,
+            "min_uniqueness": self.cfg.get("constraints", {}).get("min_uniqueness", 0.75),
+        }
 
         for iteration in range(cycles):
             serp_raw = SerpIntelligenceEngine().run(self._seed_queries())
             serp_allowed = SerpEligibilityEngine().run(serp_raw)
+            if not serp_allowed:
+                state["cycles"].append(
+                    {
+                        "iteration": iteration + 1,
+                        "time": now_iso(),
+                        "blocked": True,
+                        "reason": "no_eligible_serp_entries",
+                        "serp_candidates": len(serp_raw),
+                        "serp_allowed": 0,
+                    }
+                )
+                continue
+
             keywords = KeywordEngine().run(serp_allowed)
             classified = QueryClassifierEngine().run(keywords)
             clusters = ClusterPriorityEngine().run(classified)
             templated = TemplateEngine().run(clusters)
 
+            perf_before = AnalyticsEngine().run(pages)
             budget = CrawlBudgetEngine().run()
             if budget["status"] == "throttle":
                 max_pages = 5
@@ -80,7 +112,7 @@ class StrategyEngine:
             pages, removed = PruningEngine().run(generated, perf, self.cfg["constraints"]["prune_zero_impressions_days"])
 
             winners, expansions = self._expand_winners(clusters, perf)
-            if budget["status"] == "scale" and expansions:
+            if budget["status"] == "scale" and expansions and perf.get("decision_allowed"):
                 expanded_pages = PageGeneratorEngine().run(TemplateEngine().run(expansions), max_pages=min(30, len(expansions)))
                 pages.extend(expanded_pages)
 
@@ -105,12 +137,15 @@ class StrategyEngine:
                     "expansion_count": len(expansions),
                     "regressions": regressions,
                     "budget": budget,
+                    "control": control,
                     "entities": len(entities),
                     "links": len(links),
                     "authority_pages": len(authority),
                     "distribution_posts": len(distribution),
                     "embed_assets": len(embeds),
                     "backlink_strategy": backlinks,
+                    "pre_cycle_decision_allowed": perf_before.get("decision_allowed", False),
+                    "post_cycle_decision_allowed": perf.get("decision_allowed", False),
                 }
             )
 
@@ -118,6 +153,7 @@ class StrategyEngine:
         state["status"] = "active" if last_budget["status"] != "throttle" else "constrained"
         state["last_run"] = now_iso()
         state["scale_allowed"] = last_budget["status"] == "scale"
+        state["data_quality"] = data_quality
         save_json("indexes/strategy.json", state)
         return state
 

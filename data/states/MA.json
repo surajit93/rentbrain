@@ -1,0 +1,89 @@
+{
+  "state": "MA",
+  "name": "Massachusetts",
+  "rent_distribution": {
+    "studio": 1568,
+    "one_bed": 2010,
+    "two_bed": 2573,
+    "three_bed": 3256
+  },
+  "salary_distribution": {
+    "p25": 50581,
+    "p50": 80288,
+    "p75": 107586,
+    "p90": 142913
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.297,
+    "state_income_tax_rate": 0.05,
+    "sales_tax_rate": 0.0625
+  },
+  "groceries": 576,
+  "utilities": 281,
+  "transport": 442,
+  "insurance": 241,
+  "healthcare_baseline": 456,
+  "savings_ratio": 0.102,
+  "inflation_factor": 1.06,
+  "cities": [
+    {
+      "name": "Boston",
+      "tier": "major",
+      "population": 675000,
+      "rent_distribution": {
+        "studio": 1711,
+        "one_bed": 2251,
+        "two_bed": 2926,
+        "three_bed": 3714
+      },
+      "salary_distribution": {
+        "p25": 54717,
+        "p50": 88253,
+        "p75": 117376,
+        "p90": 155325
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.34,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.0625
+      },
+      "groceries": 645,
+      "utilities": 295,
+      "transport": 465,
+      "insurance": 256,
+      "healthcare_baseline": 484,
+      "savings_ratio": 0.104,
+      "inflation_factor": 1.06
+    },
+    {
+      "name": "Springfield",
+      "tier": "mid",
+      "population": 154000,
+      "rent_distribution": {
+        "studio": 1452,
+        "one_bed": 1910,
+        "two_bed": 2483,
+        "three_bed": 3152
+      },
+      "salary_distribution": {
+        "p25": 53363,
+        "p50": 86069,
+        "p75": 114472,
+        "p90": 151481
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.305,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.0625
+      },
+      "groceries": 547,
+      "utilities": 292,
+      "transport": 458,
+      "insurance": 252,
+      "healthcare_baseline": 476,
+      "savings_ratio": 0.096,
+      "inflation_factor": 1.06
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

@@ -1,0 +1,89 @@
+{
+  "state": "NY",
+  "name": "New York",
+  "rent_distribution": {
+    "studio": 1626,
+    "one_bed": 2085,
+    "two_bed": 2669,
+    "three_bed": 3378
+  },
+  "salary_distribution": {
+    "p25": 51155,
+    "p50": 81198,
+    "p75": 108805,
+    "p90": 144532
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.304,
+    "state_income_tax_rate": 0.0685,
+    "sales_tax_rate": 0.08875
+  },
+  "groceries": 598,
+  "utilities": 292,
+  "transport": 459,
+  "insurance": 250,
+  "healthcare_baseline": 473,
+  "savings_ratio": 0.098,
+  "inflation_factor": 1.07,
+  "cities": [
+    {
+      "name": "New York City",
+      "tier": "major",
+      "population": 8400000,
+      "rent_distribution": {
+        "studio": 1775,
+        "one_bed": 2335,
+        "two_bed": 3036,
+        "three_bed": 3853
+      },
+      "salary_distribution": {
+        "p25": 55337,
+        "p50": 89253,
+        "p75": 118706,
+        "p90": 157085
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.34,
+        "state_income_tax_rate": 0.0685,
+        "sales_tax_rate": 0.08875
+      },
+      "groceries": 669,
+      "utilities": 306,
+      "transport": 483,
+      "insurance": 266,
+      "healthcare_baseline": 502,
+      "savings_ratio": 0.1,
+      "inflation_factor": 1.07
+    },
+    {
+      "name": "Buffalo",
+      "tier": "mid",
+      "population": 276000,
+      "rent_distribution": {
+        "studio": 1506,
+        "one_bed": 1981,
+        "two_bed": 2575,
+        "three_bed": 3269
+      },
+      "salary_distribution": {
+        "p25": 53967,
+        "p50": 87044,
+        "p75": 115769,
+        "p90": 153197
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.312,
+        "state_income_tax_rate": 0.0685,
+        "sales_tax_rate": 0.08875
+      },
+      "groceries": 568,
+      "utilities": 302,
+      "transport": 475,
+      "insurance": 261,
+      "healthcare_baseline": 494,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.07
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

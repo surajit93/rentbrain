@@ -1,0 +1,89 @@
+{
+  "state": "AL",
+  "name": "Alabama",
+  "rent_distribution": {
+    "studio": 1123,
+    "one_bed": 1440,
+    "two_bed": 1843,
+    "three_bed": 2333
+  },
+  "salary_distribution": {
+    "p25": 46224,
+    "p50": 73372,
+    "p75": 98318,
+    "p90": 130602
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.241,
+    "state_income_tax_rate": 0.05,
+    "sales_tax_rate": 0.09
+  },
+  "groceries": 413,
+  "utilities": 202,
+  "transport": 317,
+  "insurance": 173,
+  "healthcare_baseline": 326,
+  "savings_ratio": 0.075,
+  "inflation_factor": 0.96,
+  "cities": [
+    {
+      "name": "Montgomery",
+      "tier": "major",
+      "population": 205000,
+      "rent_distribution": {
+        "studio": 1226,
+        "one_bed": 1613,
+        "two_bed": 2097,
+        "three_bed": 2661
+      },
+      "salary_distribution": {
+        "p25": 50004,
+        "p50": 80651,
+        "p75": 107266,
+        "p90": 141946
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.275,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.09
+      },
+      "groceries": 462,
+      "utilities": 212,
+      "transport": 333,
+      "insurance": 184,
+      "healthcare_baseline": 347,
+      "savings_ratio": 0.076,
+      "inflation_factor": 0.96
+    },
+    {
+      "name": "Huntsville",
+      "tier": "mid",
+      "population": 225000,
+      "rent_distribution": {
+        "studio": 1040,
+        "one_bed": 1368,
+        "two_bed": 1778,
+        "three_bed": 2257
+      },
+      "salary_distribution": {
+        "p25": 48766,
+        "p50": 78655,
+        "p75": 104611,
+        "p90": 138433
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.25,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.09
+      },
+      "groceries": 392,
+      "utilities": 209,
+      "transport": 328,
+      "insurance": 181,
+      "healthcare_baseline": 341,
+      "savings_ratio": 0.07,
+      "inflation_factor": 0.96
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

@@ -1,0 +1,89 @@
+{
+  "state": "NM",
+  "name": "New Mexico",
+  "rent_distribution": {
+    "studio": 1100,
+    "one_bed": 1410,
+    "two_bed": 1805,
+    "three_bed": 2284
+  },
+  "salary_distribution": {
+    "p25": 45995,
+    "p50": 73008,
+    "p75": 97831,
+    "p90": 129954
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.238,
+    "state_income_tax_rate": 0.049,
+    "sales_tax_rate": 0.0825
+  },
+  "groceries": 404,
+  "utilities": 197,
+  "transport": 310,
+  "insurance": 169,
+  "healthcare_baseline": 320,
+  "savings_ratio": 0.076,
+  "inflation_factor": 0.98,
+  "cities": [
+    {
+      "name": "Albuquerque",
+      "tier": "major",
+      "population": 563000,
+      "rent_distribution": {
+        "studio": 1200,
+        "one_bed": 1579,
+        "two_bed": 2053,
+        "three_bed": 2605
+      },
+      "salary_distribution": {
+        "p25": 49755,
+        "p50": 80250,
+        "p75": 106732,
+        "p90": 141240
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.271,
+        "state_income_tax_rate": 0.049,
+        "sales_tax_rate": 0.0825
+      },
+      "groceries": 453,
+      "utilities": 207,
+      "transport": 326,
+      "insurance": 180,
+      "healthcare_baseline": 339,
+      "savings_ratio": 0.078,
+      "inflation_factor": 0.98
+    },
+    {
+      "name": "Las Cruces",
+      "tier": "mid",
+      "population": 114000,
+      "rent_distribution": {
+        "studio": 1018,
+        "one_bed": 1340,
+        "two_bed": 1742,
+        "three_bed": 2211
+      },
+      "salary_distribution": {
+        "p25": 48524,
+        "p50": 78265,
+        "p75": 104092,
+        "p90": 137746
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.247,
+        "state_income_tax_rate": 0.049,
+        "sales_tax_rate": 0.0825
+      },
+      "groceries": 384,
+      "utilities": 205,
+      "transport": 321,
+      "insurance": 177,
+      "healthcare_baseline": 334,
+      "savings_ratio": 0.071,
+      "inflation_factor": 0.98
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

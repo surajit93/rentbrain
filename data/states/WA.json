@@ -1,0 +1,89 @@
+{
+  "state": "WA",
+  "name": "Washington",
+  "rent_distribution": {
+    "studio": 1498,
+    "one_bed": 1920,
+    "two_bed": 2458,
+    "three_bed": 3110
+  },
+  "salary_distribution": {
+    "p25": 49893,
+    "p50": 79196,
+    "p75": 106123,
+    "p90": 140969
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.288,
+    "state_income_tax_rate": 0.0,
+    "sales_tax_rate": 0.102
+  },
+  "groceries": 550,
+  "utilities": 269,
+  "transport": 422,
+  "insurance": 230,
+  "healthcare_baseline": 435,
+  "savings_ratio": 0.098,
+  "inflation_factor": 1.05,
+  "cities": [
+    {
+      "name": "Seattle",
+      "tier": "major",
+      "population": 755000,
+      "rent_distribution": {
+        "studio": 1634,
+        "one_bed": 2150,
+        "two_bed": 2795,
+        "three_bed": 3548
+      },
+      "salary_distribution": {
+        "p25": 53972,
+        "p50": 87052,
+        "p75": 115779,
+        "p90": 153212
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.33,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.102
+      },
+      "groceries": 616,
+      "utilities": 282,
+      "transport": 444,
+      "insurance": 245,
+      "healthcare_baseline": 462,
+      "savings_ratio": 0.1,
+      "inflation_factor": 1.05
+    },
+    {
+      "name": "Spokane",
+      "tier": "mid",
+      "population": 230000,
+      "rent_distribution": {
+        "studio": 1386,
+        "one_bed": 1824,
+        "two_bed": 2371,
+        "three_bed": 3010
+      },
+      "salary_distribution": {
+        "p25": 52637,
+        "p50": 84898,
+        "p75": 112914,
+        "p90": 149420
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.296,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.102
+      },
+      "groceries": 523,
+      "utilities": 278,
+      "transport": 437,
+      "insurance": 241,
+      "healthcare_baseline": 455,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.05
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

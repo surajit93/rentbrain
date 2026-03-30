@@ -1,0 +1,89 @@
+{
+  "state": "WY",
+  "name": "Wyoming",
+  "rent_distribution": {
+    "studio": 1053,
+    "one_bed": 1350,
+    "two_bed": 1728,
+    "three_bed": 2187
+  },
+  "salary_distribution": {
+    "p25": 45536,
+    "p50": 72280,
+    "p75": 96855,
+    "p90": 128658
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.232,
+    "state_income_tax_rate": 0.0,
+    "sales_tax_rate": 0.04
+  },
+  "groceries": 387,
+  "utilities": 189,
+  "transport": 297,
+  "insurance": 162,
+  "healthcare_baseline": 306,
+  "savings_ratio": 0.08,
+  "inflation_factor": 0.96,
+  "cities": [
+    {
+      "name": "Cheyenne",
+      "tier": "major",
+      "population": 65000,
+      "rent_distribution": {
+        "studio": 1149,
+        "one_bed": 1512,
+        "two_bed": 1966,
+        "three_bed": 2495
+      },
+      "salary_distribution": {
+        "p25": 49259,
+        "p50": 79450,
+        "p75": 105668,
+        "p90": 139832
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.265,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.04
+      },
+      "groceries": 433,
+      "utilities": 198,
+      "transport": 312,
+      "insurance": 172,
+      "healthcare_baseline": 325,
+      "savings_ratio": 0.082,
+      "inflation_factor": 0.96
+    },
+    {
+      "name": "Casper",
+      "tier": "mid",
+      "population": 59000,
+      "rent_distribution": {
+        "studio": 974,
+        "one_bed": 1282,
+        "two_bed": 1667,
+        "three_bed": 2115
+      },
+      "salary_distribution": {
+        "p25": 48040,
+        "p50": 77484,
+        "p75": 103054,
+        "p90": 136372
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.241,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.04
+      },
+      "groceries": 368,
+      "utilities": 196,
+      "transport": 307,
+      "insurance": 169,
+      "healthcare_baseline": 320,
+      "savings_ratio": 0.075,
+      "inflation_factor": 0.96
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

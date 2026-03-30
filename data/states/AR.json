@@ -1,0 +1,89 @@
+{
+  "state": "AR",
+  "name": "Arkansas",
+  "rent_distribution": {
+    "studio": 1076,
+    "one_bed": 1380,
+    "two_bed": 1766,
+    "three_bed": 2236
+  },
+  "salary_distribution": {
+    "p25": 45766,
+    "p50": 72644,
+    "p75": 97343,
+    "p90": 129306
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.235,
+    "state_income_tax_rate": 0.045,
+    "sales_tax_rate": 0.095
+  },
+  "groceries": 396,
+  "utilities": 193,
+  "transport": 304,
+  "insurance": 166,
+  "healthcare_baseline": 313,
+  "savings_ratio": 0.072,
+  "inflation_factor": 0.95,
+  "cities": [
+    {
+      "name": "Little Rock",
+      "tier": "major",
+      "population": 203000,
+      "rent_distribution": {
+        "studio": 1175,
+        "one_bed": 1546,
+        "two_bed": 2010,
+        "three_bed": 2551
+      },
+      "salary_distribution": {
+        "p25": 49507,
+        "p50": 79850,
+        "p75": 106200,
+        "p90": 140536
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.268,
+        "state_income_tax_rate": 0.045,
+        "sales_tax_rate": 0.095
+      },
+      "groceries": 443,
+      "utilities": 203,
+      "transport": 319,
+      "insurance": 176,
+      "healthcare_baseline": 332,
+      "savings_ratio": 0.073,
+      "inflation_factor": 0.95
+    },
+    {
+      "name": "Fayetteville",
+      "tier": "mid",
+      "population": 101000,
+      "rent_distribution": {
+        "studio": 996,
+        "one_bed": 1311,
+        "two_bed": 1704,
+        "three_bed": 2163
+      },
+      "salary_distribution": {
+        "p25": 48282,
+        "p50": 77874,
+        "p75": 103572,
+        "p90": 137058
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.244,
+        "state_income_tax_rate": 0.045,
+        "sales_tax_rate": 0.095
+      },
+      "groceries": 376,
+      "utilities": 200,
+      "transport": 314,
+      "insurance": 173,
+      "healthcare_baseline": 327,
+      "savings_ratio": 0.068,
+      "inflation_factor": 0.95
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

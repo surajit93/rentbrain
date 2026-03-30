@@ -1,6 +1,6 @@
 {
-  "state": "AZ",
-  "name": "Arizona",
+  "state": "MN",
+  "name": "Minnesota",
   "rent_distribution": {
     "studio": 1264,
     "one_bed": 1620,
@@ -15,21 +15,21 @@
   },
   "tax_model": {
     "effective_income_tax_rate": 0.258,
-    "state_income_tax_rate": 0.025,
-    "sales_tax_rate": 0.085
+    "state_income_tax_rate": 0.068,
+    "sales_tax_rate": 0.07
   },
   "groceries": 464,
   "utilities": 227,
   "transport": 356,
   "insurance": 194,
   "healthcare_baseline": 367,
-  "savings_ratio": 0.08,
-  "inflation_factor": 1.02,
+  "savings_ratio": 0.09,
+  "inflation_factor": 1.01,
   "cities": [
     {
-      "name": "Phoenix",
+      "name": "Minneapolis",
       "tier": "major",
-      "population": 1625000,
+      "population": 430000,
       "rent_distribution": {
         "studio": 1379,
         "one_bed": 1814,
@@ -44,21 +44,21 @@
       },
       "tax_model": {
         "effective_income_tax_rate": 0.295,
-        "state_income_tax_rate": 0.025,
-        "sales_tax_rate": 0.085
+        "state_income_tax_rate": 0.068,
+        "sales_tax_rate": 0.07
       },
       "groceries": 520,
       "utilities": 238,
       "transport": 375,
       "insurance": 206,
       "healthcare_baseline": 390,
-      "savings_ratio": 0.082,
-      "inflation_factor": 1.02
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.01
     },
     {
-      "name": "Tucson",
+      "name": "Rochester",
       "tier": "mid",
-      "population": 550000,
+      "population": 123000,
       "rent_distribution": {
         "studio": 1170,
         "one_bed": 1539,
@@ -73,16 +73,16 @@
       },
       "tax_model": {
         "effective_income_tax_rate": 0.267,
-        "state_income_tax_rate": 0.025,
-        "sales_tax_rate": 0.085
+        "state_income_tax_rate": 0.068,
+        "sales_tax_rate": 0.07
       },
       "groceries": 441,
       "utilities": 235,
       "transport": 369,
       "insurance": 203,
       "healthcare_baseline": 384,
-      "savings_ratio": 0.075,
-      "inflation_factor": 1.02
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.01
     }
   ],
   "data_source": "modeled_2026_cost_income_baseline"

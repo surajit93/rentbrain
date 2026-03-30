@@ -1,4 +1,89 @@
 {
   "state": "NC",
-  "notes": "placeholder state model"
+  "name": "North Carolina",
+  "rent_distribution": {
+    "studio": 1217,
+    "one_bed": 1560,
+    "two_bed": 1997,
+    "three_bed": 2527
+  },
+  "salary_distribution": {
+    "p25": 47142,
+    "p50": 74828,
+    "p75": 100270,
+    "p90": 133194
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.253,
+    "state_income_tax_rate": 0.0475,
+    "sales_tax_rate": 0.0725
+  },
+  "groceries": 447,
+  "utilities": 218,
+  "transport": 343,
+  "insurance": 187,
+  "healthcare_baseline": 354,
+  "savings_ratio": 0.082,
+  "inflation_factor": 1.0,
+  "cities": [
+    {
+      "name": "Charlotte",
+      "tier": "major",
+      "population": 911000,
+      "rent_distribution": {
+        "studio": 1328,
+        "one_bed": 1747,
+        "two_bed": 2271,
+        "three_bed": 2883
+      },
+      "salary_distribution": {
+        "p25": 50996,
+        "p50": 82251,
+        "p75": 109394,
+        "p90": 144762
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.289,
+        "state_income_tax_rate": 0.0475,
+        "sales_tax_rate": 0.0725
+      },
+      "groceries": 501,
+      "utilities": 229,
+      "transport": 361,
+      "insurance": 199,
+      "healthcare_baseline": 376,
+      "savings_ratio": 0.084,
+      "inflation_factor": 1.0
+    },
+    {
+      "name": "Raleigh",
+      "tier": "mid",
+      "population": 482000,
+      "rent_distribution": {
+        "studio": 1126,
+        "one_bed": 1482,
+        "two_bed": 1927,
+        "three_bed": 2445
+      },
+      "salary_distribution": {
+        "p25": 49734,
+        "p50": 80216,
+        "p75": 106687,
+        "p90": 141180
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.261,
+        "state_income_tax_rate": 0.0475,
+        "sales_tax_rate": 0.0725
+      },
+      "groceries": 425,
+      "utilities": 226,
+      "transport": 355,
+      "insurance": 196,
+      "healthcare_baseline": 370,
+      "savings_ratio": 0.077,
+      "inflation_factor": 1.0
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
 }

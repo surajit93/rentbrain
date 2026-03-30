@@ -1,39 +1,1004 @@
 {
   "cities": [
     {
-      "city": "Austin",
-      "state": "TX",
-      "population": 974447,
-      "median_rent": 1800,
-      "median_salary": 72000
+      "city": "Montgomery",
+      "state": "AL",
+      "tier": "major",
+      "population": 205000,
+      "median_rent": 1613,
+      "median_salary": 80651,
+      "savings_ratio": 0.076,
+      "inflation_factor": 0.96
+    },
+    {
+      "city": "Huntsville",
+      "state": "AL",
+      "tier": "mid",
+      "population": 225000,
+      "median_rent": 1368,
+      "median_salary": 78655,
+      "savings_ratio": 0.07,
+      "inflation_factor": 0.96
+    },
+    {
+      "city": "Anchorage",
+      "state": "AK",
+      "tier": "major",
+      "population": 289000,
+      "median_rent": 2050,
+      "median_salary": 85852,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.05
+    },
+    {
+      "city": "Fairbanks",
+      "state": "AK",
+      "tier": "mid",
+      "population": 32000,
+      "median_rent": 1738,
+      "median_salary": 83727,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.05
     },
     {
       "city": "Phoenix",
       "state": "AZ",
-      "population": 1624569,
-      "median_rent": 1650,
-      "median_salary": 68000
+      "tier": "major",
+      "population": 1625000,
+      "median_rent": 1814,
+      "median_salary": 83051,
+      "savings_ratio": 0.082,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Tucson",
+      "state": "AZ",
+      "tier": "mid",
+      "population": 550000,
+      "median_rent": 1539,
+      "median_salary": 80996,
+      "savings_ratio": 0.075,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Little Rock",
+      "state": "AR",
+      "tier": "major",
+      "population": 203000,
+      "median_rent": 1546,
+      "median_salary": 79850,
+      "savings_ratio": 0.073,
+      "inflation_factor": 0.95
+    },
+    {
+      "city": "Fayetteville",
+      "state": "AR",
+      "tier": "mid",
+      "population": 101000,
+      "median_rent": 1311,
+      "median_salary": 77874,
+      "savings_ratio": 0.068,
+      "inflation_factor": 0.95
+    },
+    {
+      "city": "Los Angeles",
+      "state": "CA",
+      "tier": "major",
+      "population": 3899000,
+      "median_rent": 2386,
+      "median_salary": 89853,
+      "savings_ratio": 0.102,
+      "inflation_factor": 1.08
+    },
+    {
+      "city": "Sacramento",
+      "state": "CA",
+      "tier": "mid",
+      "population": 528000,
+      "median_rent": 2024,
+      "median_salary": 87630,
+      "savings_ratio": 0.094,
+      "inflation_factor": 1.08
+    },
+    {
+      "city": "Denver",
+      "state": "CO",
+      "tier": "major",
+      "population": 715000,
+      "median_rent": 2016,
+      "median_salary": 85452,
+      "savings_ratio": 0.097,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "Colorado Springs",
+      "state": "CO",
+      "tier": "mid",
+      "population": 488000,
+      "median_rent": 1710,
+      "median_salary": 83337,
+      "savings_ratio": 0.089,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "Bridgeport",
+      "state": "CT",
+      "tier": "major",
+      "population": 149000,
+      "median_rent": 2083,
+      "median_salary": 86252,
+      "savings_ratio": 0.094,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "New Haven",
+      "state": "CT",
+      "tier": "mid",
+      "population": 135000,
+      "median_rent": 1767,
+      "median_salary": 84118,
+      "savings_ratio": 0.086,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "Wilmington",
+      "state": "DE",
+      "tier": "major",
+      "population": 71000,
+      "median_rent": 1798,
+      "median_salary": 82851,
+      "savings_ratio": 0.088,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Dover",
+      "state": "DE",
+      "tier": "mid",
+      "population": 39000,
+      "median_rent": 1525,
+      "median_salary": 80801,
+      "savings_ratio": 0.081,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Jacksonville",
+      "state": "FL",
+      "tier": "major",
+      "population": 971000,
+      "median_rent": 1882,
+      "median_salary": 83851,
+      "savings_ratio": 0.084,
+      "inflation_factor": 1.03
     },
     {
       "city": "Tampa",
       "state": "FL",
-      "population": 403364,
-      "median_rent": 1700,
-      "median_salary": 65000
+      "tier": "mid",
+      "population": 404000,
+      "median_rent": 1596,
+      "median_salary": 81776,
+      "savings_ratio": 0.077,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "Atlanta",
+      "state": "GA",
+      "tier": "major",
+      "population": 514000,
+      "median_rent": 1764,
+      "median_salary": 82451,
+      "savings_ratio": 0.082,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Savannah",
+      "state": "GA",
+      "tier": "mid",
+      "population": 147000,
+      "median_rent": 1496,
+      "median_salary": 80411,
+      "savings_ratio": 0.075,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Honolulu",
+      "state": "HI",
+      "tier": "major",
+      "population": 350000,
+      "median_rent": 2520,
+      "median_salary": 91453,
+      "savings_ratio": 0.097,
+      "inflation_factor": 1.09
+    },
+    {
+      "city": "Hilo",
+      "state": "HI",
+      "tier": "mid",
+      "population": 46000,
+      "median_rent": 2138,
+      "median_salary": 89190,
+      "savings_ratio": 0.089,
+      "inflation_factor": 1.09
+    },
+    {
+      "city": "Boise",
+      "state": "ID",
+      "tier": "major",
+      "population": 238000,
+      "median_rent": 1730,
+      "median_salary": 82051,
+      "savings_ratio": 0.087,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Idaho Falls",
+      "state": "ID",
+      "tier": "mid",
+      "population": 68000,
+      "median_rent": 1468,
+      "median_salary": 80021,
+      "savings_ratio": 0.08,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Chicago",
+      "state": "IL",
+      "tier": "major",
+      "population": 2665000,
+      "median_rent": 1882,
+      "median_salary": 83851,
+      "savings_ratio": 0.088,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Peoria",
+      "state": "IL",
+      "tier": "mid",
+      "population": 113000,
+      "median_rent": 1596,
+      "median_salary": 81776,
+      "savings_ratio": 0.081,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Indianapolis",
+      "state": "IN",
+      "tier": "major",
+      "population": 887000,
+      "median_rent": 1646,
+      "median_salary": 81051,
+      "savings_ratio": 0.081,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Fort Wayne",
+      "state": "IN",
+      "tier": "mid",
+      "population": 268000,
+      "median_rent": 1396,
+      "median_salary": 79045,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Des Moines",
+      "state": "IA",
+      "tier": "major",
+      "population": 214000,
+      "median_rent": 1579,
+      "median_salary": 80250,
+      "savings_ratio": 0.08,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Cedar Rapids",
+      "state": "IA",
+      "tier": "mid",
+      "population": 137000,
+      "median_rent": 1340,
+      "median_salary": 78265,
+      "savings_ratio": 0.073,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Wichita",
+      "state": "KS",
+      "tier": "major",
+      "population": 397000,
+      "median_rent": 1562,
+      "median_salary": 80050,
+      "savings_ratio": 0.079,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Overland Park",
+      "state": "KS",
+      "tier": "mid",
+      "population": 197000,
+      "median_rent": 1325,
+      "median_salary": 78069,
+      "savings_ratio": 0.072,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Louisville",
+      "state": "KY",
+      "tier": "major",
+      "population": 622000,
+      "median_rent": 1596,
+      "median_salary": 80450,
+      "savings_ratio": 0.078,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Lexington",
+      "state": "KY",
+      "tier": "mid",
+      "population": 323000,
+      "median_rent": 1354,
+      "median_salary": 78460,
+      "savings_ratio": 0.071,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "New Orleans",
+      "state": "LA",
+      "tier": "major",
+      "population": 364000,
+      "median_rent": 1630,
+      "median_salary": 80851,
+      "savings_ratio": 0.075,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Baton Rouge",
+      "state": "LA",
+      "tier": "mid",
+      "population": 222000,
+      "median_rent": 1382,
+      "median_salary": 78850,
+      "savings_ratio": 0.07,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Portland",
+      "state": "ME",
+      "tier": "major",
+      "population": 69000,
+      "median_rent": 1814,
+      "median_salary": 83051,
+      "savings_ratio": 0.09,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Bangor",
+      "state": "ME",
+      "tier": "mid",
+      "population": 31000,
+      "median_rent": 1539,
+      "median_salary": 80996,
+      "savings_ratio": 0.083,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Baltimore",
+      "state": "MD",
+      "tier": "major",
+      "population": 565000,
+      "median_rent": 2016,
+      "median_salary": 85452,
+      "savings_ratio": 0.096,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "Frederick",
+      "state": "MD",
+      "tier": "mid",
+      "population": 85000,
+      "median_rent": 1710,
+      "median_salary": 83337,
+      "savings_ratio": 0.088,
+      "inflation_factor": 1.03
+    },
+    {
+      "city": "Boston",
+      "state": "MA",
+      "tier": "major",
+      "population": 675000,
+      "median_rent": 2251,
+      "median_salary": 88253,
+      "savings_ratio": 0.104,
+      "inflation_factor": 1.06
+    },
+    {
+      "city": "Springfield",
+      "state": "MA",
+      "tier": "mid",
+      "population": 154000,
+      "median_rent": 1910,
+      "median_salary": 86069,
+      "savings_ratio": 0.096,
+      "inflation_factor": 1.06
+    },
+    {
+      "city": "Detroit",
+      "state": "MI",
+      "tier": "major",
+      "population": 633000,
+      "median_rent": 1663,
+      "median_salary": 81251,
+      "savings_ratio": 0.082,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Grand Rapids",
+      "state": "MI",
+      "tier": "mid",
+      "population": 198000,
+      "median_rent": 1411,
+      "median_salary": 79240,
+      "savings_ratio": 0.075,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Minneapolis",
+      "state": "MN",
+      "tier": "major",
+      "population": 430000,
+      "median_rent": 1814,
+      "median_salary": 83051,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Rochester",
+      "state": "MN",
+      "tier": "mid",
+      "population": 123000,
+      "median_rent": 1539,
+      "median_salary": 80996,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Jackson",
+      "state": "MS",
+      "tier": "major",
+      "population": 143000,
+      "median_rent": 1478,
+      "median_salary": 79050,
+      "savings_ratio": 0.069,
+      "inflation_factor": 0.95
+    },
+    {
+      "city": "Gulfport",
+      "state": "MS",
+      "tier": "mid",
+      "population": 73000,
+      "median_rent": 1254,
+      "median_salary": 77094,
+      "savings_ratio": 0.064,
+      "inflation_factor": 0.95
+    },
+    {
+      "city": "Kansas City",
+      "state": "MO",
+      "tier": "major",
+      "population": 510000,
+      "median_rent": 1596,
+      "median_salary": 80450,
+      "savings_ratio": 0.08,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Springfield",
+      "state": "MO",
+      "tier": "mid",
+      "population": 170000,
+      "median_rent": 1354,
+      "median_salary": 78460,
+      "savings_ratio": 0.073,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Billings",
+      "state": "MT",
+      "tier": "major",
+      "population": 119000,
+      "median_rent": 1714,
+      "median_salary": 81851,
+      "savings_ratio": 0.087,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Bozeman",
+      "state": "MT",
+      "tier": "mid",
+      "population": 56000,
+      "median_rent": 1454,
+      "median_salary": 79825,
+      "savings_ratio": 0.08,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Omaha",
+      "state": "NE",
+      "tier": "major",
+      "population": 486000,
+      "median_rent": 1562,
+      "median_salary": 80050,
+      "savings_ratio": 0.081,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Lincoln",
+      "state": "NE",
+      "tier": "mid",
+      "population": 292000,
+      "median_rent": 1325,
+      "median_salary": 78069,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Las Vegas",
+      "state": "NV",
+      "tier": "major",
+      "population": 662000,
+      "median_rent": 1831,
+      "median_salary": 83251,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Reno",
+      "state": "NV",
+      "tier": "mid",
+      "population": 273000,
+      "median_rent": 1553,
+      "median_salary": 81191,
+      "savings_ratio": 0.078,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Manchester",
+      "state": "NH",
+      "tier": "major",
+      "population": 116000,
+      "median_rent": 1982,
+      "median_salary": 85052,
+      "savings_ratio": 0.094,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Nashua",
+      "state": "NH",
+      "tier": "mid",
+      "population": 91000,
+      "median_rent": 1682,
+      "median_salary": 82947,
+      "savings_ratio": 0.086,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Newark",
+      "state": "NJ",
+      "tier": "major",
+      "population": 307000,
+      "median_rent": 2218,
+      "median_salary": 87852,
+      "savings_ratio": 0.099,
+      "inflation_factor": 1.05
+    },
+    {
+      "city": "Jersey City",
+      "state": "NJ",
+      "tier": "mid",
+      "population": 292000,
+      "median_rent": 1881,
+      "median_salary": 85679,
+      "savings_ratio": 0.091,
+      "inflation_factor": 1.05
+    },
+    {
+      "city": "Albuquerque",
+      "state": "NM",
+      "tier": "major",
+      "population": 563000,
+      "median_rent": 1579,
+      "median_salary": 80250,
+      "savings_ratio": 0.078,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "Las Cruces",
+      "state": "NM",
+      "tier": "mid",
+      "population": 114000,
+      "median_rent": 1340,
+      "median_salary": 78265,
+      "savings_ratio": 0.071,
+      "inflation_factor": 0.98
+    },
+    {
+      "city": "New York City",
+      "state": "NY",
+      "tier": "major",
+      "population": 8400000,
+      "median_rent": 2335,
+      "median_salary": 89253,
+      "savings_ratio": 0.1,
+      "inflation_factor": 1.07
+    },
+    {
+      "city": "Buffalo",
+      "state": "NY",
+      "tier": "mid",
+      "population": 276000,
+      "median_rent": 1981,
+      "median_salary": 87044,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.07
+    },
+    {
+      "city": "Charlotte",
+      "state": "NC",
+      "tier": "major",
+      "population": 911000,
+      "median_rent": 1747,
+      "median_salary": 82251,
+      "savings_ratio": 0.084,
+      "inflation_factor": 1.0
     },
     {
       "city": "Raleigh",
       "state": "NC",
-      "population": 482295,
-      "median_rent": 1600,
-      "median_salary": 70000
+      "tier": "mid",
+      "population": 482000,
+      "median_rent": 1482,
+      "median_salary": 80216,
+      "savings_ratio": 0.077,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Fargo",
+      "state": "ND",
+      "tier": "major",
+      "population": 133000,
+      "median_rent": 1546,
+      "median_salary": 79850,
+      "savings_ratio": 0.082,
+      "inflation_factor": 0.97
+    },
+    {
+      "city": "Bismarck",
+      "state": "ND",
+      "tier": "mid",
+      "population": 75000,
+      "median_rent": 1311,
+      "median_salary": 77874,
+      "savings_ratio": 0.075,
+      "inflation_factor": 0.97
     },
     {
       "city": "Columbus",
       "state": "OH",
-      "population": 913175,
-      "median_rent": 1450,
-      "median_salary": 62000
+      "tier": "major",
+      "population": 913000,
+      "median_rent": 1630,
+      "median_salary": 80851,
+      "savings_ratio": 0.081,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Cleveland",
+      "state": "OH",
+      "tier": "mid",
+      "population": 362000,
+      "median_rent": 1382,
+      "median_salary": 78850,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Oklahoma City",
+      "state": "OK",
+      "tier": "major",
+      "population": 702000,
+      "median_rent": 1529,
+      "median_salary": 79650,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.97
+    },
+    {
+      "city": "Tulsa",
+      "state": "OK",
+      "tier": "mid",
+      "population": 413000,
+      "median_rent": 1297,
+      "median_salary": 77679,
+      "savings_ratio": 0.069,
+      "inflation_factor": 0.97
+    },
+    {
+      "city": "Portland",
+      "state": "OR",
+      "tier": "major",
+      "population": 635000,
+      "median_rent": 1966,
+      "median_salary": 84852,
+      "savings_ratio": 0.093,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Eugene",
+      "state": "OR",
+      "tier": "mid",
+      "population": 177000,
+      "median_rent": 1667,
+      "median_salary": 82752,
+      "savings_ratio": 0.086,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Philadelphia",
+      "state": "PA",
+      "tier": "major",
+      "population": 1570000,
+      "median_rent": 1781,
+      "median_salary": 82651,
+      "savings_ratio": 0.087,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Pittsburgh",
+      "state": "PA",
+      "tier": "mid",
+      "population": 303000,
+      "median_rent": 1510,
+      "median_salary": 80606,
+      "savings_ratio": 0.08,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Providence",
+      "state": "RI",
+      "tier": "major",
+      "population": 191000,
+      "median_rent": 1949,
+      "median_salary": 84652,
+      "savings_ratio": 0.091,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Warwick",
+      "state": "RI",
+      "tier": "mid",
+      "population": 83000,
+      "median_rent": 1653,
+      "median_salary": 82557,
+      "savings_ratio": 0.084,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Charleston",
+      "state": "SC",
+      "tier": "major",
+      "population": 153000,
+      "median_rent": 1663,
+      "median_salary": 81251,
+      "savings_ratio": 0.079,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Columbia",
+      "state": "SC",
+      "tier": "mid",
+      "population": 137000,
+      "median_rent": 1411,
+      "median_salary": 79240,
+      "savings_ratio": 0.072,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Sioux Falls",
+      "state": "SD",
+      "tier": "major",
+      "population": 206000,
+      "median_rent": 1529,
+      "median_salary": 79650,
+      "savings_ratio": 0.08,
+      "inflation_factor": 0.97
+    },
+    {
+      "city": "Rapid City",
+      "state": "SD",
+      "tier": "mid",
+      "population": 79000,
+      "median_rent": 1297,
+      "median_salary": 77679,
+      "savings_ratio": 0.073,
+      "inflation_factor": 0.97
+    },
+    {
+      "city": "Nashville",
+      "state": "TN",
+      "tier": "major",
+      "population": 715000,
+      "median_rent": 1697,
+      "median_salary": 81651,
+      "savings_ratio": 0.081,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Knoxville",
+      "state": "TN",
+      "tier": "mid",
+      "population": 202000,
+      "median_rent": 1439,
+      "median_salary": 79630,
+      "savings_ratio": 0.074,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Houston",
+      "state": "TX",
+      "tier": "major",
+      "population": 2300000,
+      "median_rent": 1714,
+      "median_salary": 81851,
+      "savings_ratio": 0.083,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Austin",
+      "state": "TX",
+      "tier": "mid",
+      "population": 974000,
+      "median_rent": 1454,
+      "median_salary": 79825,
+      "savings_ratio": 0.076,
+      "inflation_factor": 1.0
+    },
+    {
+      "city": "Salt Lake City",
+      "state": "UT",
+      "tier": "major",
+      "population": 205000,
+      "median_rent": 1798,
+      "median_salary": 82851,
+      "savings_ratio": 0.09,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Provo",
+      "state": "UT",
+      "tier": "mid",
+      "population": 117000,
+      "median_rent": 1525,
+      "median_salary": 80801,
+      "savings_ratio": 0.083,
+      "inflation_factor": 1.01
+    },
+    {
+      "city": "Burlington",
+      "state": "VT",
+      "tier": "major",
+      "population": 45000,
+      "median_rent": 1882,
+      "median_salary": 83851,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Rutland",
+      "state": "VT",
+      "tier": "mid",
+      "population": 15000,
+      "median_rent": 1596,
+      "median_salary": 81776,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Virginia Beach",
+      "state": "VA",
+      "tier": "major",
+      "population": 457000,
+      "median_rent": 1865,
+      "median_salary": 83651,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Richmond",
+      "state": "VA",
+      "tier": "mid",
+      "population": 229000,
+      "median_rent": 1582,
+      "median_salary": 81581,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.02
+    },
+    {
+      "city": "Seattle",
+      "state": "WA",
+      "tier": "major",
+      "population": 755000,
+      "median_rent": 2150,
+      "median_salary": 87052,
+      "savings_ratio": 0.1,
+      "inflation_factor": 1.05
+    },
+    {
+      "city": "Spokane",
+      "state": "WA",
+      "tier": "mid",
+      "population": 230000,
+      "median_rent": 1824,
+      "median_salary": 84898,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.05
+    },
+    {
+      "city": "Charleston",
+      "state": "WV",
+      "tier": "major",
+      "population": 47000,
+      "median_rent": 1495,
+      "median_salary": 79250,
+      "savings_ratio": 0.071,
+      "inflation_factor": 0.96
+    },
+    {
+      "city": "Morgantown",
+      "state": "WV",
+      "tier": "mid",
+      "population": 31000,
+      "median_rent": 1268,
+      "median_salary": 77289,
+      "savings_ratio": 0.066,
+      "inflation_factor": 0.96
+    },
+    {
+      "city": "Milwaukee",
+      "state": "WI",
+      "tier": "major",
+      "population": 569000,
+      "median_rent": 1646,
+      "median_salary": 81051,
+      "savings_ratio": 0.084,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Madison",
+      "state": "WI",
+      "tier": "mid",
+      "population": 280000,
+      "median_rent": 1396,
+      "median_salary": 79045,
+      "savings_ratio": 0.077,
+      "inflation_factor": 0.99
+    },
+    {
+      "city": "Cheyenne",
+      "state": "WY",
+      "tier": "major",
+      "population": 65000,
+      "median_rent": 1512,
+      "median_salary": 79450,
+      "savings_ratio": 0.082,
+      "inflation_factor": 0.96
+    },
+    {
+      "city": "Casper",
+      "state": "WY",
+      "tier": "mid",
+      "population": 59000,
+      "median_rent": 1282,
+      "median_salary": 77484,
+      "savings_ratio": 0.075,
+      "inflation_factor": 0.96
     }
   ]
 }

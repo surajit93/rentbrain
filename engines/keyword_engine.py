@@ -25,6 +25,7 @@ class KeywordEngine:
                         "serp_difficulty": serp.get("serp_difficulty", 1),
                         "forum_ratio": serp.get("forum_ratio", 0),
                         "source_query": serp["query"],
+                        "eligibility": serp.get("eligibility", "BLOCK"),
                     }
                 )
         save_json("indexes/keyword_index.json", {"keywords": out, "updated_at": now_iso()})

@@ -1,0 +1,89 @@
+{
+  "state": "GA",
+  "name": "Georgia",
+  "rent_distribution": {
+    "studio": 1228,
+    "one_bed": 1575,
+    "two_bed": 2016,
+    "three_bed": 2552
+  },
+  "salary_distribution": {
+    "p25": 47256,
+    "p50": 75010,
+    "p75": 100513,
+    "p90": 133518
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.254,
+    "state_income_tax_rate": 0.054,
+    "sales_tax_rate": 0.08
+  },
+  "groceries": 452,
+  "utilities": 220,
+  "transport": 346,
+  "insurance": 189,
+  "healthcare_baseline": 357,
+  "savings_ratio": 0.08,
+  "inflation_factor": 1.0,
+  "cities": [
+    {
+      "name": "Atlanta",
+      "tier": "major",
+      "population": 514000,
+      "rent_distribution": {
+        "studio": 1341,
+        "one_bed": 1764,
+        "two_bed": 2293,
+        "three_bed": 2911
+      },
+      "salary_distribution": {
+        "p25": 51120,
+        "p50": 82451,
+        "p75": 109660,
+        "p90": 145114
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.29,
+        "state_income_tax_rate": 0.054,
+        "sales_tax_rate": 0.08
+      },
+      "groceries": 506,
+      "utilities": 231,
+      "transport": 365,
+      "insurance": 201,
+      "healthcare_baseline": 379,
+      "savings_ratio": 0.082,
+      "inflation_factor": 1.0
+    },
+    {
+      "name": "Savannah",
+      "tier": "mid",
+      "population": 147000,
+      "rent_distribution": {
+        "studio": 1137,
+        "one_bed": 1496,
+        "two_bed": 1945,
+        "three_bed": 2468
+      },
+      "salary_distribution": {
+        "p25": 49855,
+        "p50": 80411,
+        "p75": 106947,
+        "p90": 141523
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.263,
+        "state_income_tax_rate": 0.054,
+        "sales_tax_rate": 0.08
+      },
+      "groceries": 429,
+      "utilities": 228,
+      "transport": 359,
+      "insurance": 198,
+      "healthcare_baseline": 373,
+      "savings_ratio": 0.075,
+      "inflation_factor": 1.0
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

@@ -1,0 +1,89 @@
+{
+  "state": "WV",
+  "name": "West Virginia",
+  "rent_distribution": {
+    "studio": 1041,
+    "one_bed": 1335,
+    "two_bed": 1709,
+    "three_bed": 2163
+  },
+  "salary_distribution": {
+    "p25": 45422,
+    "p50": 72098,
+    "p75": 96611,
+    "p90": 128334
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.231,
+    "state_income_tax_rate": 0.0512,
+    "sales_tax_rate": 0.06
+  },
+  "groceries": 383,
+  "utilities": 187,
+  "transport": 294,
+  "insurance": 160,
+  "healthcare_baseline": 303,
+  "savings_ratio": 0.07,
+  "inflation_factor": 0.96,
+  "cities": [
+    {
+      "name": "Charleston",
+      "tier": "major",
+      "population": 47000,
+      "rent_distribution": {
+        "studio": 1136,
+        "one_bed": 1495,
+        "two_bed": 1944,
+        "three_bed": 2467
+      },
+      "salary_distribution": {
+        "p25": 49135,
+        "p50": 79250,
+        "p75": 105402,
+        "p90": 139480
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.263,
+        "state_income_tax_rate": 0.0512,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 429,
+      "utilities": 196,
+      "transport": 309,
+      "insurance": 170,
+      "healthcare_baseline": 321,
+      "savings_ratio": 0.071,
+      "inflation_factor": 0.96
+    },
+    {
+      "name": "Morgantown",
+      "tier": "mid",
+      "population": 31000,
+      "rent_distribution": {
+        "studio": 964,
+        "one_bed": 1268,
+        "two_bed": 1648,
+        "three_bed": 2092
+      },
+      "salary_distribution": {
+        "p25": 47919,
+        "p50": 77289,
+        "p75": 102794,
+        "p90": 136029
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.24,
+        "state_income_tax_rate": 0.0512,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 364,
+      "utilities": 194,
+      "transport": 304,
+      "insurance": 167,
+      "healthcare_baseline": 316,
+      "savings_ratio": 0.066,
+      "inflation_factor": 0.96
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

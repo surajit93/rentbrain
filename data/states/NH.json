@@ -1,0 +1,89 @@
+{
+  "state": "NH",
+  "name": "New Hampshire",
+  "rent_distribution": {
+    "studio": 1381,
+    "one_bed": 1770,
+    "two_bed": 2266,
+    "three_bed": 2867
+  },
+  "salary_distribution": {
+    "p25": 48747,
+    "p50": 77376,
+    "p75": 103684,
+    "p90": 137729
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.273,
+    "state_income_tax_rate": 0.0,
+    "sales_tax_rate": 0.0
+  },
+  "groceries": 507,
+  "utilities": 248,
+  "transport": 389,
+  "insurance": 212,
+  "healthcare_baseline": 401,
+  "savings_ratio": 0.092,
+  "inflation_factor": 1.02,
+  "cities": [
+    {
+      "name": "Manchester",
+      "tier": "major",
+      "population": 116000,
+      "rent_distribution": {
+        "studio": 1506,
+        "one_bed": 1982,
+        "two_bed": 2577,
+        "three_bed": 3270
+      },
+      "salary_distribution": {
+        "p25": 52732,
+        "p50": 85052,
+        "p75": 113119,
+        "p90": 149692
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.313,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.0
+      },
+      "groceries": 568,
+      "utilities": 260,
+      "transport": 410,
+      "insurance": 226,
+      "healthcare_baseline": 426,
+      "savings_ratio": 0.094,
+      "inflation_factor": 1.02
+    },
+    {
+      "name": "Nashua",
+      "tier": "mid",
+      "population": 91000,
+      "rent_distribution": {
+        "studio": 1278,
+        "one_bed": 1682,
+        "two_bed": 2187,
+        "three_bed": 2775
+      },
+      "salary_distribution": {
+        "p25": 51427,
+        "p50": 82947,
+        "p75": 110320,
+        "p90": 145987
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.282,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.0
+      },
+      "groceries": 482,
+      "utilities": 257,
+      "transport": 403,
+      "insurance": 222,
+      "healthcare_baseline": 419,
+      "savings_ratio": 0.086,
+      "inflation_factor": 1.02
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}
