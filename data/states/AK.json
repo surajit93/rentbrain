@@ -1,0 +1,89 @@
+{
+  "state": "AK",
+  "name": "Alaska",
+  "rent_distribution": {
+    "studio": 1427,
+    "one_bed": 1830,
+    "two_bed": 2342,
+    "three_bed": 2965
+  },
+  "salary_distribution": {
+    "p25": 49206,
+    "p50": 78104,
+    "p75": 104659,
+    "p90": 139025
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.279,
+    "state_income_tax_rate": 0.0,
+    "sales_tax_rate": 0.0
+  },
+  "groceries": 525,
+  "utilities": 256,
+  "transport": 403,
+  "insurance": 220,
+  "healthcare_baseline": 415,
+  "savings_ratio": 0.09,
+  "inflation_factor": 1.05,
+  "cities": [
+    {
+      "name": "Anchorage",
+      "tier": "major",
+      "population": 289000,
+      "rent_distribution": {
+        "studio": 1558,
+        "one_bed": 2050,
+        "two_bed": 2665,
+        "three_bed": 3382
+      },
+      "salary_distribution": {
+        "p25": 53228,
+        "p50": 85852,
+        "p75": 114183,
+        "p90": 151100
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.32,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.0
+      },
+      "groceries": 588,
+      "utilities": 269,
+      "transport": 424,
+      "insurance": 233,
+      "healthcare_baseline": 441,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.05
+    },
+    {
+      "name": "Fairbanks",
+      "tier": "mid",
+      "population": 32000,
+      "rent_distribution": {
+        "studio": 1321,
+        "one_bed": 1738,
+        "two_bed": 2259,
+        "three_bed": 2868
+      },
+      "salary_distribution": {
+        "p25": 51911,
+        "p50": 83727,
+        "p75": 111357,
+        "p90": 147360
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.288,
+        "state_income_tax_rate": 0.0,
+        "sales_tax_rate": 0.0
+      },
+      "groceries": 498,
+      "utilities": 265,
+      "transport": 417,
+      "insurance": 229,
+      "healthcare_baseline": 433,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.05
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

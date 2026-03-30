@@ -1,6 +1,6 @@
 {
-  "state": "TX",
-  "name": "Texas",
+  "state": "MT",
+  "name": "Montana",
   "rent_distribution": {
     "studio": 1193,
     "one_bed": 1530,
@@ -15,21 +15,21 @@
   },
   "tax_model": {
     "effective_income_tax_rate": 0.25,
-    "state_income_tax_rate": 0.0,
-    "sales_tax_rate": 0.0825
+    "state_income_tax_rate": 0.047,
+    "sales_tax_rate": 0.0
   },
   "groceries": 439,
   "utilities": 214,
   "transport": 337,
   "insurance": 184,
   "healthcare_baseline": 347,
-  "savings_ratio": 0.081,
+  "savings_ratio": 0.085,
   "inflation_factor": 1.0,
   "cities": [
     {
-      "name": "Houston",
+      "name": "Billings",
       "tier": "major",
-      "population": 2300000,
+      "population": 119000,
       "rent_distribution": {
         "studio": 1303,
         "one_bed": 1714,
@@ -44,21 +44,21 @@
       },
       "tax_model": {
         "effective_income_tax_rate": 0.285,
-        "state_income_tax_rate": 0.0,
-        "sales_tax_rate": 0.0825
+        "state_income_tax_rate": 0.047,
+        "sales_tax_rate": 0.0
       },
       "groceries": 491,
       "utilities": 225,
       "transport": 354,
       "insurance": 195,
       "healthcare_baseline": 368,
-      "savings_ratio": 0.083,
+      "savings_ratio": 0.087,
       "inflation_factor": 1.0
     },
     {
-      "name": "Austin",
+      "name": "Bozeman",
       "tier": "mid",
-      "population": 974000,
+      "population": 56000,
       "rent_distribution": {
         "studio": 1105,
         "one_bed": 1454,
@@ -73,15 +73,15 @@
       },
       "tax_model": {
         "effective_income_tax_rate": 0.259,
-        "state_income_tax_rate": 0.0,
-        "sales_tax_rate": 0.0825
+        "state_income_tax_rate": 0.047,
+        "sales_tax_rate": 0.0
       },
       "groceries": 417,
       "utilities": 222,
       "transport": 348,
       "insurance": 192,
       "healthcare_baseline": 362,
-      "savings_ratio": 0.076,
+      "savings_ratio": 0.08,
       "inflation_factor": 1.0
     }
   ],

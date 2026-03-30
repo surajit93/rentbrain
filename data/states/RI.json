@@ -1,0 +1,89 @@
+{
+  "state": "RI",
+  "name": "Rhode Island",
+  "rent_distribution": {
+    "studio": 1357,
+    "one_bed": 1740,
+    "two_bed": 2227,
+    "three_bed": 2819
+  },
+  "salary_distribution": {
+    "p25": 48518,
+    "p50": 77012,
+    "p75": 103196,
+    "p90": 137081
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.27,
+    "state_income_tax_rate": 0.055,
+    "sales_tax_rate": 0.07
+  },
+  "groceries": 499,
+  "utilities": 244,
+  "transport": 383,
+  "insurance": 209,
+  "healthcare_baseline": 394,
+  "savings_ratio": 0.089,
+  "inflation_factor": 1.02,
+  "cities": [
+    {
+      "name": "Providence",
+      "tier": "major",
+      "population": 191000,
+      "rent_distribution": {
+        "studio": 1481,
+        "one_bed": 1949,
+        "two_bed": 2534,
+        "three_bed": 3216
+      },
+      "salary_distribution": {
+        "p25": 52484,
+        "p50": 84652,
+        "p75": 112587,
+        "p90": 148988
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.309,
+        "state_income_tax_rate": 0.055,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 559,
+      "utilities": 256,
+      "transport": 403,
+      "insurance": 222,
+      "healthcare_baseline": 419,
+      "savings_ratio": 0.091,
+      "inflation_factor": 1.02
+    },
+    {
+      "name": "Warwick",
+      "tier": "mid",
+      "population": 83000,
+      "rent_distribution": {
+        "studio": 1256,
+        "one_bed": 1653,
+        "two_bed": 2149,
+        "three_bed": 2727
+      },
+      "salary_distribution": {
+        "p25": 51185,
+        "p50": 82557,
+        "p75": 109801,
+        "p90": 145300
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.279,
+        "state_income_tax_rate": 0.055,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 474,
+      "utilities": 252,
+      "transport": 396,
+      "insurance": 218,
+      "healthcare_baseline": 412,
+      "savings_ratio": 0.084,
+      "inflation_factor": 1.02
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

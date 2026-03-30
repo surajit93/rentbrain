@@ -7,9 +7,14 @@ class ClusterPriorityEngine:
     def run(self, keywords: list[dict]):
         perf = load_json("indexes/performance_index.json")
         historical_ctr = perf.get("site", {}).get("ctr", 0)
+        has_analytics = perf.get("decision_allowed", False)
         clusters = []
         for kw in keywords:
-            opportunity = (1 - kw.get("serp_difficulty", 1)) * 0.5 + kw.get("forum_ratio", 0) * 0.3 + (0.2 if historical_ctr > 0.03 else 0.05)
+            if kw.get("eligibility") == "BLOCK":
+                continue
+            serp_component = (1 - kw.get("serp_difficulty", 1)) * 0.5 + kw.get("forum_ratio", 0) * 0.35
+            ctr_component = 0.15 if (has_analytics and historical_ctr > 0.03) else 0.03
+            opportunity = serp_component + ctr_component
             clusters.append(
                 {
                     "cluster_id": f"{kw['city'].lower()}-{kw['intent']}",
@@ -20,6 +25,7 @@ class ClusterPriorityEngine:
                     "rent": kw["rent"],
                     "query": kw["query"],
                     "priority_score": round(opportunity, 3),
+                    "decision_context": "analytics_backed" if has_analytics else "serp_only",
                 }
             )
         clusters.sort(key=lambda x: x["priority_score"], reverse=True)

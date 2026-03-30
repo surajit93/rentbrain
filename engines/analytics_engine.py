@@ -12,7 +12,8 @@ class AnalyticsEngine:
 
     def run(self, pages: list[dict]) -> dict:
         gsc = self._load_gsc_export()
-        by_slug = {row.get("slug"): row for row in gsc.get("pages", []) if row.get("slug")}
+        gsc_pages = gsc.get("pages", []) if isinstance(gsc, dict) else []
+        by_slug = {row.get("slug"): row for row in gsc_pages if row.get("slug")}
 
         page_metrics = []
         indexed_count = 0
@@ -39,10 +40,13 @@ class AnalyticsEngine:
 
         indexing_rate = indexed_count / max(len(pages), 1)
         site_ctr = total_clicks / max(total_impr, 1)
-        trend = gsc.get("impressions_trend", "flat")
+        has_real_data = bool(gsc_pages)
+        trend = gsc.get("impressions_trend", "unknown") if has_real_data else "unknown"
         out = {
             "updated_at": now_iso(),
-            "source": "gsc_export" if gsc else "no_gsc_data",
+            "source": "gsc_export" if has_real_data else "no_gsc_data",
+            "data_status": "ok" if has_real_data else "missing",
+            "decision_allowed": has_real_data,
             "pages": page_metrics,
             "site": {
                 "indexing_rate": round(indexing_rate, 3),

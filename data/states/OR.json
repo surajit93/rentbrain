@@ -1,0 +1,89 @@
+{
+  "state": "OR",
+  "name": "Oregon",
+  "rent_distribution": {
+    "studio": 1369,
+    "one_bed": 1755,
+    "two_bed": 2246,
+    "three_bed": 2843
+  },
+  "salary_distribution": {
+    "p25": 48632,
+    "p50": 77194,
+    "p75": 103440,
+    "p90": 137405
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.272,
+    "state_income_tax_rate": 0.0875,
+    "sales_tax_rate": 0.0
+  },
+  "groceries": 503,
+  "utilities": 246,
+  "transport": 386,
+  "insurance": 211,
+  "healthcare_baseline": 398,
+  "savings_ratio": 0.091,
+  "inflation_factor": 1.02,
+  "cities": [
+    {
+      "name": "Portland",
+      "tier": "major",
+      "population": 635000,
+      "rent_distribution": {
+        "studio": 1494,
+        "one_bed": 1966,
+        "two_bed": 2556,
+        "three_bed": 3244
+      },
+      "salary_distribution": {
+        "p25": 52608,
+        "p50": 84852,
+        "p75": 112853,
+        "p90": 149340
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.311,
+        "state_income_tax_rate": 0.0875,
+        "sales_tax_rate": 0.0
+      },
+      "groceries": 563,
+      "utilities": 258,
+      "transport": 406,
+      "insurance": 224,
+      "healthcare_baseline": 422,
+      "savings_ratio": 0.093,
+      "inflation_factor": 1.02
+    },
+    {
+      "name": "Eugene",
+      "tier": "mid",
+      "population": 177000,
+      "rent_distribution": {
+        "studio": 1267,
+        "one_bed": 1667,
+        "two_bed": 2167,
+        "three_bed": 2751
+      },
+      "salary_distribution": {
+        "p25": 51306,
+        "p50": 82752,
+        "p75": 110060,
+        "p90": 145644
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.28,
+        "state_income_tax_rate": 0.0875,
+        "sales_tax_rate": 0.0
+      },
+      "groceries": 478,
+      "utilities": 255,
+      "transport": 400,
+      "insurance": 220,
+      "healthcare_baseline": 416,
+      "savings_ratio": 0.086,
+      "inflation_factor": 1.02
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

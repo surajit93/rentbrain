@@ -1,0 +1,89 @@
+{
+  "state": "CA",
+  "name": "California",
+  "rent_distribution": {
+    "studio": 1661,
+    "one_bed": 2130,
+    "two_bed": 2726,
+    "three_bed": 3451
+  },
+  "salary_distribution": {
+    "p25": 51499,
+    "p50": 81744,
+    "p75": 109537,
+    "p90": 145504
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.308,
+    "state_income_tax_rate": 0.075,
+    "sales_tax_rate": 0.095
+  },
+  "groceries": 611,
+  "utilities": 298,
+  "transport": 469,
+  "insurance": 256,
+  "healthcare_baseline": 483,
+  "savings_ratio": 0.1,
+  "inflation_factor": 1.08,
+  "cities": [
+    {
+      "name": "Los Angeles",
+      "tier": "major",
+      "population": 3899000,
+      "rent_distribution": {
+        "studio": 1813,
+        "one_bed": 2386,
+        "two_bed": 3102,
+        "three_bed": 3937
+      },
+      "salary_distribution": {
+        "p25": 55709,
+        "p50": 89853,
+        "p75": 119504,
+        "p90": 158141
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.34,
+        "state_income_tax_rate": 0.075,
+        "sales_tax_rate": 0.095
+      },
+      "groceries": 684,
+      "utilities": 313,
+      "transport": 493,
+      "insurance": 271,
+      "healthcare_baseline": 513,
+      "savings_ratio": 0.102,
+      "inflation_factor": 1.08
+    },
+    {
+      "name": "Sacramento",
+      "tier": "mid",
+      "population": 528000,
+      "rent_distribution": {
+        "studio": 1538,
+        "one_bed": 2024,
+        "two_bed": 2631,
+        "three_bed": 3340
+      },
+      "salary_distribution": {
+        "p25": 54331,
+        "p50": 87630,
+        "p75": 116548,
+        "p90": 154229
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.317,
+        "state_income_tax_rate": 0.075,
+        "sales_tax_rate": 0.095
+      },
+      "groceries": 580,
+      "utilities": 309,
+      "transport": 485,
+      "insurance": 267,
+      "healthcare_baseline": 505,
+      "savings_ratio": 0.094,
+      "inflation_factor": 1.08
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

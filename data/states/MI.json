@@ -1,0 +1,89 @@
+{
+  "state": "MI",
+  "name": "Michigan",
+  "rent_distribution": {
+    "studio": 1158,
+    "one_bed": 1485,
+    "two_bed": 1901,
+    "three_bed": 2406
+  },
+  "salary_distribution": {
+    "p25": 46568,
+    "p50": 73918,
+    "p75": 99050,
+    "p90": 131574
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.245,
+    "state_income_tax_rate": 0.0425,
+    "sales_tax_rate": 0.06
+  },
+  "groceries": 426,
+  "utilities": 208,
+  "transport": 327,
+  "insurance": 178,
+  "healthcare_baseline": 337,
+  "savings_ratio": 0.08,
+  "inflation_factor": 0.99,
+  "cities": [
+    {
+      "name": "Detroit",
+      "tier": "major",
+      "population": 633000,
+      "rent_distribution": {
+        "studio": 1264,
+        "one_bed": 1663,
+        "two_bed": 2162,
+        "three_bed": 2744
+      },
+      "salary_distribution": {
+        "p25": 50376,
+        "p50": 81251,
+        "p75": 108064,
+        "p90": 143002
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.28,
+        "state_income_tax_rate": 0.0425,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 477,
+      "utilities": 218,
+      "transport": 344,
+      "insurance": 189,
+      "healthcare_baseline": 357,
+      "savings_ratio": 0.082,
+      "inflation_factor": 0.99
+    },
+    {
+      "name": "Grand Rapids",
+      "tier": "mid",
+      "population": 198000,
+      "rent_distribution": {
+        "studio": 1072,
+        "one_bed": 1411,
+        "two_bed": 1834,
+        "three_bed": 2328
+      },
+      "salary_distribution": {
+        "p25": 49129,
+        "p50": 79240,
+        "p75": 105389,
+        "p90": 139462
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.254,
+        "state_income_tax_rate": 0.0425,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 404,
+      "utilities": 215,
+      "transport": 338,
+      "insurance": 186,
+      "healthcare_baseline": 352,
+      "savings_ratio": 0.075,
+      "inflation_factor": 0.99
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

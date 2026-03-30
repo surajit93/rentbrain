@@ -1,0 +1,89 @@
+{
+  "state": "UT",
+  "name": "Utah",
+  "rent_distribution": {
+    "studio": 1252,
+    "one_bed": 1605,
+    "two_bed": 2054,
+    "three_bed": 2600
+  },
+  "salary_distribution": {
+    "p25": 47486,
+    "p50": 75374,
+    "p75": 101001,
+    "p90": 134166
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.257,
+    "state_income_tax_rate": 0.0485,
+    "sales_tax_rate": 0.0725
+  },
+  "groceries": 460,
+  "utilities": 225,
+  "transport": 353,
+  "insurance": 193,
+  "healthcare_baseline": 364,
+  "savings_ratio": 0.088,
+  "inflation_factor": 1.01,
+  "cities": [
+    {
+      "name": "Salt Lake City",
+      "tier": "major",
+      "population": 205000,
+      "rent_distribution": {
+        "studio": 1366,
+        "one_bed": 1798,
+        "two_bed": 2337,
+        "three_bed": 2967
+      },
+      "salary_distribution": {
+        "p25": 51368,
+        "p50": 82851,
+        "p75": 110192,
+        "p90": 145818
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.294,
+        "state_income_tax_rate": 0.0485,
+        "sales_tax_rate": 0.0725
+      },
+      "groceries": 515,
+      "utilities": 236,
+      "transport": 371,
+      "insurance": 205,
+      "healthcare_baseline": 386,
+      "savings_ratio": 0.09,
+      "inflation_factor": 1.01
+    },
+    {
+      "name": "Provo",
+      "tier": "mid",
+      "population": 117000,
+      "rent_distribution": {
+        "studio": 1159,
+        "one_bed": 1525,
+        "two_bed": 1982,
+        "three_bed": 2516
+      },
+      "salary_distribution": {
+        "p25": 50097,
+        "p50": 80801,
+        "p75": 107465,
+        "p90": 142210
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.266,
+        "state_income_tax_rate": 0.0485,
+        "sales_tax_rate": 0.0725
+      },
+      "groceries": 437,
+      "utilities": 233,
+      "transport": 365,
+      "insurance": 201,
+      "healthcare_baseline": 380,
+      "savings_ratio": 0.083,
+      "inflation_factor": 1.01
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

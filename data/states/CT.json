@@ -1,0 +1,89 @@
+{
+  "state": "CT",
+  "name": "Connecticut",
+  "rent_distribution": {
+    "studio": 1451,
+    "one_bed": 1860,
+    "two_bed": 2381,
+    "three_bed": 3013
+  },
+  "salary_distribution": {
+    "p25": 49435,
+    "p50": 78468,
+    "p75": 105147,
+    "p90": 139673
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.282,
+    "state_income_tax_rate": 0.05,
+    "sales_tax_rate": 0.08
+  },
+  "groceries": 533,
+  "utilities": 260,
+  "transport": 409,
+  "insurance": 223,
+  "healthcare_baseline": 422,
+  "savings_ratio": 0.092,
+  "inflation_factor": 1.03,
+  "cities": [
+    {
+      "name": "Bridgeport",
+      "tier": "major",
+      "population": 149000,
+      "rent_distribution": {
+        "studio": 1583,
+        "one_bed": 2083,
+        "two_bed": 2708,
+        "three_bed": 3437
+      },
+      "salary_distribution": {
+        "p25": 53476,
+        "p50": 86252,
+        "p75": 114715,
+        "p90": 151804
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.323,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.08
+      },
+      "groceries": 597,
+      "utilities": 273,
+      "transport": 430,
+      "insurance": 237,
+      "healthcare_baseline": 448,
+      "savings_ratio": 0.094,
+      "inflation_factor": 1.03
+    },
+    {
+      "name": "New Haven",
+      "tier": "mid",
+      "population": 135000,
+      "rent_distribution": {
+        "studio": 1343,
+        "one_bed": 1767,
+        "two_bed": 2297,
+        "three_bed": 2916
+      },
+      "salary_distribution": {
+        "p25": 52153,
+        "p50": 84118,
+        "p75": 111877,
+        "p90": 148048
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.291,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.08
+      },
+      "groceries": 507,
+      "utilities": 270,
+      "transport": 424,
+      "insurance": 233,
+      "healthcare_baseline": 441,
+      "savings_ratio": 0.086,
+      "inflation_factor": 1.03
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

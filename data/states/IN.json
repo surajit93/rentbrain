@@ -1,0 +1,89 @@
+{
+  "state": "IN",
+  "name": "Indiana",
+  "rent_distribution": {
+    "studio": 1147,
+    "one_bed": 1470,
+    "two_bed": 1882,
+    "three_bed": 2381
+  },
+  "salary_distribution": {
+    "p25": 46454,
+    "p50": 73736,
+    "p75": 98806,
+    "p90": 131250
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.244,
+    "state_income_tax_rate": 0.0315,
+    "sales_tax_rate": 0.07
+  },
+  "groceries": 421,
+  "utilities": 206,
+  "transport": 323,
+  "insurance": 176,
+  "healthcare_baseline": 333,
+  "savings_ratio": 0.079,
+  "inflation_factor": 0.99,
+  "cities": [
+    {
+      "name": "Indianapolis",
+      "tier": "major",
+      "population": 887000,
+      "rent_distribution": {
+        "studio": 1251,
+        "one_bed": 1646,
+        "two_bed": 2140,
+        "three_bed": 2716
+      },
+      "salary_distribution": {
+        "p25": 50252,
+        "p50": 81051,
+        "p75": 107798,
+        "p90": 142650
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.278,
+        "state_income_tax_rate": 0.0315,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 472,
+      "utilities": 216,
+      "transport": 340,
+      "insurance": 187,
+      "healthcare_baseline": 354,
+      "savings_ratio": 0.081,
+      "inflation_factor": 0.99
+    },
+    {
+      "name": "Fort Wayne",
+      "tier": "mid",
+      "population": 268000,
+      "rent_distribution": {
+        "studio": 1061,
+        "one_bed": 1396,
+        "two_bed": 1815,
+        "three_bed": 2303
+      },
+      "salary_distribution": {
+        "p25": 49008,
+        "p50": 79045,
+        "p75": 105130,
+        "p90": 139119
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.253,
+        "state_income_tax_rate": 0.0315,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 400,
+      "utilities": 213,
+      "transport": 335,
+      "insurance": 184,
+      "healthcare_baseline": 348,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.99
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

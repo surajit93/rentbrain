@@ -1,0 +1,89 @@
+{
+  "state": "NE",
+  "name": "Nebraska",
+  "rent_distribution": {
+    "studio": 1088,
+    "one_bed": 1395,
+    "two_bed": 1786,
+    "three_bed": 2260
+  },
+  "salary_distribution": {
+    "p25": 45880,
+    "p50": 72826,
+    "p75": 97587,
+    "p90": 129630
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.236,
+    "state_income_tax_rate": 0.053,
+    "sales_tax_rate": 0.07
+  },
+  "groceries": 400,
+  "utilities": 195,
+  "transport": 307,
+  "insurance": 167,
+  "healthcare_baseline": 316,
+  "savings_ratio": 0.079,
+  "inflation_factor": 0.98,
+  "cities": [
+    {
+      "name": "Omaha",
+      "tier": "major",
+      "population": 486000,
+      "rent_distribution": {
+        "studio": 1187,
+        "one_bed": 1562,
+        "two_bed": 2031,
+        "three_bed": 2577
+      },
+      "salary_distribution": {
+        "p25": 49631,
+        "p50": 80050,
+        "p75": 106466,
+        "p90": 140888
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.27,
+        "state_income_tax_rate": 0.053,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 448,
+      "utilities": 205,
+      "transport": 323,
+      "insurance": 178,
+      "healthcare_baseline": 336,
+      "savings_ratio": 0.081,
+      "inflation_factor": 0.98
+    },
+    {
+      "name": "Lincoln",
+      "tier": "mid",
+      "population": 292000,
+      "rent_distribution": {
+        "studio": 1007,
+        "one_bed": 1325,
+        "two_bed": 1722,
+        "three_bed": 2186
+      },
+      "salary_distribution": {
+        "p25": 48403,
+        "p50": 78069,
+        "p75": 103832,
+        "p90": 137401
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.245,
+        "state_income_tax_rate": 0.053,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 380,
+      "utilities": 202,
+      "transport": 318,
+      "insurance": 175,
+      "healthcare_baseline": 330,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.98
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

@@ -14,6 +14,7 @@ AUTHORITY_DOMAINS = {
     "nerdwallet.com",
     "apartments.com",
     "realtor.com",
+    "rocketmortgage.com",
 }
 FORUM_DOMAINS = {"reddit.com", "quora.com"}
 
@@ -54,6 +55,9 @@ class SerpEvaluation:
     classification: str
     eligibility: str
     fetched_at: str
+    source_status: str
+    fetch_error: str | None
+    result_count: int
 
 
 class SerpIntelligenceEngine:
@@ -67,25 +71,17 @@ class SerpIntelligenceEngine:
         return parser.results[:10]
 
     def _root_domain(self, url: str) -> str:
-        host = urlparse(url).netloc.lower().replace("www.", "")
-        return host
+        return urlparse(url).netloc.lower().replace("www.", "")
 
-    def _analyze(self, query: str, rows: list[dict]) -> SerpEvaluation:
+    def _analyze(self, query: str, rows: list[dict], source_status: str, fetch_error: str | None) -> SerpEvaluation:
         domains = [self._root_domain(r.get("url", "")) for r in rows if r.get("url")]
         domains = [d for d in domains if d]
-        ql = query.lower()
-        if not domains:
-            if "reddit" in ql:
-                domains.append("reddit.com")
-            if "quora" in ql:
-                domains.append("quora.com")
-            if "forum" in ql:
-                domains.append("forum.example")
         authority = sum(1 for d in domains if d in AUTHORITY_DOMAINS)
         forum_hits = sum(1 for d in domains if d in FORUM_DOMAINS or "forum" in d)
         forum_ratio = forum_hits / max(len(domains), 1)
         titles = " ".join(r.get("title", "").lower() for r in rows)
         has_calculator = "calculator" in titles or "estimate" in titles
+
         features = []
         if any("reddit.com" in d for d in domains):
             features.append("reddit")
@@ -95,19 +91,25 @@ class SerpIntelligenceEngine:
             features.append("forum")
         if has_calculator:
             features.append("calculator")
-        if authority == 0:
+        if domains and authority == 0:
             features.append("weak_blog")
 
-        weak_signal = min(1.0, 0.55 * forum_ratio + 0.45 * (1 - min(authority / 4, 1)))
-        difficulty = min(1.0, 0.6 * min(authority / 4, 1) + 0.4 * (1 - forum_ratio))
-        if difficulty < 0.35:
-            classification = "weak"
-        elif difficulty < 0.65:
-            classification = "mixed"
+        if not domains:
+            classification = "insufficient_data"
+            difficulty = 1.0
+            weak_signal = 0.0
+            eligibility = "BLOCK"
         else:
-            classification = "strong"
+            weak_signal = min(1.0, 0.55 * forum_ratio + 0.45 * (1 - min(authority / 4, 1)))
+            difficulty = min(1.0, 0.6 * min(authority / 4, 1) + 0.4 * (1 - forum_ratio))
+            if difficulty < 0.35:
+                classification = "weak"
+            elif difficulty < 0.65:
+                classification = "mixed"
+            else:
+                classification = "strong"
+            eligibility = "ALLOW" if classification == "weak" and not has_calculator else "BLOCK"
 
-        eligibility = "ALLOW" if classification == "weak" and not has_calculator else "BLOCK"
         return SerpEvaluation(
             query=query,
             top_domains=domains,
@@ -120,21 +122,28 @@ class SerpIntelligenceEngine:
             classification=classification,
             eligibility=eligibility,
             fetched_at=now_iso(),
+            source_status=source_status,
+            fetch_error=fetch_error,
+            result_count=len(domains),
         )
 
     def run(self, queries: list[dict]) -> list[dict]:
         evaluated = []
         for item in queries:
             query = item["query"] if isinstance(item, dict) else str(item)
+            source_status = "ok"
+            err = None
             try:
                 rows = self._fetch_duckduckgo(query)
-            except Exception:
+            except Exception as ex:
                 rows = []
-            record = self._analyze(query, rows)
+                source_status = "error"
+                err = str(ex)
+            record = self._analyze(query, rows, source_status, err)
             payload = record.__dict__
             if isinstance(item, dict):
                 payload.update({k: v for k, v in item.items() if k != "query"})
             evaluated.append(payload)
 
-        save_json("indexes/serp_index.json", {"queries": evaluated, "updated_at": now_iso()})
+        save_json("indexes/serp_index.json", {"queries": evaluated, "updated_at": now_iso(), "provider": "duckduckgo_html"})
         return evaluated

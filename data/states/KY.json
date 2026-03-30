@@ -1,0 +1,89 @@
+{
+  "state": "KY",
+  "name": "Kentucky",
+  "rent_distribution": {
+    "studio": 1112,
+    "one_bed": 1425,
+    "two_bed": 1824,
+    "three_bed": 2308
+  },
+  "salary_distribution": {
+    "p25": 46110,
+    "p50": 73190,
+    "p75": 98075,
+    "p90": 130278
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.239,
+    "state_income_tax_rate": 0.05,
+    "sales_tax_rate": 0.09
+  },
+  "groceries": 408,
+  "utilities": 200,
+  "transport": 314,
+  "insurance": 171,
+  "healthcare_baseline": 323,
+  "savings_ratio": 0.076,
+  "inflation_factor": 0.98,
+  "cities": [
+    {
+      "name": "Louisville",
+      "tier": "major",
+      "population": 622000,
+      "rent_distribution": {
+        "studio": 1213,
+        "one_bed": 1596,
+        "two_bed": 2075,
+        "three_bed": 2633
+      },
+      "salary_distribution": {
+        "p25": 49879,
+        "p50": 80450,
+        "p75": 106998,
+        "p90": 141592
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.273,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.09
+      },
+      "groceries": 458,
+      "utilities": 209,
+      "transport": 330,
+      "insurance": 182,
+      "healthcare_baseline": 343,
+      "savings_ratio": 0.078,
+      "inflation_factor": 0.98
+    },
+    {
+      "name": "Lexington",
+      "tier": "mid",
+      "population": 323000,
+      "rent_distribution": {
+        "studio": 1029,
+        "one_bed": 1354,
+        "two_bed": 1760,
+        "three_bed": 2234
+      },
+      "salary_distribution": {
+        "p25": 48645,
+        "p50": 78460,
+        "p75": 104352,
+        "p90": 138090
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.248,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.09
+      },
+      "groceries": 388,
+      "utilities": 207,
+      "transport": 324,
+      "insurance": 179,
+      "healthcare_baseline": 338,
+      "savings_ratio": 0.071,
+      "inflation_factor": 0.98
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

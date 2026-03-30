@@ -1,6 +1,6 @@
 {
-  "state": "FL",
-  "name": "Florida",
+  "state": "VT",
+  "name": "Vermont",
   "rent_distribution": {
     "studio": 1310,
     "one_bed": 1680,
@@ -15,21 +15,21 @@
   },
   "tax_model": {
     "effective_income_tax_rate": 0.264,
-    "state_income_tax_rate": 0.0,
-    "sales_tax_rate": 0.075
+    "state_income_tax_rate": 0.066,
+    "sales_tax_rate": 0.06
   },
   "groceries": 482,
   "utilities": 235,
   "transport": 370,
   "insurance": 202,
   "healthcare_baseline": 381,
-  "savings_ratio": 0.082,
-  "inflation_factor": 1.03,
+  "savings_ratio": 0.09,
+  "inflation_factor": 1.02,
   "cities": [
     {
-      "name": "Jacksonville",
+      "name": "Burlington",
       "tier": "major",
-      "population": 971000,
+      "population": 45000,
       "rent_distribution": {
         "studio": 1430,
         "one_bed": 1882,
@@ -44,21 +44,21 @@
       },
       "tax_model": {
         "effective_income_tax_rate": 0.302,
-        "state_income_tax_rate": 0.0,
-        "sales_tax_rate": 0.075
+        "state_income_tax_rate": 0.066,
+        "sales_tax_rate": 0.06
       },
       "groceries": 539,
       "utilities": 247,
       "transport": 389,
       "insurance": 214,
       "healthcare_baseline": 404,
-      "savings_ratio": 0.084,
-      "inflation_factor": 1.03
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.02
     },
     {
-      "name": "Tampa",
+      "name": "Rutland",
       "tier": "mid",
-      "population": 404000,
+      "population": 15000,
       "rent_distribution": {
         "studio": 1213,
         "one_bed": 1596,
@@ -73,16 +73,16 @@
       },
       "tax_model": {
         "effective_income_tax_rate": 0.273,
-        "state_income_tax_rate": 0.0,
-        "sales_tax_rate": 0.075
+        "state_income_tax_rate": 0.066,
+        "sales_tax_rate": 0.06
       },
       "groceries": 458,
       "utilities": 244,
       "transport": 383,
       "insurance": 211,
       "healthcare_baseline": 398,
-      "savings_ratio": 0.077,
-      "inflation_factor": 1.03
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.02
     }
   ],
   "data_source": "modeled_2026_cost_income_baseline"

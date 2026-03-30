@@ -1,0 +1,89 @@
+{
+  "state": "ID",
+  "name": "Idaho",
+  "rent_distribution": {
+    "studio": 1205,
+    "one_bed": 1545,
+    "two_bed": 1978,
+    "three_bed": 2503
+  },
+  "salary_distribution": {
+    "p25": 47027,
+    "p50": 74646,
+    "p75": 100026,
+    "p90": 132870
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.251,
+    "state_income_tax_rate": 0.058,
+    "sales_tax_rate": 0.06
+  },
+  "groceries": 443,
+  "utilities": 216,
+  "transport": 340,
+  "insurance": 185,
+  "healthcare_baseline": 350,
+  "savings_ratio": 0.085,
+  "inflation_factor": 1.0,
+  "cities": [
+    {
+      "name": "Boise",
+      "tier": "major",
+      "population": 238000,
+      "rent_distribution": {
+        "studio": 1315,
+        "one_bed": 1730,
+        "two_bed": 2249,
+        "three_bed": 2854
+      },
+      "salary_distribution": {
+        "p25": 50872,
+        "p50": 82051,
+        "p75": 109128,
+        "p90": 144410
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.287,
+        "state_income_tax_rate": 0.058,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 496,
+      "utilities": 227,
+      "transport": 358,
+      "insurance": 197,
+      "healthcare_baseline": 372,
+      "savings_ratio": 0.087,
+      "inflation_factor": 1.0
+    },
+    {
+      "name": "Idaho Falls",
+      "tier": "mid",
+      "population": 68000,
+      "rent_distribution": {
+        "studio": 1116,
+        "one_bed": 1468,
+        "two_bed": 1908,
+        "three_bed": 2422
+      },
+      "salary_distribution": {
+        "p25": 49613,
+        "p50": 80021,
+        "p75": 106428,
+        "p90": 140837
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.26,
+        "state_income_tax_rate": 0.058,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 421,
+      "utilities": 224,
+      "transport": 352,
+      "insurance": 194,
+      "healthcare_baseline": 366,
+      "savings_ratio": 0.08,
+      "inflation_factor": 1.0
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

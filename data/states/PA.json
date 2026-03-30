@@ -1,0 +1,89 @@
+{
+  "state": "PA",
+  "name": "Pennsylvania",
+  "rent_distribution": {
+    "studio": 1240,
+    "one_bed": 1590,
+    "two_bed": 2035,
+    "three_bed": 2576
+  },
+  "salary_distribution": {
+    "p25": 47371,
+    "p50": 75192,
+    "p75": 100757,
+    "p90": 133842
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.255,
+    "state_income_tax_rate": 0.0307,
+    "sales_tax_rate": 0.06
+  },
+  "groceries": 456,
+  "utilities": 223,
+  "transport": 350,
+  "insurance": 191,
+  "healthcare_baseline": 360,
+  "savings_ratio": 0.085,
+  "inflation_factor": 1.01,
+  "cities": [
+    {
+      "name": "Philadelphia",
+      "tier": "major",
+      "population": 1570000,
+      "rent_distribution": {
+        "studio": 1354,
+        "one_bed": 1781,
+        "two_bed": 2315,
+        "three_bed": 2939
+      },
+      "salary_distribution": {
+        "p25": 51244,
+        "p50": 82651,
+        "p75": 109926,
+        "p90": 145466
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.292,
+        "state_income_tax_rate": 0.0307,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 510,
+      "utilities": 234,
+      "transport": 368,
+      "insurance": 203,
+      "healthcare_baseline": 383,
+      "savings_ratio": 0.087,
+      "inflation_factor": 1.01
+    },
+    {
+      "name": "Pittsburgh",
+      "tier": "mid",
+      "population": 303000,
+      "rent_distribution": {
+        "studio": 1148,
+        "one_bed": 1510,
+        "two_bed": 1963,
+        "three_bed": 2492
+      },
+      "salary_distribution": {
+        "p25": 49976,
+        "p50": 80606,
+        "p75": 107206,
+        "p90": 141867
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.264,
+        "state_income_tax_rate": 0.0307,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 433,
+      "utilities": 231,
+      "transport": 362,
+      "insurance": 199,
+      "healthcare_baseline": 377,
+      "savings_ratio": 0.08,
+      "inflation_factor": 1.01
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

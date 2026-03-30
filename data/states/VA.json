@@ -1,0 +1,89 @@
+{
+  "state": "VA",
+  "name": "Virginia",
+  "rent_distribution": {
+    "studio": 1299,
+    "one_bed": 1665,
+    "two_bed": 2131,
+    "three_bed": 2697
+  },
+  "salary_distribution": {
+    "p25": 47944,
+    "p50": 76102,
+    "p75": 101977,
+    "p90": 135462
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.263,
+    "state_income_tax_rate": 0.0575,
+    "sales_tax_rate": 0.06
+  },
+  "groceries": 477,
+  "utilities": 233,
+  "transport": 366,
+  "insurance": 200,
+  "healthcare_baseline": 377,
+  "savings_ratio": 0.09,
+  "inflation_factor": 1.02,
+  "cities": [
+    {
+      "name": "Virginia Beach",
+      "tier": "major",
+      "population": 457000,
+      "rent_distribution": {
+        "studio": 1417,
+        "one_bed": 1865,
+        "two_bed": 2424,
+        "three_bed": 3077
+      },
+      "salary_distribution": {
+        "p25": 51864,
+        "p50": 83651,
+        "p75": 111256,
+        "p90": 147226
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.301,
+        "state_income_tax_rate": 0.0575,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 535,
+      "utilities": 245,
+      "transport": 385,
+      "insurance": 212,
+      "healthcare_baseline": 401,
+      "savings_ratio": 0.092,
+      "inflation_factor": 1.02
+    },
+    {
+      "name": "Richmond",
+      "tier": "mid",
+      "population": 229000,
+      "rent_distribution": {
+        "studio": 1202,
+        "one_bed": 1582,
+        "two_bed": 2057,
+        "three_bed": 2610
+      },
+      "salary_distribution": {
+        "p25": 50580,
+        "p50": 81581,
+        "p75": 108503,
+        "p90": 143583
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.272,
+        "state_income_tax_rate": 0.0575,
+        "sales_tax_rate": 0.06
+      },
+      "groceries": 453,
+      "utilities": 241,
+      "transport": 379,
+      "insurance": 209,
+      "healthcare_baseline": 394,
+      "savings_ratio": 0.085,
+      "inflation_factor": 1.02
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

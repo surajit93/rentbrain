@@ -1,0 +1,89 @@
+{
+  "state": "OK",
+  "name": "Oklahoma",
+  "rent_distribution": {
+    "studio": 1065,
+    "one_bed": 1365,
+    "two_bed": 1747,
+    "three_bed": 2211
+  },
+  "salary_distribution": {
+    "p25": 45651,
+    "p50": 72462,
+    "p75": 97099,
+    "p90": 128982
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.233,
+    "state_income_tax_rate": 0.05,
+    "sales_tax_rate": 0.09
+  },
+  "groceries": 391,
+  "utilities": 191,
+  "transport": 300,
+  "insurance": 164,
+  "healthcare_baseline": 309,
+  "savings_ratio": 0.073,
+  "inflation_factor": 0.97,
+  "cities": [
+    {
+      "name": "Oklahoma City",
+      "tier": "major",
+      "population": 702000,
+      "rent_distribution": {
+        "studio": 1162,
+        "one_bed": 1529,
+        "two_bed": 1988,
+        "three_bed": 2523
+      },
+      "salary_distribution": {
+        "p25": 49383,
+        "p50": 79650,
+        "p75": 105934,
+        "p90": 140184
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.266,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.09
+      },
+      "groceries": 438,
+      "utilities": 201,
+      "transport": 316,
+      "insurance": 174,
+      "healthcare_baseline": 329,
+      "savings_ratio": 0.074,
+      "inflation_factor": 0.97
+    },
+    {
+      "name": "Tulsa",
+      "tier": "mid",
+      "population": 413000,
+      "rent_distribution": {
+        "studio": 986,
+        "one_bed": 1297,
+        "two_bed": 1686,
+        "three_bed": 2140
+      },
+      "salary_distribution": {
+        "p25": 48161,
+        "p50": 77679,
+        "p75": 103313,
+        "p90": 136715
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.243,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.09
+      },
+      "groceries": 372,
+      "utilities": 198,
+      "transport": 311,
+      "insurance": 171,
+      "healthcare_baseline": 323,
+      "savings_ratio": 0.069,
+      "inflation_factor": 0.97
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

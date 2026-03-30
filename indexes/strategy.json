@@ -1,85 +1,236 @@
 {
-  "version": 2,
-  "started_at": "2026-03-30T16:31:06.501083+00:00",
+  "version": 3,
+  "started_at": "2026-03-30T17:22:53.172194+00:00",
   "cycles": [
     {
       "iteration": 1,
-      "time": "2026-03-30T16:31:06.573661+00:00",
-      "serp_candidates": 10,
-      "serp_allowed": 5,
-      "keywords": 20,
-      "pages_generated": 5,
-      "pages_kept": 5,
-      "removed": [],
-      "winners": [],
-      "expansion_count": 0,
-      "regressions": [
-        "indexing_critical",
-        "ctr_critical",
-        "impressions_stagnant"
-      ],
-      "budget": {
-        "updated_at": "2026-03-30T16:31:06.560688+00:00",
-        "indexing_rate": 0.0,
-        "impressions_trend": "flat",
-        "status": "throttle",
-        "target_new_pages_per_day": 2,
-        "sitemap_segment": "sitemap-low-priority.xml"
-      },
-      "entities": 5,
-      "links": 0,
-      "authority_pages": 5,
-      "distribution_posts": 10,
-      "embed_assets": 3,
-      "backlink_strategy": {
-        "strategy": "embed_and_answer_outreach",
-        "channels": [
-          "quora",
-          "reddit"
-        ],
-        "target_weekly_outreach": 10
-      }
+      "time": "2026-03-30T17:22:53.616047+00:00",
+      "blocked": true,
+      "reason": "no_eligible_serp_entries",
+      "serp_candidates": 80,
+      "serp_allowed": 0
     },
     {
       "iteration": 2,
-      "time": "2026-03-30T16:31:06.629331+00:00",
-      "serp_candidates": 10,
-      "serp_allowed": 5,
-      "keywords": 20,
-      "pages_generated": 5,
-      "pages_kept": 5,
-      "removed": [],
-      "winners": [],
-      "expansion_count": 0,
-      "regressions": [
-        "indexing_critical",
-        "ctr_critical",
-        "impressions_stagnant"
-      ],
-      "budget": {
-        "updated_at": "2026-03-30T16:31:06.618625+00:00",
-        "indexing_rate": 0.0,
-        "impressions_trend": "flat",
-        "status": "throttle",
-        "target_new_pages_per_day": 2,
-        "sitemap_segment": "sitemap-low-priority.xml"
-      },
-      "entities": 5,
-      "links": 0,
-      "authority_pages": 5,
-      "distribution_posts": 10,
-      "embed_assets": 3,
-      "backlink_strategy": {
-        "strategy": "embed_and_answer_outreach",
-        "channels": [
-          "quora",
-          "reddit"
-        ],
-        "target_weekly_outreach": 10
-      }
+      "time": "2026-03-30T17:22:53.940304+00:00",
+      "blocked": true,
+      "reason": "no_eligible_serp_entries",
+      "serp_candidates": 80,
+      "serp_allowed": 0
     }
   ],
   "status": "constrained",
-  "last_run": "2026-03-30T16:31:06.629654+00:00",
-  "scale_allowed": false
+  "last_run": "2026-03-30T17:22:53.940769+00:00",
+  "scale_allowed": false,
+  "data_quality": {
+    "updated_at": "2026-03-30T17:22:53.179262+00:00",
+    "state_files": 50,
+    "missing_states": [],
+    "missing_fields": [],
+    "schema_inconsistencies": [],
+    "unrealistic_values": [],
+    "tier_coverage": {
+      "AK.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "AL.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "AR.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "AZ.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "CA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "CO.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "CT.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "DE.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "FL.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "GA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "HI.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "IA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "ID.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "IL.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "IN.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "KS.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "KY.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "LA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MD.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "ME.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MI.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MN.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MO.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MS.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "MT.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NC.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "ND.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NE.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NH.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NJ.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NM.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NV.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "NY.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "OH.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "OK.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "OR.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "PA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "RI.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "SC.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "SD.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "TN.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "TX.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "UT.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "VA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "VT.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "WA.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "WI.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "WV.json": {
+        "major": 1,
+        "mid": 1
+      },
+      "WY.json": {
+        "major": 1,
+        "mid": 1
+      }
+    },
+    "valid": true
+  }
 }

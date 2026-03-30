@@ -9,6 +9,8 @@ class SerpEligibilityEngine:
         blocked_domains = set(cfg.get("serp_rules", {}).get("high_authority_domains", []))
         allowed = []
         for row in serp_rows:
+            if row.get("source_status") != "ok" or row.get("result_count", 0) < 5:
+                continue
             domains = set(row.get("top_domains", []))
             authority_count = sum(1 for d in domains if d in blocked_domains)
             forum_ratio = row.get("forum_ratio", 0)

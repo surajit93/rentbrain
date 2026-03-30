@@ -1,0 +1,89 @@
+{
+  "state": "HI",
+  "name": "Hawaii",
+  "rent_distribution": {
+    "studio": 1755,
+    "one_bed": 2250,
+    "two_bed": 2880,
+    "three_bed": 3645
+  },
+  "salary_distribution": {
+    "p25": 52416,
+    "p50": 83200,
+    "p75": 111488,
+    "p90": 148096
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.32,
+    "state_income_tax_rate": 0.11,
+    "sales_tax_rate": 0.045
+  },
+  "groceries": 645,
+  "utilities": 315,
+  "transport": 495,
+  "insurance": 270,
+  "healthcare_baseline": 510,
+  "savings_ratio": 0.095,
+  "inflation_factor": 1.09,
+  "cities": [
+    {
+      "name": "Honolulu",
+      "tier": "major",
+      "population": 350000,
+      "rent_distribution": {
+        "studio": 1915,
+        "one_bed": 2520,
+        "two_bed": 3276,
+        "three_bed": 4158
+      },
+      "salary_distribution": {
+        "p25": 56701,
+        "p50": 91453,
+        "p75": 121632,
+        "p90": 160957
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.34,
+        "state_income_tax_rate": 0.11,
+        "sales_tax_rate": 0.045
+      },
+      "groceries": 722,
+      "utilities": 331,
+      "transport": 521,
+      "insurance": 287,
+      "healthcare_baseline": 542,
+      "savings_ratio": 0.097,
+      "inflation_factor": 1.09
+    },
+    {
+      "name": "Hilo",
+      "tier": "mid",
+      "population": 46000,
+      "rent_distribution": {
+        "studio": 1625,
+        "one_bed": 2138,
+        "two_bed": 2779,
+        "three_bed": 3528
+      },
+      "salary_distribution": {
+        "p25": 55298,
+        "p50": 89190,
+        "p75": 118623,
+        "p90": 156974
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.329,
+        "state_income_tax_rate": 0.11,
+        "sales_tax_rate": 0.045
+      },
+      "groceries": 613,
+      "utilities": 326,
+      "transport": 512,
+      "insurance": 282,
+      "healthcare_baseline": 533,
+      "savings_ratio": 0.089,
+      "inflation_factor": 1.09
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

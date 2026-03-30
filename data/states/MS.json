@@ -1,0 +1,89 @@
+{
+  "state": "MS",
+  "name": "Mississippi",
+  "rent_distribution": {
+    "studio": 1030,
+    "one_bed": 1320,
+    "two_bed": 1690,
+    "three_bed": 2138
+  },
+  "salary_distribution": {
+    "p25": 45307,
+    "p50": 71916,
+    "p75": 96367,
+    "p90": 128010
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.229,
+    "state_income_tax_rate": 0.05,
+    "sales_tax_rate": 0.07
+  },
+  "groceries": 378,
+  "utilities": 185,
+  "transport": 290,
+  "insurance": 158,
+  "healthcare_baseline": 299,
+  "savings_ratio": 0.068,
+  "inflation_factor": 0.95,
+  "cities": [
+    {
+      "name": "Jackson",
+      "tier": "major",
+      "population": 143000,
+      "rent_distribution": {
+        "studio": 1123,
+        "one_bed": 1478,
+        "two_bed": 1921,
+        "three_bed": 2439
+      },
+      "salary_distribution": {
+        "p25": 49011,
+        "p50": 79050,
+        "p75": 105136,
+        "p90": 139128
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.261,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 424,
+      "utilities": 194,
+      "transport": 306,
+      "insurance": 168,
+      "healthcare_baseline": 318,
+      "savings_ratio": 0.069,
+      "inflation_factor": 0.95
+    },
+    {
+      "name": "Gulfport",
+      "tier": "mid",
+      "population": 73000,
+      "rent_distribution": {
+        "studio": 953,
+        "one_bed": 1254,
+        "two_bed": 1630,
+        "three_bed": 2069
+      },
+      "salary_distribution": {
+        "p25": 47798,
+        "p50": 77094,
+        "p75": 102535,
+        "p90": 135685
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.238,
+        "state_income_tax_rate": 0.05,
+        "sales_tax_rate": 0.07
+      },
+      "groceries": 359,
+      "utilities": 191,
+      "transport": 301,
+      "insurance": 166,
+      "healthcare_baseline": 313,
+      "savings_ratio": 0.064,
+      "inflation_factor": 0.95
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

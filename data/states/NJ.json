@@ -1,0 +1,89 @@
+{
+  "state": "NJ",
+  "name": "New Jersey",
+  "rent_distribution": {
+    "studio": 1544,
+    "one_bed": 1980,
+    "two_bed": 2534,
+    "three_bed": 3208
+  },
+  "salary_distribution": {
+    "p25": 50352,
+    "p50": 79924,
+    "p75": 107098,
+    "p90": 142265
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.294,
+    "state_income_tax_rate": 0.0637,
+    "sales_tax_rate": 0.06625
+  },
+  "groceries": 568,
+  "utilities": 277,
+  "transport": 436,
+  "insurance": 238,
+  "healthcare_baseline": 449,
+  "savings_ratio": 0.097,
+  "inflation_factor": 1.05,
+  "cities": [
+    {
+      "name": "Newark",
+      "tier": "major",
+      "population": 307000,
+      "rent_distribution": {
+        "studio": 1686,
+        "one_bed": 2218,
+        "two_bed": 2883,
+        "three_bed": 3660
+      },
+      "salary_distribution": {
+        "p25": 54468,
+        "p50": 87852,
+        "p75": 116843,
+        "p90": 154620
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.337,
+        "state_income_tax_rate": 0.0637,
+        "sales_tax_rate": 0.06625
+      },
+      "groceries": 636,
+      "utilities": 291,
+      "transport": 458,
+      "insurance": 252,
+      "healthcare_baseline": 477,
+      "savings_ratio": 0.099,
+      "inflation_factor": 1.05
+    },
+    {
+      "name": "Jersey City",
+      "tier": "mid",
+      "population": 292000,
+      "rent_distribution": {
+        "studio": 1430,
+        "one_bed": 1881,
+        "two_bed": 2445,
+        "three_bed": 3104
+      },
+      "salary_distribution": {
+        "p25": 53121,
+        "p50": 85679,
+        "p75": 113953,
+        "p90": 150795
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.302,
+        "state_income_tax_rate": 0.0637,
+        "sales_tax_rate": 0.06625
+      },
+      "groceries": 539,
+      "utilities": 287,
+      "transport": 451,
+      "insurance": 248,
+      "healthcare_baseline": 469,
+      "savings_ratio": 0.091,
+      "inflation_factor": 1.05
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}

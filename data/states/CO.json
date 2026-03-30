@@ -1,0 +1,89 @@
+{
+  "state": "CO",
+  "name": "Colorado",
+  "rent_distribution": {
+    "studio": 1404,
+    "one_bed": 1800,
+    "two_bed": 2304,
+    "three_bed": 2916
+  },
+  "salary_distribution": {
+    "p25": 48976,
+    "p50": 77740,
+    "p75": 104172,
+    "p90": 138377
+  },
+  "tax_model": {
+    "effective_income_tax_rate": 0.276,
+    "state_income_tax_rate": 0.044,
+    "sales_tax_rate": 0.08
+  },
+  "groceries": 516,
+  "utilities": 252,
+  "transport": 396,
+  "insurance": 216,
+  "healthcare_baseline": 408,
+  "savings_ratio": 0.095,
+  "inflation_factor": 1.03,
+  "cities": [
+    {
+      "name": "Denver",
+      "tier": "major",
+      "population": 715000,
+      "rent_distribution": {
+        "studio": 1532,
+        "one_bed": 2016,
+        "two_bed": 2621,
+        "three_bed": 3326
+      },
+      "salary_distribution": {
+        "p25": 52980,
+        "p50": 85452,
+        "p75": 113651,
+        "p90": 150396
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.316,
+        "state_income_tax_rate": 0.044,
+        "sales_tax_rate": 0.08
+      },
+      "groceries": 578,
+      "utilities": 264,
+      "transport": 417,
+      "insurance": 229,
+      "healthcare_baseline": 433,
+      "savings_ratio": 0.097,
+      "inflation_factor": 1.03
+    },
+    {
+      "name": "Colorado Springs",
+      "tier": "mid",
+      "population": 488000,
+      "rent_distribution": {
+        "studio": 1300,
+        "one_bed": 1710,
+        "two_bed": 2223,
+        "three_bed": 2822
+      },
+      "salary_distribution": {
+        "p25": 51669,
+        "p50": 83337,
+        "p75": 110838,
+        "p90": 146673
+      },
+      "tax_model": {
+        "effective_income_tax_rate": 0.285,
+        "state_income_tax_rate": 0.044,
+        "sales_tax_rate": 0.08
+      },
+      "groceries": 490,
+      "utilities": 261,
+      "transport": 410,
+      "insurance": 226,
+      "healthcare_baseline": 426,
+      "savings_ratio": 0.089,
+      "inflation_factor": 1.03
+    }
+  ],
+  "data_source": "modeled_2026_cost_income_baseline"
+}
