@@ -1,154 +1,75 @@
 {
+  "updated_at": "2026-03-30T16:31:06.628429+00:00",
   "posts": [
     {
       "channel": "reddit",
-      "title": "Help: Can I afford $1800 rent in Austin on $72000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency.json"
+      "style": "discussion",
+      "title": "Trying to make $72000 work in Austin \u2014 is $1800 too high?",
+      "body": "Scenario: alone. Post-rent cash is $960.0 and risk score is 0.416. What would you cut first?",
+      "link": "/pages/austin-alone-rent-1800-salary-72000-affordability.json"
     },
     {
       "channel": "quora",
-      "title": "Can I afford $1800 rent in Austin on $72000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency.json"
+      "style": "expert-answer",
+      "title": "Can you afford $1800 rent in Austin on $72000?",
+      "body": "Short answer: stretched. The monthly net estimate is $4560.0 with stability fragile.",
+      "link": "/pages/austin-alone-rent-1800-salary-72000-affordability.json"
     },
     {
       "channel": "reddit",
-      "title": "Help: Can I afford $1800 rent in Austin on $72000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency.json"
+      "style": "discussion",
+      "title": "Trying to make $68000 work in Phoenix \u2014 is $1650 too high?",
+      "body": "Scenario: alone. Post-rent cash is $856.67 and risk score is 0.407. What would you cut first?",
+      "link": "/pages/phoenix-alone-rent-1650-salary-68000-affordability.json"
     },
     {
       "channel": "quora",
-      "title": "Can I afford $1800 rent in Austin on $72000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency.json"
+      "style": "expert-answer",
+      "title": "Can you afford $1650 rent in Phoenix on $68000?",
+      "body": "Short answer: stretched. The monthly net estimate is $4306.67 with stability fragile.",
+      "link": "/pages/phoenix-alone-rent-1650-salary-68000-affordability.json"
     },
     {
       "channel": "reddit",
-      "title": "Help: Can I afford $1800 rent in Austin on $72000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency.json"
+      "style": "discussion",
+      "title": "Trying to make $65000 work in Tampa \u2014 is $1700 too high?",
+      "body": "Scenario: alone. Post-rent cash is $616.67 and risk score is 0.43. What would you cut first?",
+      "link": "/pages/tampa-alone-rent-1700-salary-65000-affordability.json"
     },
     {
       "channel": "quora",
-      "title": "Can I afford $1800 rent in Austin on $72000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency.json"
+      "style": "expert-answer",
+      "title": "Can you afford $1700 rent in Tampa on $65000?",
+      "body": "Short answer: stretched. The monthly net estimate is $4116.67 with stability fragile.",
+      "link": "/pages/tampa-alone-rent-1700-salary-65000-affordability.json"
     },
     {
       "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Phoenix on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency.json"
+      "style": "discussion",
+      "title": "Trying to make $70000 work in Raleigh \u2014 is $1600 too high?",
+      "body": "Scenario: roommates. Post-rent cash is $1633.33 and risk score is 0.171. What would you cut first?",
+      "link": "/pages/raleigh-roommates-rent-1600-salary-70000-affordability.json"
     },
     {
       "channel": "quora",
-      "title": "Can I afford $1650 rent in Phoenix on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency.json"
+      "style": "expert-answer",
+      "title": "Can you afford $1600 rent in Raleigh on $70000?",
+      "body": "Short answer: stretched. The monthly net estimate is $4433.33 with stability stable.",
+      "link": "/pages/raleigh-roommates-rent-1600-salary-70000-affordability.json"
     },
     {
       "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Phoenix on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency.json"
+      "style": "discussion",
+      "title": "Trying to make $62000 work in Columbus \u2014 is $1450 too high?",
+      "body": "Scenario: family. Post-rent cash is $308.33 and risk score is 0.49. What would you cut first?",
+      "link": "/pages/columbus-family-rent-1450-salary-62000-affordability.json"
     },
     {
       "channel": "quora",
-      "title": "Can I afford $1650 rent in Phoenix on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Phoenix on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Phoenix on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Tampa on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Tampa on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Tampa on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Tampa on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Tampa on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Tampa on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Raleigh on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Raleigh on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Raleigh on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Raleigh on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Raleigh on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Raleigh on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Columbus on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Columbus on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Columbus on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Columbus on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "reddit",
-      "title": "Help: Can I afford $1650 rent in Columbus on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency.json"
-    },
-    {
-      "channel": "quora",
-      "title": "Can I afford $1650 rent in Columbus on $68000 salary after tax? (salary_sufficiency)",
-      "link": "/pages/can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency.json"
+      "style": "expert-answer",
+      "title": "Can you afford $1450 rent in Columbus on $62000?",
+      "body": "Short answer: affordable. The monthly net estimate is $4908.33 with stability fragile.",
+      "link": "/pages/columbus-family-rent-1450-salary-62000-affordability.json"
     }
   ]
 }

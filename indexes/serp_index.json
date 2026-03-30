@@ -1,28 +1,175 @@
 {
   "queries": [
     {
-      "query": "can i afford 1800 rent in austin on 72k",
+      "query": "can i afford 1800 rent in Austin on 72000 salary",
+      "top_domains": [],
       "features": [
-        "reddit",
         "weak_blog"
       ],
-      "top_domains": [
-        "reddit.com",
-        "smallblog.example"
-      ],
-      "allow": true
+      "authority_count": 0,
+      "forum_ratio": 0.0,
+      "has_calculator": false,
+      "weak_signal_score": 0.45,
+      "serp_difficulty": 0.4,
+      "classification": "mixed",
+      "eligibility": "BLOCK",
+      "fetched_at": "2026-03-30T16:31:06.579823+00:00"
     },
     {
-      "query": "rent affordability austin",
-      "features": [
-        "authority"
-      ],
+      "query": "Austin rent calculator reddit",
       "top_domains": [
-        "zillow.com",
-        "bankrate.com"
+        "reddit.com"
       ],
-      "strong_calculator": true,
-      "allow": false
+      "features": [
+        "reddit",
+        "forum",
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 1.0,
+      "has_calculator": false,
+      "weak_signal_score": 1.0,
+      "serp_difficulty": 0.0,
+      "classification": "weak",
+      "eligibility": "ALLOW",
+      "fetched_at": "2026-03-30T16:31:06.584601+00:00"
+    },
+    {
+      "query": "can i afford 1650 rent in Phoenix on 68000 salary",
+      "top_domains": [],
+      "features": [
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 0.0,
+      "has_calculator": false,
+      "weak_signal_score": 0.45,
+      "serp_difficulty": 0.4,
+      "classification": "mixed",
+      "eligibility": "BLOCK",
+      "fetched_at": "2026-03-30T16:31:06.588737+00:00"
+    },
+    {
+      "query": "Phoenix rent calculator reddit",
+      "top_domains": [
+        "reddit.com"
+      ],
+      "features": [
+        "reddit",
+        "forum",
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 1.0,
+      "has_calculator": false,
+      "weak_signal_score": 1.0,
+      "serp_difficulty": 0.0,
+      "classification": "weak",
+      "eligibility": "ALLOW",
+      "fetched_at": "2026-03-30T16:31:06.593919+00:00"
+    },
+    {
+      "query": "can i afford 1700 rent in Tampa on 65000 salary",
+      "top_domains": [],
+      "features": [
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 0.0,
+      "has_calculator": false,
+      "weak_signal_score": 0.45,
+      "serp_difficulty": 0.4,
+      "classification": "mixed",
+      "eligibility": "BLOCK",
+      "fetched_at": "2026-03-30T16:31:06.597394+00:00"
+    },
+    {
+      "query": "Tampa rent calculator reddit",
+      "top_domains": [
+        "reddit.com"
+      ],
+      "features": [
+        "reddit",
+        "forum",
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 1.0,
+      "has_calculator": false,
+      "weak_signal_score": 1.0,
+      "serp_difficulty": 0.0,
+      "classification": "weak",
+      "eligibility": "ALLOW",
+      "fetched_at": "2026-03-30T16:31:06.601178+00:00"
+    },
+    {
+      "query": "can i afford 1600 rent in Raleigh on 70000 salary",
+      "top_domains": [],
+      "features": [
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 0.0,
+      "has_calculator": false,
+      "weak_signal_score": 0.45,
+      "serp_difficulty": 0.4,
+      "classification": "mixed",
+      "eligibility": "BLOCK",
+      "fetched_at": "2026-03-30T16:31:06.604941+00:00"
+    },
+    {
+      "query": "Raleigh rent calculator reddit",
+      "top_domains": [
+        "reddit.com"
+      ],
+      "features": [
+        "reddit",
+        "forum",
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 1.0,
+      "has_calculator": false,
+      "weak_signal_score": 1.0,
+      "serp_difficulty": 0.0,
+      "classification": "weak",
+      "eligibility": "ALLOW",
+      "fetched_at": "2026-03-30T16:31:06.608471+00:00"
+    },
+    {
+      "query": "can i afford 1450 rent in Columbus on 62000 salary",
+      "top_domains": [],
+      "features": [
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 0.0,
+      "has_calculator": false,
+      "weak_signal_score": 0.45,
+      "serp_difficulty": 0.4,
+      "classification": "mixed",
+      "eligibility": "BLOCK",
+      "fetched_at": "2026-03-30T16:31:06.612597+00:00"
+    },
+    {
+      "query": "Columbus rent calculator reddit",
+      "top_domains": [
+        "reddit.com"
+      ],
+      "features": [
+        "reddit",
+        "forum",
+        "weak_blog"
+      ],
+      "authority_count": 0,
+      "forum_ratio": 1.0,
+      "has_calculator": false,
+      "weak_signal_score": 1.0,
+      "serp_difficulty": 0.0,
+      "classification": "weak",
+      "eligibility": "ALLOW",
+      "fetched_at": "2026-03-30T16:31:06.616107+00:00"
     }
-  ]
+  ],
+  "updated_at": "2026-03-30T16:31:06.616127+00:00"
 }

@@ -1,8 +1,19 @@
-from .common import load_json
+from __future__ import annotations
+
 
 class TemplateEngine:
-    def run(self, clusters):
-        variants=load_json("instructions/template_instructions.json").get("variants",[])
-        for i,c in enumerate(clusters):
-            c["template"]=variants[i % len(variants)] if variants else "decision_heavy"
-        return clusters
+    VARIANTS = [
+        {"name": "decision_heavy", "sections": ["summary", "risk", "survivability", "actions"]},
+        {"name": "data_heavy", "sections": ["dataset", "model", "comparison", "recommendations"]},
+        {"name": "narrative", "sections": ["persona", "cashflow", "tradeoffs", "next_steps"]},
+    ]
+
+    def run(self, clusters: list[dict]):
+        out = []
+        for i, cluster in enumerate(clusters):
+            variant = self.VARIANTS[(i + len(cluster.get("intent", ""))) % len(self.VARIANTS)]
+            c = dict(cluster)
+            c["template"] = variant["name"]
+            c["layout"] = variant["sections"]
+            out.append(c)
+        return out

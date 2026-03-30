@@ -1,32 +1,85 @@
 {
-  "version": 1,
-  "status": "active",
-  "last_run": "2026-03-30T15:08:20.154161+00:00",
-  "scale_allowed": false,
-  "removed_pages": 0,
-  "regressions": [],
-  "counts": {
-    "allowed_serp": 1,
-    "keywords": 15,
-    "clusters": 15,
-    "pages": 15,
-    "authority_pages": 20,
-    "distribution_posts": 30,
-    "entities": 15,
-    "links": 15
-  },
-  "crawl_budget": {
-    "target_new_pages_per_day": 8,
-    "status": "hold"
-  },
-  "embeds": [
-    "rent-affordability-widget.html"
+  "version": 2,
+  "started_at": "2026-03-30T16:31:06.501083+00:00",
+  "cycles": [
+    {
+      "iteration": 1,
+      "time": "2026-03-30T16:31:06.573661+00:00",
+      "serp_candidates": 10,
+      "serp_allowed": 5,
+      "keywords": 20,
+      "pages_generated": 5,
+      "pages_kept": 5,
+      "removed": [],
+      "winners": [],
+      "expansion_count": 0,
+      "regressions": [
+        "indexing_critical",
+        "ctr_critical",
+        "impressions_stagnant"
+      ],
+      "budget": {
+        "updated_at": "2026-03-30T16:31:06.560688+00:00",
+        "indexing_rate": 0.0,
+        "impressions_trend": "flat",
+        "status": "throttle",
+        "target_new_pages_per_day": 2,
+        "sitemap_segment": "sitemap-low-priority.xml"
+      },
+      "entities": 5,
+      "links": 0,
+      "authority_pages": 5,
+      "distribution_posts": 10,
+      "embed_assets": 3,
+      "backlink_strategy": {
+        "strategy": "embed_and_answer_outreach",
+        "channels": [
+          "quora",
+          "reddit"
+        ],
+        "target_weekly_outreach": 10
+      }
+    },
+    {
+      "iteration": 2,
+      "time": "2026-03-30T16:31:06.629331+00:00",
+      "serp_candidates": 10,
+      "serp_allowed": 5,
+      "keywords": 20,
+      "pages_generated": 5,
+      "pages_kept": 5,
+      "removed": [],
+      "winners": [],
+      "expansion_count": 0,
+      "regressions": [
+        "indexing_critical",
+        "ctr_critical",
+        "impressions_stagnant"
+      ],
+      "budget": {
+        "updated_at": "2026-03-30T16:31:06.618625+00:00",
+        "indexing_rate": 0.0,
+        "impressions_trend": "flat",
+        "status": "throttle",
+        "target_new_pages_per_day": 2,
+        "sitemap_segment": "sitemap-low-priority.xml"
+      },
+      "entities": 5,
+      "links": 0,
+      "authority_pages": 5,
+      "distribution_posts": 10,
+      "embed_assets": 3,
+      "backlink_strategy": {
+        "strategy": "embed_and_answer_outreach",
+        "channels": [
+          "quora",
+          "reddit"
+        ],
+        "target_weekly_outreach": 10
+      }
+    }
   ],
-  "backlink_strategy": {
-    "strategy": "passive_embed_acquisition",
-    "channels": [
-      "developer_blogs",
-      "personal_finance_forums"
-    ]
-  }
+  "status": "constrained",
+  "last_run": "2026-03-30T16:31:06.629654+00:00",
+  "scale_allowed": false
 }

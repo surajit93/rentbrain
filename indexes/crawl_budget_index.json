@@ -1,4 +1,8 @@
 {
-  "target_new_pages_per_day": 8,
-  "status": "hold"
+  "updated_at": "2026-03-30T16:31:06.629482+00:00",
+  "indexing_rate": 0.0,
+  "impressions_trend": "flat",
+  "status": "throttle",
+  "target_new_pages_per_day": 2,
+  "sitemap_segment": "sitemap-low-priority.xml"
 }

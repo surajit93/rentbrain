@@ -1,153 +1,53 @@
 {
   "entities": [
     {
-      "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
+      "slug": "austin-alone-rent-1800-salary-72000-affordability",
       "entities": [
         "Austin",
-        "NA",
+        "TX",
         "72000",
         "1800",
-        "salary_sufficiency"
+        "alone"
       ]
     },
     {
-      "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "entities": [
-        "Austin",
-        "NA",
-        "72000",
-        "1800",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "entities": [
-        "Austin",
-        "NA",
-        "72000",
-        "1800",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
+      "slug": "phoenix-alone-rent-1650-salary-68000-affordability",
       "entities": [
         "Phoenix",
-        "NA",
+        "AZ",
         "68000",
         "1650",
-        "salary_sufficiency"
+        "alone"
       ]
     },
     {
-      "slug": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "entities": [
-        "Phoenix",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "entities": [
-        "Phoenix",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
+      "slug": "tampa-alone-rent-1700-salary-65000-affordability",
       "entities": [
         "Tampa",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
+        "FL",
+        "65000",
+        "1700",
+        "alone"
       ]
     },
     {
-      "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "entities": [
-        "Tampa",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "entities": [
-        "Tampa",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
+      "slug": "raleigh-roommates-rent-1600-salary-70000-affordability",
       "entities": [
         "Raleigh",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
+        "NC",
+        "70000",
+        "1600",
+        "roommates"
       ]
     },
     {
-      "slug": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "entities": [
-        "Raleigh",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "entities": [
-        "Raleigh",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
+      "slug": "columbus-family-rent-1450-salary-62000-affordability",
       "entities": [
         "Columbus",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "entities": [
-        "Columbus",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
-      ]
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "entities": [
-        "Columbus",
-        "NA",
-        "68000",
-        "1650",
-        "salary_sufficiency"
+        "OH",
+        "62000",
+        "1450",
+        "family"
       ]
     }
   ]

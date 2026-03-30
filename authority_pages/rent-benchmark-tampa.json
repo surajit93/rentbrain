@@ -1,0 +1,28 @@
+{
+  "slug": "rent-benchmark-tampa",
+  "title": "Tampa rent benchmark and affordability dataset",
+  "sections": [
+    "Methodology",
+    "Income vs Rent Ratio",
+    "Scenario Analysis",
+    "Risk Benchmarks"
+  ],
+  "dataset": {
+    "city": "Tampa",
+    "state": "FL",
+    "median_rent": 1700,
+    "median_salary": 65000
+  },
+  "structured_data": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "rent-benchmark-tampa",
+    "dateModified": "2026-03-30T16:31:06.627696+00:00"
+  },
+  "citations": [
+    "https://www.bls.gov/",
+    "https://www.census.gov/"
+  ],
+  "word_count_target": 1800,
+  "updated_at": "2026-03-30T16:31:06.627704+00:00"
+}

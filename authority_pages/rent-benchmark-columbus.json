@@ -1,0 +1,28 @@
+{
+  "slug": "rent-benchmark-columbus",
+  "title": "Columbus rent benchmark and affordability dataset",
+  "sections": [
+    "Methodology",
+    "Income vs Rent Ratio",
+    "Scenario Analysis",
+    "Risk Benchmarks"
+  ],
+  "dataset": {
+    "city": "Columbus",
+    "state": "OH",
+    "median_rent": 1450,
+    "median_salary": 62000
+  },
+  "structured_data": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "rent-benchmark-columbus",
+    "dateModified": "2026-03-30T16:31:06.628132+00:00"
+  },
+  "citations": [
+    "https://www.bls.gov/",
+    "https://www.census.gov/"
+  ],
+  "word_count_target": 1800,
+  "updated_at": "2026-03-30T16:31:06.628139+00:00"
+}

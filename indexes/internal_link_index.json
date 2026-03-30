@@ -1,79 +1,16 @@
 {
-  "links": [
-    {
-      "from": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "to": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "to": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "to": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    },
-    {
-      "from": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "to": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "reason": "city_cluster"
-    }
+  "updated_at": "2026-03-30T16:31:06.626968+00:00",
+  "links": [],
+  "winner_slugs": [
+    "austin-alone-rent-1800-salary-72000-affordability",
+    "phoenix-alone-rent-1650-salary-68000-affordability",
+    "tampa-alone-rent-1700-salary-65000-affordability"
+  ],
+  "suppressed": [
+    "phoenix-alone-rent-1650-salary-68000-affordability",
+    "columbus-family-rent-1450-salary-62000-affordability",
+    "tampa-alone-rent-1700-salary-65000-affordability",
+    "austin-alone-rent-1800-salary-72000-affordability",
+    "raleigh-roommates-rent-1600-salary-70000-affordability"
   ]
 }

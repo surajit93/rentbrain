@@ -1,0 +1,25 @@
+{
+  "slug": "tampa-alone-rent-1700-salary-65000-affordability",
+  "city": "Tampa",
+  "state": "FL",
+  "salary": 65000,
+  "rent": 1700,
+  "scenario": "alone",
+  "intent": "affordability",
+  "template": "decision_heavy",
+  "title": "Tampa alone affordability for $1700 rent on $65000 salary",
+  "source_query": "affordability check for $1700 rent in Tampa at $65000 income",
+  "calculator": {
+    "monthly_net": 4116.67,
+    "post_rent_cash": 616.67,
+    "rent_ratio": 0.413,
+    "survivability_months": 1.04,
+    "risk_score": 0.43,
+    "stability": "fragile",
+    "affordability": "stretched",
+    "scenario": "alone",
+    "debt_payment": 0
+  },
+  "created_at": "2026-03-30T16:31:06.621516+00:00",
+  "uniqueness_score": 0.8
+}

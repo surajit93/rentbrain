@@ -1,0 +1,25 @@
+{
+  "slug": "columbus-family-rent-1450-salary-62000-affordability",
+  "city": "Columbus",
+  "state": "OH",
+  "salary": 62000,
+  "rent": 1450,
+  "scenario": "family",
+  "intent": "affordability",
+  "template": "narrative",
+  "title": "Columbus family affordability for $1450 rent on $62000 salary",
+  "source_query": "affordability check for $1450 rent in Columbus at $62000 income",
+  "calculator": {
+    "monthly_net": 4908.33,
+    "post_rent_cash": 308.33,
+    "rent_ratio": 0.295,
+    "survivability_months": 0.61,
+    "risk_score": 0.49,
+    "stability": "fragile",
+    "affordability": "affordable",
+    "scenario": "family",
+    "debt_payment": 350
+  },
+  "created_at": "2026-03-30T16:31:06.625488+00:00",
+  "uniqueness_score": 0.84
+}
