@@ -1,60 +1,99 @@
 from __future__ import annotations
 
+import hashlib
 import math
-from collections import Counter
 
 
 class UniquenessEngine:
-    SYNONYM_MAP = {
-        "affordability": "afford",
-        "affordable": "afford",
-        "survivability": "survive",
-        "survival": "survive",
-        "salary_sufficiency": "salary",
-        "sufficiency": "salary",
-        "roommates": "shared",
-        "family": "household",
-        "alone": "solo",
-        "risk": "risk",
-    }
+    DIMENSIONS = 64
 
-    def _normalize_token(self, token: str) -> str:
-        return self.SYNONYM_MAP.get(token, token)
+    def _tokens(self, page: dict) -> list[str]:
+        text = " ".join(
+            [
+                str(page.get("title", "")),
+                str(page.get("city", "")),
+                str(page.get("state", "")),
+                str(page.get("scenario", "")),
+                str(page.get("intent", "")),
+                str(page.get("rent", "")),
+                str(page.get("salary", "")),
+                str(page.get("source_query", "")),
+            ]
+        ).lower()
+        clean = []
+        for token in text.replace("$", " ").replace("-", " ").split():
+            token = "".join(ch for ch in token if ch.isalnum() or ch == "_")
+            if token:
+                clean.append(token)
+        return clean
 
-    def _embed(self, text: str) -> Counter:
-        tokens = [self._normalize_token(t.strip(".,$-!?():;'").lower()) for t in text.split() if t.strip()]
-        bow = Counter(t for t in tokens if len(t) > 2)
+    def _embedding(self, tokens: list[str]) -> list[float]:
+        vec = [0.0] * self.DIMENSIONS
         for token in tokens:
-            if len(token) >= 3:
-                bow.update(token[i : i + 3] for i in range(len(token) - 2))
-        return bow
+            digest = hashlib.sha256(token.encode("utf-8")).digest()
+            for i in range(self.DIMENSIONS):
+                vec[i] += 1.0 if digest[i % len(digest)] % 2 == 0 else -1.0
+        return vec
 
-    def _cosine(self, a: Counter, b: Counter) -> float:
-        keys = set(a) | set(b)
-        dot = sum(a[k] * b[k] for k in keys)
-        na = math.sqrt(sum(v * v for v in a.values()))
-        nb = math.sqrt(sum(v * v for v in b.values()))
+    def _cosine(self, va: list[float], vb: list[float]) -> float:
+        dot = sum(a * b for a, b in zip(va, vb))
+        na = math.sqrt(sum(a * a for a in va))
+        nb = math.sqrt(sum(b * b for b in vb))
         if na == 0 or nb == 0:
             return 0.0
         return dot / (na * nb)
 
-    def score(self, candidate: dict, existing_pages: list[dict]) -> float:
-        candidate_text = f"{candidate['title']} {candidate['city']} {candidate['state']} {candidate['scenario']} {candidate['intent']} {candidate['rent']} {candidate['salary']}"
-        cvec = self._embed(candidate_text)
+    def _structural_variation(self, candidate: dict, page: dict) -> float:
+        layout_a = tuple(candidate.get("layout", []))
+        layout_b = tuple(page.get("layout", []))
+        if not layout_a and not layout_b:
+            return 0.0
+        overlap = len(set(layout_a) & set(layout_b))
+        union = max(1, len(set(layout_a) | set(layout_b)))
+        return 1 - (overlap / union)
+
+    def _intent_variance(self, candidate: dict, page: dict) -> float:
+        same_city = candidate.get("city") == page.get("city")
+        same_intent = candidate.get("intent") == page.get("intent")
+        same_scenario = candidate.get("scenario") == page.get("scenario")
+        if same_city and same_intent and same_scenario:
+            return 0.0
+        if same_city and same_intent:
+            return 0.35
+        if same_city:
+            return 0.65
+        return 1.0
+
+    def evaluate(self, candidate: dict, existing_pages: list[dict]) -> dict:
+        c_tokens = self._tokens(candidate)
+        c_vec = self._embedding(c_tokens)
 
         max_similarity = 0.0
+        min_structural_variation = 1.0
+        min_intent_variance = 1.0
         for page in existing_pages:
-            ptxt = f"{page.get('title','')} {page.get('city','')} {page.get('state','')} {page.get('scenario','')} {page.get('intent','')} {page.get('rent','')} {page.get('salary','')}"
-            sim = self._cosine(cvec, self._embed(ptxt))
+            p_vec = self._embedding(self._tokens(page))
+            sim = self._cosine(c_vec, p_vec)
             max_similarity = max(max_similarity, sim)
+            min_structural_variation = min(min_structural_variation, self._structural_variation(candidate, page))
+            min_intent_variance = min(min_intent_variance, self._intent_variance(candidate, page))
 
-        if max_similarity >= 0.9:
-            return 0.0
+        uniqueness_score = (
+            (1 - max_similarity) * 0.6
+            + min_structural_variation * 0.2
+            + min_intent_variance * 0.2
+        )
+        uniqueness_score = round(max(0.0, min(1.0, uniqueness_score)), 4)
 
-        templates = {p.get("template") for p in existing_pages}
-        structural_diversity = 1.0 if candidate.get("template") not in templates else 0.65
-        numeric_variance = 1.0 if not any(abs(candidate["rent"] - p.get("rent", 0)) < 35 for p in existing_pages) else 0.7
-        entity_variation = 1.0 if not any(candidate["city"] == p.get("city") and candidate["scenario"] == p.get("scenario") for p in existing_pages) else 0.65
-        intent_variation = 1.0 if not any(candidate.get("intent") == p.get("intent") and candidate["city"] == p.get("city") for p in existing_pages) else 0.7
-        uniqueness = (1 - max_similarity) * 0.45 + structural_diversity * 0.2 + numeric_variance * 0.15 + entity_variation * 0.1 + intent_variation * 0.1
-        return round(max(0.0, min(1.0, uniqueness)), 3)
+        blocked = max_similarity > 0.9 or uniqueness_score < 0.65
+        return {
+            "score": uniqueness_score,
+            "max_similarity": round(max_similarity, 4),
+            "structural_variation": round(min_structural_variation, 4),
+            "intent_variance": round(min_intent_variance, 4),
+            "blocked": blocked,
+            "reason": "high_similarity" if max_similarity > 0.9 else ("low_uniqueness" if uniqueness_score < 0.65 else "ok"),
+        }
+
+    def score(self, candidate: dict, existing_pages: list[dict]) -> float:
+        return self.evaluate(candidate, existing_pages)["score"]

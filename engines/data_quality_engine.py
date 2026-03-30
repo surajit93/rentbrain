@@ -52,6 +52,29 @@ class DataQualityEngine:
             elif val <= 0:
                 issues.append({"path": f"{path}.{fld}", "issue": "non_positive"})
 
+    def _validate_realism(self, node: dict, path: str, issues: list[dict]):
+        rents = node.get("rent_distribution", {})
+        salaries = node.get("salary_distribution", {})
+        if rents and salaries:
+            avg_rent = (rents.get("one_bed", 0) + rents.get("two_bed", 0)) / 2
+            monthly_salary = salaries.get("p50", 0) / 12
+            ratio = (avg_rent / monthly_salary) if monthly_salary else 9
+            if ratio > 0.6 or ratio < 0.12:
+                issues.append({"path": f"{path}.rent_salary_ratio", "issue": "out_of_range", "value": round(ratio, 3)})
+
+        costs = sum(
+            node.get(k, 0)
+            for k in ["groceries", "utilities", "transport", "insurance", "healthcare_baseline"]
+        )
+        if salaries.get("p50", 0):
+            cost_ratio = costs / (salaries["p50"] / 12)
+            if cost_ratio > 0.75:
+                issues.append({"path": f"{path}.baseline_cost_ratio", "issue": "too_high", "value": round(cost_ratio, 3)})
+
+        inflation = node.get("inflation_factor", 1)
+        if inflation < 0.8 or inflation > 1.3:
+            issues.append({"path": f"{path}.inflation_factor", "issue": "anomaly"})
+
     def run(self) -> dict:
         states_dir = ROOT / "data" / "states"
         files = sorted(states_dir.glob("*.json"))
@@ -81,6 +104,7 @@ class DataQualityEngine:
                 schema_issues.append({"state_file": f.name, "field": "tax_model", "keys": sorted(tm.keys())})
 
             self._validate_numeric(data, {"groceries", "utilities", "transport", "insurance", "healthcare_baseline", "savings_ratio", "inflation_factor"}, f.name, unrealistic)
+            self._validate_realism(data, f.name, unrealistic)
             if rd and not (rd.get("studio", 0) < rd.get("one_bed", 0) < rd.get("two_bed", 0) < rd.get("three_bed", 0)):
                 unrealistic.append({"path": f"{f.name}.rent_distribution", "issue": "non_monotonic"})
             if sd and not (sd.get("p25", 0) < sd.get("p50", 0) < sd.get("p75", 0) < sd.get("p90", 0)):
@@ -101,6 +125,7 @@ class DataQualityEngine:
                     schema_issues.append({"state_file": f.name, "city": city.get("name", idx), "field": "rent_distribution"})
                 if set(city.get("salary_distribution", {}).keys()) != self.REQUIRED_SALARY:
                     schema_issues.append({"state_file": f.name, "city": city.get("name", idx), "field": "salary_distribution"})
+                self._validate_realism(city, f"{f.name}.cities[{idx}]", unrealistic)
 
         missing_states = sorted(self.ALL_STATES - found)
         report = {
@@ -112,6 +137,7 @@ class DataQualityEngine:
             "unrealistic_values": unrealistic,
             "tier_coverage": tier_coverage,
             "valid": not (missing_states or missing_fields or schema_issues or unrealistic),
+            "decision_allowed": not (missing_states or missing_fields or schema_issues or unrealistic),
         }
         save_json("indexes/data_quality_index.json", report)
         return report
