@@ -1,0 +1,13 @@
+{
+  "allow_signals": [
+    "reddit",
+    "quora",
+    "forums",
+    "weak_blogs"
+  ],
+  "deny_signals": [
+    "2plus_authority_domains",
+    "google_native_tools",
+    "strong_calculator"
+  ]
+}

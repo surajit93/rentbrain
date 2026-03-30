@@ -1,0 +1,11 @@
+{
+  "channels": [
+    "reddit",
+    "quora"
+  ],
+  "rules": [
+    "contextual_help",
+    "no_spam",
+    "problem_first"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "rules": [
+    "no_head_keywords",
+    "must_include_city_salary_rent_scenario",
+    "intent_priority:affordability,survivability,salary_sufficiency"
+  ]
+}

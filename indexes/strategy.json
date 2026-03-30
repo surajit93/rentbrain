@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "status": "active",
+  "last_run": "2026-03-30T15:08:20.154161+00:00",
+  "scale_allowed": false,
+  "removed_pages": 0,
+  "regressions": [],
+  "counts": {
+    "allowed_serp": 1,
+    "keywords": 15,
+    "clusters": 15,
+    "pages": 15,
+    "authority_pages": 20,
+    "distribution_posts": 30,
+    "entities": 15,
+    "links": 15
+  },
+  "crawl_budget": {
+    "target_new_pages_per_day": 8,
+    "status": "hold"
+  },
+  "embeds": [
+    "rent-affordability-widget.html"
+  ],
+  "backlink_strategy": {
+    "strategy": "passive_embed_acquisition",
+    "channels": [
+      "developer_blogs",
+      "personal_finance_forums"
+    ]
+  }
+}

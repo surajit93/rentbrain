@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "cluster_id",
+    "intent",
+    "city",
+    "priority_score"
+  ],
+  "properties": {
+    "cluster_id": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "priority_score": {
+      "type": "number"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "queries": [
+    {
+      "query": "can i afford 1800 rent in austin on 72k",
+      "features": [
+        "reddit",
+        "weak_blog"
+      ],
+      "top_domains": [
+        "reddit.com",
+        "smallblog.example"
+      ],
+      "allow": true
+    },
+    {
+      "query": "rent affordability austin",
+      "features": [
+        "authority"
+      ],
+      "top_domains": [
+        "zillow.com",
+        "bankrate.com"
+      ],
+      "strong_calculator": true,
+      "allow": false
+    }
+  ]
+}

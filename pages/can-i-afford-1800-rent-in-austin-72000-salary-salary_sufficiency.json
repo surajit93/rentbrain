@@ -1,0 +1,17 @@
+{
+  "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
+  "city": "Austin",
+  "state": "NA",
+  "salary": 72000,
+  "rent": 1800,
+  "scenario": "salary_sufficiency",
+  "title": "",
+  "calculator": {
+    "monthly_net": 4680.0,
+    "post_rent_cash": 1400.0,
+    "status": "safe"
+  },
+  "uniqueness_score": 1.0,
+  "ctr": 0.05,
+  "impressions": 5
+}

@@ -1,0 +1,7 @@
+{
+  "rules": [
+    "hub_and_spoke_by_city",
+    "cross_link_salary_adjacent",
+    "link_authority_pages_every_page"
+  ]
+}

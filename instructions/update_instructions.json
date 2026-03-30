@@ -1,0 +1,8 @@
+{
+  "frequency": "daily",
+  "tasks": [
+    "refresh_performance",
+    "regenerate_winners_only",
+    "update_internal_links"
+  ]
+}

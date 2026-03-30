@@ -1,0 +1,17 @@
+{
+  "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
+  "city": "Tampa",
+  "state": "NA",
+  "salary": 68000,
+  "rent": 1650,
+  "scenario": "salary_sufficiency",
+  "title": "",
+  "calculator": {
+    "monthly_net": 4420.0,
+    "post_rent_cash": 1290.0,
+    "status": "safe"
+  },
+  "uniqueness_score": 1.0,
+  "ctr": 0.05,
+  "impressions": 5
+}

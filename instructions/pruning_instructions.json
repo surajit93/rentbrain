@@ -1,0 +1,7 @@
+{
+  "rules": [
+    "delete_if_zero_impressions_after_60_days",
+    "delete_low_ctr_clusters",
+    "delete_duplicate_intent_pages"
+  ]
+}
