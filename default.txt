@@ -1,0 +1,350 @@
+You are a senior SEO engineer + programmatic SEO strategist + SERP reverse-engineering expert + search behavior analyst + authority growth architect + distribution strategist + SRE.
+
+Your task is to generate a **production-grade, fully automated, strategy-governed, indexing-safe, authority-building GitHub repository** for:
+
+👉 US-focused RENT DECISION PLATFORM (ULTRA LONG-TAIL DOMINATION)
+
+---
+
+# 🎯 CORE SUCCESS TARGET
+
+* ≥ 600,000 monthly organic traffic
+* Timeline: 12–18 months
+* Goal: **MAXIMIZE REAL-WORLD SUCCESS PROBABILITY (not assumed)**
+
+Strategy:
+
+* long-tail domination
+* SERP gap exploitation
+* calculator-first UX
+* controlled scaling (anti-deindexing)
+* authority + distribution integrated
+
+---
+
+# 🔴 ABSOLUTE SUCCESS PRINCIPLES (NON-NEGOTIABLE)
+
+1. NO HEAD KEYWORDS
+2. ONLY FRAGMENTED / WEAK SERPs
+3. INDEXING-FIRST (NOT VOLUME-FIRST)
+4. CTR > RANK
+5. UNIQUENESS ≥ 75% (HARD BLOCK)
+6. STRATEGY ENGINE = SINGLE SOURCE OF TRUTH
+7. NO ENGINE AUTONOMY
+8. AUTHORITY + DISTRIBUTION ARE MANDATORY
+9. SCALE ONLY WINNERS (NO BLIND EXPANSION)
+
+---
+
+# 🔴 CORE STRATEGY LAYER (CRITICAL - MISSING LINK FIXED)
+
+SYSTEM MUST OPERATE ON:
+
+## 1. SERP FRAGMENTATION ONLY
+
+ALLOW ONLY IF:
+
+* Reddit / Quora / forums rank
+* weak blogs rank
+* no strong calculator present
+
+BLOCK IF:
+
+* ≥2 high-authority domains (Zillow, NerdWallet, Bankrate)
+* Google native tools dominate
+
+👉 THIS IS PRIMARY SUCCESS DRIVER
+
+---
+
+## 2. CLICK DOMINANCE (CTR > RANK)
+
+Pages MUST win via:
+
+* hyper-specific titles
+* scenario-driven phrasing
+
+Pattern:
+“Can I afford $1800 rent in Austin on $72k salary after tax?”
+
+---
+
+## 3. UTILITY DIFFERENTIATION
+
+Each page MUST:
+
+* outperform SERP results in clarity
+* provide numeric decision unavailable elsewhere
+
+---
+
+## 4. DEMAND CLUSTER PRIORITY
+
+Prioritize:
+
+* repeatable intent clusters (city × salary × rent)
+* high urgency queries:
+
+  * affordability
+  * survivability
+  * salary sufficiency
+
+Deprioritize:
+
+* informational queries
+
+---
+
+## 5. PROGRAMMATIC CONTROL (ANTI-SPAM)
+
+* Max pages: 2500–3000
+* Expand ONLY WINNER clusters
+* Require:
+
+  * indexing > 70%
+  * CTR > 4.5%
+  * impressions growth
+
+---
+
+## 6. UNIQUENESS (UPGRADED)
+
+Must include:
+
+* numeric variance
+* structure variance
+* entity variance
+* intent variance
+
+IF < 75% → BLOCK
+
+---
+
+## 7. AUTHORITY LAYER (MANDATORY)
+
+Generate 20–30 human-grade pages:
+
+* rent benchmarks
+* salary vs rent datasets
+* cost breakdowns
+
+Must include:
+
+* structured data
+* citations
+* deep analysis
+
+---
+
+## 8. EMBED STRATEGY
+
+Generate:
+
+* embeddable calculators
+* HTML widgets
+
+Goal:
+→ passive backlink acquisition
+
+---
+
+## 9. DISTRIBUTION LAYER
+
+Generate:
+
+* Reddit answers
+* Quora answers
+
+Rules:
+
+* real problem solving
+* contextual linking
+* no spam
+
+---
+
+## 10. INDEXING ENFORCEMENT
+
+STOP scaling IF:
+
+* indexing < 65%
+* OR impressions stagnant
+
+Adjust:
+
+* crawl rate
+* internal linking
+
+---
+
+## 11. PRUNING (AGGRESSIVE)
+
+DELETE:
+
+* 0 impressions after 60 days
+* low CTR clusters
+* duplicate intent pages
+
+---
+
+# 🔴 COMPLETE SYSTEM ARCHITECTURE (FINAL)
+
+/root
+├── config.json
+
+├── /data/
+│    ├── states/
+│    ├── city_index.json
+│    ├── rent_distributions.json
+│    ├── cost_models.json
+│    ├── tax_models.json
+
+├── /indexes/
+│    ├── strategy.json
+│    ├── keyword_index.json
+│    ├── page_index.json
+│    ├── performance_index.json
+│    ├── serp_index.json
+│    ├── entity_index.json
+│    ├── internal_link_index.json
+│    ├── crawl_budget_index.json
+│    ├── cluster_index.json
+
+├── /instructions/
+│    ├── keyword_instructions.json
+│    ├── page_generation_instructions.json
+│    ├── update_instructions.json
+│    ├── pruning_instructions.json
+│    ├── serp_instructions.json
+│    ├── interlinking_instructions.json
+│    ├── template_instructions.json
+│    ├── authority_instructions.json
+│    ├── distribution_instructions.json
+
+├── /engines/
+│    ├── strategy_engine.py (MASTER CONTROL)
+│    ├── serp_eligibility_engine.py
+│    ├── serp_intelligence_engine.py
+│    ├── cluster_priority_engine.py
+│    ├── keyword_engine.py
+│    ├── query_classifier_engine.py
+│    ├── template_engine.py
+│    ├── page_generator_engine.py
+│    ├── decision_engine.py
+│    ├── uniqueness_engine.py
+│    ├── entity_engine.py
+│    ├── internal_linking_engine.py
+│    ├── crawl_budget_engine.py
+│    ├── analytics_engine.py
+│    ├── regression_engine.py
+│    ├── pruning_engine.py
+│    ├── ctr_optimization_engine.py
+│    ├── authority_content_engine.py
+│    ├── embed_engine.py
+│    ├── backlink_engine.py
+│    ├── distribution_engine.py
+
+├── /templates/
+├── /pages/
+├── /authority_pages/
+├── /embeds/
+├── /logs/
+
+---
+
+# 🔴 EXECUTION LOOP (STRICT)
+
+strategy_engine
+→ serp_eligibility_engine
+→ serp_intelligence_engine
+→ keyword_engine
+→ cluster_priority_engine
+→ template_engine
+→ page_generator_engine
+→ analytics_engine
+→ regression_engine
+→ pruning_engine
+→ ctr_optimization_engine
+→ authority_content_engine
+→ distribution_engine
+→ repeat
+
+---
+
+# 🔴 SCALING LOGIC
+
+* initial: 300–500 pages
+* max: 2500–3000 pages
+
+Scale ONLY IF:
+
+* indexing > 70%
+* CTR > 4.5%
+* impressions growing
+
+---
+
+# 🔴 PAGE RULES
+
+Each page MUST:
+
+map to:
+
+* city
+* salary
+* rent
+* scenario
+
+include:
+
+* calculator
+* numeric outputs
+* scenario variation
+
+---
+
+# 🔴 SUCCESS ENFORCEMENT
+
+System MUST:
+
+* enter ONLY weak SERPs
+* dominate clusters (not keywords)
+* maintain indexing health
+* continuously build authority
+* avoid over-scaling
+
+---
+
+# 🔴 FINAL GOAL
+
+A rent decision platform that:
+
+* captures fragmented long-tail demand
+* avoids authority competition
+* scales safely without deindexing
+* builds trust + backlinks
+* reaches 600k+ traffic sustainably
+
+---
+
+# 🔴 FINAL INSTRUCTION
+
+Do NOT explain.
+
+Generate:
+
+* full repository
+* all engines
+* all schemas
+* config.json
+* CI/CD pipeline
+* execution scripts
+* sample pages
+
+Ensure:
+
+* strict SERP filtering
+* controlled scaling
+* authority integration
+* indexing safety
+* maximum achievable real-world success probability
