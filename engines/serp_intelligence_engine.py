@@ -51,7 +51,7 @@ class SerpEvaluation:
     forum_ratio: float
     has_calculator: bool
     weak_signal_score: float
-    serp_difficulty: float
+    serp_difficulty: float | None
     classification: str
     eligibility: str
     fetched_at: str
@@ -94,9 +94,14 @@ class SerpIntelligenceEngine:
         if domains and authority == 0:
             features.append("weak_blog")
 
-        if not domains:
-            classification = "insufficient_data"
-            difficulty = 1.0
+        if source_status != "ok":
+            classification = "unknown"
+            difficulty = None
+            weak_signal = 0.0
+            eligibility = "BLOCK"
+        elif not domains:
+            classification = "unknown"
+            difficulty = None
             weak_signal = 0.0
             eligibility = "BLOCK"
         else:
@@ -118,7 +123,7 @@ class SerpIntelligenceEngine:
             forum_ratio=round(forum_ratio, 3),
             has_calculator=has_calculator,
             weak_signal_score=round(weak_signal, 3),
-            serp_difficulty=round(difficulty, 3),
+            serp_difficulty=round(difficulty, 3) if difficulty is not None else None,
             classification=classification,
             eligibility=eligibility,
             fetched_at=now_iso(),
