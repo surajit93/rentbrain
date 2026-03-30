@@ -1,26 +1,50 @@
-from pathlib import Path
+from __future__ import annotations
+
 import json
-from .common import ROOT, save_json
+from pathlib import Path
+
+from .common import ROOT, load_json, save_json, now_iso
 from .decision_engine import DecisionEngine
 from .uniqueness_engine import UniquenessEngine
 
+
 class PageGeneratorEngine:
-    def run(self, clusters, max_pages=400):
-        dec=DecisionEngine()
-        uq=UniquenessEngine()
-        pages=[]
-        for c in clusters[:max_pages]:
-            city=c["city"]; state="NA"
-            salary=72000 if city=="Austin" else 68000
-            rent=1800 if city=="Austin" else 1650
-            scenario=c["intent"]
-            slug=f"can-i-afford-{rent}-rent-in-{city.lower()}-{salary}-salary-{scenario}"
-            res=dec.decision(salary,rent)
-            score=uq.score(city,salary,rent,scenario,c.get("template"))
-            if score < 0.75:
-                continue
-            page={"slug":slug,"city":city,"state":state,"salary":salary,"rent":rent,"scenario":scenario,"title":"","calculator":res,"uniqueness_score":score,"ctr":0.05,"impressions":5}
-            pages.append(page)
-            (ROOT/"pages"/f"{slug}.json").write_text(json.dumps(page,indent=2))
-        save_json("indexes/page_index.json", {"pages":pages})
+    SCENARIOS = [("alone", 0), ("roommates", 0), ("family", 350), ("alone", 450)]
+
+    def run(self, clusters: list[dict], max_pages: int = 100) -> list[dict]:
+        cfg = load_json("config.json")
+        threshold = cfg.get("constraints", {}).get("min_uniqueness", 0.75)
+        decision = DecisionEngine()
+        uniq = UniquenessEngine()
+        pages = []
+
+        for c in clusters:
+            for scenario, debt_payment in self.SCENARIOS:
+                if len(pages) >= max_pages:
+                    break
+                salary = c["salary"]
+                rent = c["rent"]
+                slug = f"{c['city'].lower()}-{scenario}-rent-{int(rent)}-salary-{int(salary)}-{c['intent']}"
+                title = f"{c['city']} {scenario} affordability for ${int(rent)} rent on ${int(salary)} salary"
+                page = {
+                    "slug": slug,
+                    "city": c["city"],
+                    "state": c["state"],
+                    "salary": salary,
+                    "rent": rent,
+                    "scenario": scenario,
+                    "intent": c["intent"],
+                    "template": c.get("template", "decision_heavy"),
+                    "title": title,
+                    "source_query": c.get("query"),
+                    "calculator": decision.evaluate(salary, rent, scenario=scenario, debt_payment=debt_payment),
+                    "created_at": now_iso(),
+                }
+                page["uniqueness_score"] = uniq.score(page, pages)
+                if page["uniqueness_score"] < threshold:
+                    continue
+                pages.append(page)
+                Path(ROOT / "pages" / f"{slug}.json").write_text(json.dumps(page, indent=2))
+
+        save_json("indexes/page_index.json", {"pages": pages, "updated_at": now_iso()})
         return pages

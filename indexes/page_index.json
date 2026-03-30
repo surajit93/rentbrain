@@ -1,259 +1,130 @@
 {
   "pages": [
     {
-      "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
+      "slug": "austin-alone-rent-1800-salary-72000-affordability",
       "city": "Austin",
-      "state": "NA",
+      "state": "TX",
       "salary": 72000,
       "rent": 1800,
-      "scenario": "salary_sufficiency",
-      "title": "",
+      "scenario": "alone",
+      "intent": "affordability",
+      "template": "data_heavy",
+      "title": "Austin alone affordability for $1800 rent on $72000 salary",
+      "source_query": "affordability check for $1800 rent in Austin at $72000 income",
       "calculator": {
-        "monthly_net": 4680.0,
-        "post_rent_cash": 1400.0,
-        "status": "safe"
+        "monthly_net": 4560.0,
+        "post_rent_cash": 960.0,
+        "rent_ratio": 0.395,
+        "survivability_months": 1.52,
+        "risk_score": 0.416,
+        "stability": "fragile",
+        "affordability": "stretched",
+        "scenario": "alone",
+        "debt_payment": 0
       },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
+      "created_at": "2026-03-30T16:31:06.618935+00:00",
+      "uniqueness_score": 1.0
     },
     {
-      "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "city": "Austin",
-      "state": "NA",
-      "salary": 72000,
-      "rent": 1800,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4680.0,
-        "post_rent_cash": 1400.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1800-rent-in-austin-72000-salary-salary_sufficiency",
-      "city": "Austin",
-      "state": "NA",
-      "salary": 72000,
-      "rent": 1800,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4680.0,
-        "post_rent_cash": 1400.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
+      "slug": "phoenix-alone-rent-1650-salary-68000-affordability",
       "city": "Phoenix",
-      "state": "NA",
+      "state": "AZ",
       "salary": 68000,
       "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
+      "scenario": "alone",
+      "intent": "affordability",
+      "template": "narrative",
+      "title": "Phoenix alone affordability for $1650 rent on $68000 salary",
+      "source_query": "affordability check for $1650 rent in Phoenix at $68000 income",
       "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
+        "monthly_net": 4306.67,
+        "post_rent_cash": 856.67,
+        "rent_ratio": 0.383,
+        "survivability_months": 1.48,
+        "risk_score": 0.407,
+        "stability": "fragile",
+        "affordability": "stretched",
+        "scenario": "alone",
+        "debt_payment": 0
       },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
+      "created_at": "2026-03-30T16:31:06.619989+00:00",
+      "uniqueness_score": 0.8
     },
     {
-      "slug": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "city": "Phoenix",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-phoenix-68000-salary-salary_sufficiency",
-      "city": "Phoenix",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
+      "slug": "tampa-alone-rent-1700-salary-65000-affordability",
       "city": "Tampa",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
+      "state": "FL",
+      "salary": 65000,
+      "rent": 1700,
+      "scenario": "alone",
+      "intent": "affordability",
+      "template": "decision_heavy",
+      "title": "Tampa alone affordability for $1700 rent on $65000 salary",
+      "source_query": "affordability check for $1700 rent in Tampa at $65000 income",
       "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
+        "monthly_net": 4116.67,
+        "post_rent_cash": 616.67,
+        "rent_ratio": 0.413,
+        "survivability_months": 1.04,
+        "risk_score": 0.43,
+        "stability": "fragile",
+        "affordability": "stretched",
+        "scenario": "alone",
+        "debt_payment": 0
       },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
+      "created_at": "2026-03-30T16:31:06.621516+00:00",
+      "uniqueness_score": 0.8
     },
     {
-      "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "city": "Tampa",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-tampa-68000-salary-salary_sufficiency",
-      "city": "Tampa",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
+      "slug": "raleigh-roommates-rent-1600-salary-70000-affordability",
       "city": "Raleigh",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
+      "state": "NC",
+      "salary": 70000,
+      "rent": 1600,
+      "scenario": "roommates",
+      "intent": "affordability",
+      "template": "data_heavy",
+      "title": "Raleigh roommates affordability for $1600 rent on $70000 salary",
+      "source_query": "affordability check for $1600 rent in Raleigh at $70000 income",
       "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
+        "monthly_net": 4433.33,
+        "post_rent_cash": 1633.33,
+        "rent_ratio": 0.361,
+        "survivability_months": 2.92,
+        "risk_score": 0.171,
+        "stability": "stable",
+        "affordability": "stretched",
+        "scenario": "roommates",
+        "debt_payment": 0
       },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
+      "created_at": "2026-03-30T16:31:06.623333+00:00",
+      "uniqueness_score": 0.84
     },
     {
-      "slug": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "city": "Raleigh",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-raleigh-68000-salary-salary_sufficiency",
-      "city": "Raleigh",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
+      "slug": "columbus-family-rent-1450-salary-62000-affordability",
       "city": "Columbus",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
+      "state": "OH",
+      "salary": 62000,
+      "rent": 1450,
+      "scenario": "family",
+      "intent": "affordability",
+      "template": "narrative",
+      "title": "Columbus family affordability for $1450 rent on $62000 salary",
+      "source_query": "affordability check for $1450 rent in Columbus at $62000 income",
       "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
+        "monthly_net": 4908.33,
+        "post_rent_cash": 308.33,
+        "rent_ratio": 0.295,
+        "survivability_months": 0.61,
+        "risk_score": 0.49,
+        "stability": "fragile",
+        "affordability": "affordable",
+        "scenario": "family",
+        "debt_payment": 350
       },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "city": "Columbus",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
-    },
-    {
-      "slug": "can-i-afford-1650-rent-in-columbus-68000-salary-salary_sufficiency",
-      "city": "Columbus",
-      "state": "NA",
-      "salary": 68000,
-      "rent": 1650,
-      "scenario": "salary_sufficiency",
-      "title": "",
-      "calculator": {
-        "monthly_net": 4420.0,
-        "post_rent_cash": 1290.0,
-        "status": "safe"
-      },
-      "uniqueness_score": 1.0,
-      "ctr": 0.05,
-      "impressions": 5
+      "created_at": "2026-03-30T16:31:06.625488+00:00",
+      "uniqueness_score": 0.84
     }
-  ]
+  ],
+  "updated_at": "2026-03-30T16:31:06.625800+00:00"
 }

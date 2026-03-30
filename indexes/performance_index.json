@@ -1,8 +1,48 @@
 {
-  "clusters": [],
+  "updated_at": "2026-03-30T16:31:06.626281+00:00",
+  "source": "no_gsc_data",
+  "pages": [
+    {
+      "slug": "austin-alone-rent-1800-salary-72000-affordability",
+      "indexed": false,
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0.0
+    },
+    {
+      "slug": "phoenix-alone-rent-1650-salary-68000-affordability",
+      "indexed": false,
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0.0
+    },
+    {
+      "slug": "tampa-alone-rent-1700-salary-65000-affordability",
+      "indexed": false,
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0.0
+    },
+    {
+      "slug": "raleigh-roommates-rent-1600-salary-70000-affordability",
+      "indexed": false,
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0.0
+    },
+    {
+      "slug": "columbus-family-rent-1450-salary-62000-affordability",
+      "indexed": false,
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0.0
+    }
+  ],
   "site": {
-    "indexing_rate": 0.683,
-    "ctr": 0.046,
-    "impressions_trend": "growing"
+    "indexing_rate": 0.0,
+    "impressions": 0,
+    "clicks": 0,
+    "ctr": 0.0,
+    "impressions_trend": "flat"
   }
 }

@@ -1,139 +1,225 @@
 {
   "keywords": [
     {
-      "query": "can i afford $1800 rent in Austin on $72000 salary after tax",
+      "query": "affordability check for $1800 rent in Austin at $72000 income",
       "city": "Austin",
       "state": "TX",
       "salary": 72000,
       "rent": 1800,
       "intent": "affordability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Austin rent calculator reddit"
     },
     {
-      "query": "can i afford $1800 rent in Austin on $72000 salary after tax",
+      "query": "survivability check for $1800 rent in Austin at $72000 income",
       "city": "Austin",
       "state": "TX",
       "salary": 72000,
       "rent": 1800,
       "intent": "survivability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Austin rent calculator reddit"
     },
     {
-      "query": "can i afford $1800 rent in Austin on $72000 salary after tax",
+      "query": "salary_sufficiency check for $1800 rent in Austin at $72000 income",
       "city": "Austin",
       "state": "TX",
       "salary": 72000,
       "rent": 1800,
       "intent": "salary_sufficiency",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Austin rent calculator reddit"
     },
     {
-      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax",
+      "query": "risk check for $1800 rent in Austin at $72000 income",
+      "city": "Austin",
+      "state": "TX",
+      "salary": 72000,
+      "rent": 1800,
+      "intent": "risk",
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Austin rent calculator reddit"
+    },
+    {
+      "query": "affordability check for $1650 rent in Phoenix at $68000 income",
       "city": "Phoenix",
       "state": "AZ",
       "salary": 68000,
       "rent": 1650,
       "intent": "affordability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Phoenix rent calculator reddit"
     },
     {
-      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax",
+      "query": "survivability check for $1650 rent in Phoenix at $68000 income",
       "city": "Phoenix",
       "state": "AZ",
       "salary": 68000,
       "rent": 1650,
       "intent": "survivability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Phoenix rent calculator reddit"
     },
     {
-      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax",
+      "query": "salary_sufficiency check for $1650 rent in Phoenix at $68000 income",
       "city": "Phoenix",
       "state": "AZ",
       "salary": 68000,
       "rent": 1650,
       "intent": "salary_sufficiency",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Phoenix rent calculator reddit"
     },
     {
-      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax",
+      "query": "risk check for $1650 rent in Phoenix at $68000 income",
+      "city": "Phoenix",
+      "state": "AZ",
+      "salary": 68000,
+      "rent": 1650,
+      "intent": "risk",
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Phoenix rent calculator reddit"
+    },
+    {
+      "query": "affordability check for $1700 rent in Tampa at $65000 income",
       "city": "Tampa",
       "state": "FL",
       "salary": 65000,
       "rent": 1700,
       "intent": "affordability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Tampa rent calculator reddit"
     },
     {
-      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax",
+      "query": "survivability check for $1700 rent in Tampa at $65000 income",
       "city": "Tampa",
       "state": "FL",
       "salary": 65000,
       "rent": 1700,
       "intent": "survivability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Tampa rent calculator reddit"
     },
     {
-      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax",
+      "query": "salary_sufficiency check for $1700 rent in Tampa at $65000 income",
       "city": "Tampa",
       "state": "FL",
       "salary": 65000,
       "rent": 1700,
       "intent": "salary_sufficiency",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Tampa rent calculator reddit"
     },
     {
-      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax",
+      "query": "risk check for $1700 rent in Tampa at $65000 income",
+      "city": "Tampa",
+      "state": "FL",
+      "salary": 65000,
+      "rent": 1700,
+      "intent": "risk",
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Tampa rent calculator reddit"
+    },
+    {
+      "query": "affordability check for $1600 rent in Raleigh at $70000 income",
       "city": "Raleigh",
       "state": "NC",
       "salary": 70000,
       "rent": 1600,
       "intent": "affordability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Raleigh rent calculator reddit"
     },
     {
-      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax",
+      "query": "survivability check for $1600 rent in Raleigh at $70000 income",
       "city": "Raleigh",
       "state": "NC",
       "salary": 70000,
       "rent": 1600,
       "intent": "survivability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Raleigh rent calculator reddit"
     },
     {
-      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax",
+      "query": "salary_sufficiency check for $1600 rent in Raleigh at $70000 income",
       "city": "Raleigh",
       "state": "NC",
       "salary": 70000,
       "rent": 1600,
       "intent": "salary_sufficiency",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Raleigh rent calculator reddit"
     },
     {
-      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax",
+      "query": "risk check for $1600 rent in Raleigh at $70000 income",
+      "city": "Raleigh",
+      "state": "NC",
+      "salary": 70000,
+      "rent": 1600,
+      "intent": "risk",
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Raleigh rent calculator reddit"
+    },
+    {
+      "query": "affordability check for $1450 rent in Columbus at $62000 income",
       "city": "Columbus",
       "state": "OH",
       "salary": 62000,
       "rent": 1450,
       "intent": "affordability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Columbus rent calculator reddit"
     },
     {
-      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax",
+      "query": "survivability check for $1450 rent in Columbus at $62000 income",
       "city": "Columbus",
       "state": "OH",
       "salary": 62000,
       "rent": 1450,
       "intent": "survivability",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Columbus rent calculator reddit"
     },
     {
-      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax",
+      "query": "salary_sufficiency check for $1450 rent in Columbus at $62000 income",
       "city": "Columbus",
       "state": "OH",
       "salary": 62000,
       "rent": 1450,
       "intent": "salary_sufficiency",
-      "fragmentation_score": 0.8
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Columbus rent calculator reddit"
+    },
+    {
+      "query": "risk check for $1450 rent in Columbus at $62000 income",
+      "city": "Columbus",
+      "state": "OH",
+      "salary": 62000,
+      "rent": 1450,
+      "intent": "risk",
+      "serp_difficulty": 0.0,
+      "forum_ratio": 1.0,
+      "source_query": "Columbus rent calculator reddit"
     }
-  ]
+  ],
+  "updated_at": "2026-03-30T16:31:06.617188+00:00"
 }

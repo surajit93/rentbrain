@@ -1,0 +1,25 @@
+{
+  "slug": "raleigh-roommates-rent-1600-salary-70000-affordability",
+  "city": "Raleigh",
+  "state": "NC",
+  "salary": 70000,
+  "rent": 1600,
+  "scenario": "roommates",
+  "intent": "affordability",
+  "template": "data_heavy",
+  "title": "Raleigh roommates affordability for $1600 rent on $70000 salary",
+  "source_query": "affordability check for $1600 rent in Raleigh at $70000 income",
+  "calculator": {
+    "monthly_net": 4433.33,
+    "post_rent_cash": 1633.33,
+    "rent_ratio": 0.361,
+    "survivability_months": 2.92,
+    "risk_score": 0.171,
+    "stability": "stable",
+    "affordability": "stretched",
+    "scenario": "roommates",
+    "debt_payment": 0
+  },
+  "created_at": "2026-03-30T16:31:06.623333+00:00",
+  "uniqueness_score": 0.84
+}

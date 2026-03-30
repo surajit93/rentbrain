@@ -1,0 +1,28 @@
+{
+  "slug": "rent-benchmark-phoenix",
+  "title": "Phoenix rent benchmark and affordability dataset",
+  "sections": [
+    "Methodology",
+    "Income vs Rent Ratio",
+    "Scenario Analysis",
+    "Risk Benchmarks"
+  ],
+  "dataset": {
+    "city": "Phoenix",
+    "state": "AZ",
+    "median_rent": 1650,
+    "median_salary": 68000
+  },
+  "structured_data": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "rent-benchmark-phoenix",
+    "dateModified": "2026-03-30T16:31:06.627489+00:00"
+  },
+  "citations": [
+    "https://www.bls.gov/",
+    "https://www.census.gov/"
+  ],
+  "word_count_target": 1800,
+  "updated_at": "2026-03-30T16:31:06.627497+00:00"
+}

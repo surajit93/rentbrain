@@ -1,11 +1,27 @@
-from .common import save_json
+from __future__ import annotations
+
+from .common import load_json, save_json, now_iso
+
 
 class ClusterPriorityEngine:
-    def run(self, keywords):
-        clusters=[]
-        for k in keywords:
-            priority=0.5 + 0.2*(k.get("intent") in {"affordability","survivability","salary_sufficiency"}) + 0.3*min(k.get("fragmentation_score",0),1)
-            clusters.append({"cluster_id":f"{k['city'].lower()}-{k['intent']}","city":k["city"],"intent":k["intent"],"priority_score":round(priority,3),"query":k["query"]})
-        clusters=sorted(clusters,key=lambda x:x["priority_score"],reverse=True)
-        save_json("indexes/cluster_index.json", {"clusters":clusters})
+    def run(self, keywords: list[dict]):
+        perf = load_json("indexes/performance_index.json")
+        historical_ctr = perf.get("site", {}).get("ctr", 0)
+        clusters = []
+        for kw in keywords:
+            opportunity = (1 - kw.get("serp_difficulty", 1)) * 0.5 + kw.get("forum_ratio", 0) * 0.3 + (0.2 if historical_ctr > 0.03 else 0.05)
+            clusters.append(
+                {
+                    "cluster_id": f"{kw['city'].lower()}-{kw['intent']}",
+                    "city": kw["city"],
+                    "state": kw["state"],
+                    "intent": kw["intent"],
+                    "salary": kw["salary"],
+                    "rent": kw["rent"],
+                    "query": kw["query"],
+                    "priority_score": round(opportunity, 3),
+                }
+            )
+        clusters.sort(key=lambda x: x["priority_score"], reverse=True)
+        save_json("indexes/cluster_index.json", {"updated_at": now_iso(), "clusters": clusters})
         return clusters

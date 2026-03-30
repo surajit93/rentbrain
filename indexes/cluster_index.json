@@ -1,109 +1,205 @@
 {
+  "updated_at": "2026-03-30T16:31:06.617989+00:00",
   "clusters": [
     {
-      "cluster_id": "austin-salary_sufficiency",
+      "cluster_id": "austin-affordability",
       "city": "Austin",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1800 rent in Austin on $72000 salary after tax"
+      "state": "TX",
+      "intent": "affordability",
+      "salary": 72000,
+      "rent": 1800,
+      "query": "affordability check for $1800 rent in Austin at $72000 income",
+      "priority_score": 0.85
+    },
+    {
+      "cluster_id": "austin-survivability",
+      "city": "Austin",
+      "state": "TX",
+      "intent": "survivability",
+      "salary": 72000,
+      "rent": 1800,
+      "query": "survivability check for $1800 rent in Austin at $72000 income",
+      "priority_score": 0.85
     },
     {
       "cluster_id": "austin-salary_sufficiency",
       "city": "Austin",
+      "state": "TX",
       "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1800 rent in Austin on $72000 salary after tax"
+      "salary": 72000,
+      "rent": 1800,
+      "query": "salary_sufficiency check for $1800 rent in Austin at $72000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "austin-salary_sufficiency",
+      "cluster_id": "austin-risk",
       "city": "Austin",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1800 rent in Austin on $72000 salary after tax"
+      "state": "TX",
+      "intent": "risk",
+      "salary": 72000,
+      "rent": 1800,
+      "query": "risk check for $1800 rent in Austin at $72000 income",
+      "priority_score": 0.85
+    },
+    {
+      "cluster_id": "phoenix-affordability",
+      "city": "Phoenix",
+      "state": "AZ",
+      "intent": "affordability",
+      "salary": 68000,
+      "rent": 1650,
+      "query": "affordability check for $1650 rent in Phoenix at $68000 income",
+      "priority_score": 0.85
+    },
+    {
+      "cluster_id": "phoenix-survivability",
+      "city": "Phoenix",
+      "state": "AZ",
+      "intent": "survivability",
+      "salary": 68000,
+      "rent": 1650,
+      "query": "survivability check for $1650 rent in Phoenix at $68000 income",
+      "priority_score": 0.85
     },
     {
       "cluster_id": "phoenix-salary_sufficiency",
       "city": "Phoenix",
+      "state": "AZ",
       "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax"
+      "salary": 68000,
+      "rent": 1650,
+      "query": "salary_sufficiency check for $1650 rent in Phoenix at $68000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "phoenix-salary_sufficiency",
+      "cluster_id": "phoenix-risk",
       "city": "Phoenix",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax"
+      "state": "AZ",
+      "intent": "risk",
+      "salary": 68000,
+      "rent": 1650,
+      "query": "risk check for $1650 rent in Phoenix at $68000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "phoenix-salary_sufficiency",
-      "city": "Phoenix",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1650 rent in Phoenix on $68000 salary after tax"
+      "cluster_id": "tampa-affordability",
+      "city": "Tampa",
+      "state": "FL",
+      "intent": "affordability",
+      "salary": 65000,
+      "rent": 1700,
+      "query": "affordability check for $1700 rent in Tampa at $65000 income",
+      "priority_score": 0.85
+    },
+    {
+      "cluster_id": "tampa-survivability",
+      "city": "Tampa",
+      "state": "FL",
+      "intent": "survivability",
+      "salary": 65000,
+      "rent": 1700,
+      "query": "survivability check for $1700 rent in Tampa at $65000 income",
+      "priority_score": 0.85
     },
     {
       "cluster_id": "tampa-salary_sufficiency",
       "city": "Tampa",
+      "state": "FL",
       "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax"
+      "salary": 65000,
+      "rent": 1700,
+      "query": "salary_sufficiency check for $1700 rent in Tampa at $65000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "tampa-salary_sufficiency",
+      "cluster_id": "tampa-risk",
       "city": "Tampa",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax"
+      "state": "FL",
+      "intent": "risk",
+      "salary": 65000,
+      "rent": 1700,
+      "query": "risk check for $1700 rent in Tampa at $65000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "tampa-salary_sufficiency",
-      "city": "Tampa",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1700 rent in Tampa on $65000 salary after tax"
+      "cluster_id": "raleigh-affordability",
+      "city": "Raleigh",
+      "state": "NC",
+      "intent": "affordability",
+      "salary": 70000,
+      "rent": 1600,
+      "query": "affordability check for $1600 rent in Raleigh at $70000 income",
+      "priority_score": 0.85
+    },
+    {
+      "cluster_id": "raleigh-survivability",
+      "city": "Raleigh",
+      "state": "NC",
+      "intent": "survivability",
+      "salary": 70000,
+      "rent": 1600,
+      "query": "survivability check for $1600 rent in Raleigh at $70000 income",
+      "priority_score": 0.85
     },
     {
       "cluster_id": "raleigh-salary_sufficiency",
       "city": "Raleigh",
+      "state": "NC",
       "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax"
+      "salary": 70000,
+      "rent": 1600,
+      "query": "salary_sufficiency check for $1600 rent in Raleigh at $70000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "raleigh-salary_sufficiency",
+      "cluster_id": "raleigh-risk",
       "city": "Raleigh",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax"
+      "state": "NC",
+      "intent": "risk",
+      "salary": 70000,
+      "rent": 1600,
+      "query": "risk check for $1600 rent in Raleigh at $70000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "raleigh-salary_sufficiency",
-      "city": "Raleigh",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1600 rent in Raleigh on $70000 salary after tax"
+      "cluster_id": "columbus-affordability",
+      "city": "Columbus",
+      "state": "OH",
+      "intent": "affordability",
+      "salary": 62000,
+      "rent": 1450,
+      "query": "affordability check for $1450 rent in Columbus at $62000 income",
+      "priority_score": 0.85
+    },
+    {
+      "cluster_id": "columbus-survivability",
+      "city": "Columbus",
+      "state": "OH",
+      "intent": "survivability",
+      "salary": 62000,
+      "rent": 1450,
+      "query": "survivability check for $1450 rent in Columbus at $62000 income",
+      "priority_score": 0.85
     },
     {
       "cluster_id": "columbus-salary_sufficiency",
       "city": "Columbus",
+      "state": "OH",
       "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax"
+      "salary": 62000,
+      "rent": 1450,
+      "query": "salary_sufficiency check for $1450 rent in Columbus at $62000 income",
+      "priority_score": 0.85
     },
     {
-      "cluster_id": "columbus-salary_sufficiency",
+      "cluster_id": "columbus-risk",
       "city": "Columbus",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax"
-    },
-    {
-      "cluster_id": "columbus-salary_sufficiency",
-      "city": "Columbus",
-      "intent": "salary_sufficiency",
-      "priority_score": 0.94,
-      "query": "can i afford $1450 rent in Columbus on $62000 salary after tax"
+      "state": "OH",
+      "intent": "risk",
+      "salary": 62000,
+      "rent": 1450,
+      "query": "risk check for $1450 rent in Columbus at $62000 income",
+      "priority_score": 0.85
     }
   ]
 }
