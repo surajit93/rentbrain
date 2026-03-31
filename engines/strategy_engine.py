@@ -22,6 +22,7 @@ from .backlink_engine import BacklinkEngine
 from .data_quality_engine import DataQualityEngine
 from .data_realism_engine import DataRealismEngine
 from .learning_engine import LearningEngine
+from .content_differentiation_engine import ContentDifferentiationEngine
 
 
 def is_dead(page):
@@ -66,7 +67,7 @@ class StrategyEngine:
         if action == "expand_winners":
             allow = context.get("budget_status") == "scale" and context.get("winner_clusters", 0) > 0 and context.get("analytics_decision_allowed", False)
             return allow, "approved" if allow else "blocked_expansion_constraints"
-        if action in {"prune", "optimize_ctr", "entity_index", "internal_linking", "distribution", "backlink", "authority_content", "embed"}:
+        if action in {"prune", "optimize_ctr", "entity_index", "internal_linking", "distribution", "backlink", "authority_content", "embed", "content_differentiation"}:
             return context.get("generated_pages", 0) > 0, "approved" if context.get("generated_pages", 0) > 0 else "blocked_no_pages"
         return False, "blocked_unknown_action"
 
@@ -235,6 +236,7 @@ class StrategyEngine:
             entities = self._execute_if_approved(cycle, "entity_index", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: EntityEngine().run(pages)) or []
             links = self._execute_if_approved(cycle, "internal_linking", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: InternalLinkingEngine().run(pages, perf)) or []
             authority = self._execute_if_approved(cycle, "authority_content", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: AuthorityContentEngine().run()) or []
+            differentiation = self._execute_if_approved(cycle, "content_differentiation", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: ContentDifferentiationEngine().run()) or {}
             distribution = self._execute_if_approved(cycle, "distribution", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: DistributionEngine().run(pages, perf=perf)) or []
             embeds = self._execute_if_approved(cycle, "embed", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: EmbedEngine().run()) or []
             backlinks = self._execute_if_approved(cycle, "backlink", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: BacklinkEngine().run()) or {}
@@ -271,6 +273,7 @@ class StrategyEngine:
                     "entities": len(entities),
                     "links": len(links),
                     "authority_pages": len(authority),
+                    "differentiation_updates": differentiation.get("updated", {}),
                     "distribution_posts": len(distribution),
                     "embed_assets": len(embeds),
                     "backlink_strategy": backlinks,
