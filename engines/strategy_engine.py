@@ -20,11 +20,14 @@ from .crawl_budget_engine import CrawlBudgetEngine
 from .embed_engine import EmbedEngine
 from .backlink_engine import BacklinkEngine
 from .data_quality_engine import DataQualityEngine
+from .data_realism_engine import DataRealismEngine
+from .learning_engine import LearningEngine
 
 
 class StrategyEngine:
     def __init__(self):
         self.cfg = load_json("config.json")
+        self.learning_engine = LearningEngine()
 
     def _seed_queries(self):
         cities = load_json("data/city_index.json").get("cities", [])
@@ -33,38 +36,6 @@ class StrategyEngine:
             queries.append({"query": f"can i afford {c['median_rent']} rent in {c['city']} on {c['median_salary']} salary", "city": c["city"], "state": c["state"]})
             queries.append({"query": f"{c['city']} rent calculator reddit", "city": c["city"], "state": c["state"]})
         return queries
-
-    def _load_learning(self) -> dict:
-        prior = load_json("indexes/strategy.json")
-        memory = prior.get("learning", {}) if isinstance(prior, dict) else {}
-        memory.setdefault("template_rank", {})
-        memory.setdefault("cluster_rank", {})
-        memory.setdefault("high_ctr_structures", {})
-        memory.setdefault("history", [])
-        return memory
-
-    def _update_learning(self, learning: dict, pages: list[dict], perf: dict) -> dict:
-        by_slug = {p.get("slug"): p for p in perf.get("pages", [])}
-        for page in pages:
-            slug = page.get("slug")
-            m = by_slug.get(slug, {})
-            ctr = float(m.get("ctr", 0))
-            impr = int(m.get("impressions", 0))
-            if impr < 5:
-                continue
-
-            template = page.get("template", "unknown")
-            learning["template_rank"][template] = round(learning["template_rank"].get(template, 0.0) * 0.8 + ctr * 0.2, 4)
-
-            cluster = page.get("cluster_id") or f"{page.get('city')}|{page.get('intent')}"
-            learning["cluster_rank"][cluster] = round(learning["cluster_rank"].get(cluster, 0.0) * 0.75 + ctr * 0.25, 4)
-
-            layout_key = "|".join(page.get("layout", [])) or "none"
-            learning["high_ctr_structures"][layout_key] = round(learning["high_ctr_structures"].get(layout_key, 0.0) * 0.7 + ctr * 0.3, 4)
-
-        learning["history"].append({"at": now_iso(), "site_ctr": perf.get("site", {}).get("ctr", 0), "indexing_rate": perf.get("site", {}).get("indexing_rate", 0)})
-        learning["history"] = learning["history"][-50:]
-        return learning
 
     def _approve_action(self, action: str, context: dict) -> tuple[bool, str]:
         if context.get("signal_state") in {"unknown", "missing", "error"}:
@@ -89,6 +60,11 @@ class StrategyEngine:
             return context.get("generated_pages", 0) > 0, "approved" if context.get("generated_pages", 0) > 0 else "blocked_no_pages"
         return False, "blocked_unknown_action"
 
+    def _execute_if_approved(self, cycle: dict, action: str, context: dict, fn):
+        approved, reason = self._approve_action(action, context)
+        cycle["approvals"][action] = {"approved": approved, "reason": reason}
+        return fn() if approved else None
+
     def _winner_expansions(self, clusters: list[dict], learning: dict) -> tuple[list[dict], list[dict]]:
         winners = [c for c in clusters if c.get("eligible_for_expansion") and not c.get("suppressed")]
         winners.sort(key=lambda c: c.get("priority_score", 0), reverse=True)
@@ -109,7 +85,7 @@ class StrategyEngine:
 
     def run(self, cycles: int = 2):
         state = {"version": 4, "started_at": now_iso(), "cycles": []}
-        learning = self._load_learning()
+        learning = self.learning_engine.load()
 
         data_quality = DataQualityEngine().run()
         if not data_quality.get("decision_allowed"):
@@ -126,52 +102,58 @@ class StrategyEngine:
         for iteration in range(cycles):
             cycle = {"iteration": iteration + 1, "time": now_iso(), "approvals": {}}
 
-            approve_serp, reason_serp = self._approve_action("serp_intelligence", {"signal_state": "ok"})
-            cycle["approvals"]["serp_intelligence"] = {"approved": approve_serp, "reason": reason_serp}
-            serp_raw = SerpIntelligenceEngine().run(self._seed_queries()) if approve_serp else []
+            serp_raw = self._execute_if_approved(cycle, "serp_intelligence", {"signal_state": "ok"}, lambda: SerpIntelligenceEngine().run(self._seed_queries())) or []
 
             serp_source_ok = any(r.get("source_status") == "ok" for r in serp_raw)
-            approve_eligibility, reason_eligibility = self._approve_action("serp_eligibility", {"signal_state": "ok" if serp_source_ok else "unknown", "serp_source_ok": serp_source_ok})
-            cycle["approvals"]["serp_eligibility"] = {"approved": approve_eligibility, "reason": reason_eligibility}
-            serp_allowed = SerpEligibilityEngine().run(serp_raw) if approve_eligibility else []
+            serp_allowed = self._execute_if_approved(
+                cycle,
+                "serp_eligibility",
+                {"signal_state": "ok" if serp_source_ok else "unknown", "serp_source_ok": serp_source_ok},
+                lambda: SerpEligibilityEngine().run(serp_raw),
+            ) or []
 
-            approve_kw, reason_kw = self._approve_action("keyword_generation", {"signal_state": "ok" if serp_allowed else "unknown", "serp_allowed": len(serp_allowed)})
-            cycle["approvals"]["keyword_generation"] = {"approved": approve_kw, "reason": reason_kw}
-            keywords = KeywordEngine().run(serp_allowed) if approve_kw else []
+            keywords = self._execute_if_approved(
+                cycle, "keyword_generation", {"signal_state": "ok" if serp_allowed else "unknown", "serp_allowed": len(serp_allowed)}, lambda: KeywordEngine().run(serp_allowed)
+            ) or []
             classified = QueryClassifierEngine().run(keywords) if keywords else []
 
-            approve_clusters, reason_clusters = self._approve_action("cluster_build", {"signal_state": "ok" if classified else "unknown", "keywords": len(classified)})
-            cycle["approvals"]["cluster_build"] = {"approved": approve_clusters, "reason": reason_clusters}
-            clusters = ClusterPriorityEngine().run(classified) if approve_clusters else []
+            clusters = self._execute_if_approved(
+                cycle, "cluster_build", {"signal_state": "ok" if classified else "unknown", "keywords": len(classified)}, lambda: ClusterPriorityEngine().run(classified)
+            ) or []
 
-            approve_templates, reason_templates = self._approve_action("template_select", {"signal_state": "ok" if clusters else "unknown", "clusters": len(clusters)})
-            cycle["approvals"]["template_select"] = {"approved": approve_templates, "reason": reason_templates}
-            templated = TemplateEngine().run(clusters, learning=learning) if approve_templates else []
+            templated = self._execute_if_approved(
+                cycle, "template_select", {"signal_state": "ok" if clusters else "unknown", "clusters": len(clusters)}, lambda: TemplateEngine().run(clusters, learning=learning)
+            ) or []
 
             budget = CrawlBudgetEngine().run()
-            generate_ok, generate_reason = self._approve_action(
+            max_pages = 0 if budget["status"] == "throttle" else 20 if budget["status"] == "hold" else 60
+            generated = self._execute_if_approved(
+                cycle,
                 "generate_pages",
                 {
                     "signal_state": "ok" if perf_baseline.get("decision_allowed") else "unknown",
                     "analytics_decision_allowed": perf_baseline.get("decision_allowed", False),
                     "budget_status": budget.get("status"),
                 },
+                lambda: PageGeneratorEngine().run(templated, max_pages=max_pages),
+            ) or []
+
+            realism = DataRealismEngine().run(generated)
+            if not realism.get("decision_allowed"):
+                generated = [p for p in generated if not any(b.get("slug") == p.get("slug") for b in realism.get("blocked", []))]
+
+            optimized = self._execute_if_approved(
+                cycle, "optimize_ctr", {"signal_state": "ok" if generated else "unknown", "generated_pages": len(generated)}, lambda: CtrOptimizationEngine().run(generated)
             )
-            cycle["approvals"]["generate_pages"] = {"approved": generate_ok, "reason": generate_reason}
-
-            max_pages = 0 if budget["status"] == "throttle" else 20 if budget["status"] == "hold" else 60
-            generated = PageGeneratorEngine().run(templated, max_pages=max_pages) if generate_ok else []
-
-            optimize_ok, optimize_reason = self._approve_action("optimize_ctr", {"signal_state": "ok" if generated else "unknown", "generated_pages": len(generated)})
-            cycle["approvals"]["optimize_ctr"] = {"approved": optimize_ok, "reason": optimize_reason}
-            if optimize_ok:
-                generated = CtrOptimizationEngine().run(generated)
+            if optimized is not None:
+                generated = optimized
 
             perf = AnalyticsEngine().run(generated)
             regressions = RegressionEngine().run(perf)
 
             winners, expansions = self._winner_expansions(clusters, learning)
-            expand_ok, expand_reason = self._approve_action(
+            expanded = self._execute_if_approved(
+                cycle,
                 "expand_winners",
                 {
                     "signal_state": "ok" if perf.get("decision_allowed") else "unknown",
@@ -179,23 +161,26 @@ class StrategyEngine:
                     "budget_status": budget.get("status"),
                     "winner_clusters": len(winners),
                 },
+                lambda: PageGeneratorEngine().run(TemplateEngine().run(expansions, learning=learning), max_pages=min(30, len(expansions))),
             )
-            cycle["approvals"]["expand_winners"] = {"approved": expand_ok, "reason": expand_reason}
-            if expand_ok and expansions:
-                generated.extend(PageGeneratorEngine().run(TemplateEngine().run(expansions, learning=learning), max_pages=min(30, len(expansions))))
+            if expanded:
+                generated.extend(expanded)
 
-            prune_ok, prune_reason = self._approve_action("prune", {"signal_state": "ok" if generated else "unknown", "generated_pages": len(generated)})
-            cycle["approvals"]["prune"] = {"approved": prune_ok, "reason": prune_reason}
-            pages, removed = PruningEngine().run(generated, perf, self.cfg["constraints"]["prune_zero_impressions_days"]) if prune_ok else (generated, [])
+            pruned = self._execute_if_approved(
+                cycle, "prune", {"signal_state": "ok" if generated else "unknown", "generated_pages": len(generated)}, lambda: PruningEngine().run(generated, perf, self.cfg["constraints"]["prune_zero_impressions_days"])
+            )
+            pages, removed = pruned if pruned is not None else (generated, [])
 
-            entities = EntityEngine().run(pages) if self._approve_action("entity_index", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)})[0] else []
-            links = InternalLinkingEngine().run(pages, perf) if self._approve_action("internal_linking", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)})[0] else []
-            authority = AuthorityContentEngine().run() if self._approve_action("authority_content", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)})[0] else []
-            distribution = DistributionEngine().run(pages, perf=perf) if self._approve_action("distribution", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)})[0] else []
-            embeds = EmbedEngine().run() if self._approve_action("embed", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)})[0] else []
-            backlinks = BacklinkEngine().run() if self._approve_action("backlink", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)})[0] else {}
+            entities = self._execute_if_approved(cycle, "entity_index", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: EntityEngine().run(pages)) or []
+            links = self._execute_if_approved(cycle, "internal_linking", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: InternalLinkingEngine().run(pages, perf)) or []
+            authority = self._execute_if_approved(cycle, "authority_content", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: AuthorityContentEngine().run()) or []
+            distribution = self._execute_if_approved(cycle, "distribution", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: DistributionEngine().run(pages, perf=perf)) or []
+            embeds = self._execute_if_approved(cycle, "embed", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: EmbedEngine().run()) or []
+            backlinks = self._execute_if_approved(cycle, "backlink", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: BacklinkEngine().run()) or {}
 
-            learning = self._update_learning(learning, pages, perf)
+            dist_feedback = load_json("logs/distribution_plan.json").get("feedback", {})
+            learning = self.learning_engine.update(learning, pages, perf, clusters, distribution_feedback=dist_feedback)
+            self.learning_engine.save_snapshot(learning)
 
             cycle.update(
                 {
@@ -216,6 +201,7 @@ class StrategyEngine:
                     "distribution_posts": len(distribution),
                     "embed_assets": len(embeds),
                     "backlink_strategy": backlinks,
+                    "data_realism": realism,
                     "pre_cycle_decision_allowed": perf_baseline.get("decision_allowed", False),
                     "post_cycle_decision_allowed": perf.get("decision_allowed", False),
                 }

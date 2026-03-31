@@ -7,12 +7,20 @@ class ClusterPriorityEngine:
     def _cluster_key(self, kw: dict) -> str:
         rent_band = int(kw.get("rent", 0) // 250 * 250)
         salary_band = int(kw.get("salary", 0) // 10000 * 10000)
-        return f"{kw.get('city','').lower()}|{salary_band}|{rent_band}|{kw.get('intent','unknown')}"
+        scenario = kw.get("scenario", kw.get("intent", "unknown"))
+        return f"{kw.get('city','').lower()}|{salary_band}|{rent_band}|{scenario}"
 
     def _aggregate_perf(self, cluster: dict, pages: list[dict], perf_map: dict) -> dict:
         city = cluster.get("city")
-        intent = cluster.get("intent")
-        matching = [p for p in pages if p.get("city") == city and p.get("intent") == intent]
+        salary_band = int(cluster.get("salary_band", 0))
+        rent_band = int(cluster.get("rent_band", 0))
+        scenario = cluster.get("scenario")
+        matching = []
+        for p in pages:
+            p_salary_band = int(p.get("salary", 0) // 10000 * 10000)
+            p_rent_band = int(p.get("rent", 0) // 250 * 250)
+            if p.get("city") == city and p_salary_band == salary_band and p_rent_band == rent_band and p.get("scenario") == scenario:
+                matching.append(p)
         if not matching:
             return {"impressions": 0, "clicks": 0, "ctr": 0.0, "indexing_rate": 0.0, "observations": 0}
 
@@ -53,7 +61,7 @@ class ClusterPriorityEngine:
                     "cluster_id": key,
                     "city": kw["city"],
                     "state": kw["state"],
-                    "scenario": kw.get("intent", "unknown"),
+                    "scenario": kw.get("scenario", kw.get("intent", "unknown")),
                     "intent": kw["intent"],
                     "salary": kw["salary"],
                     "salary_band": salary_band,
@@ -78,7 +86,7 @@ class ClusterPriorityEngine:
             perf_agg = self._aggregate_perf(rec, page_index.get("pages", []), perf_map)
             performance_component = min(0.25, perf_agg["ctr"] * 1.5 + perf_agg["indexing_rate"] * 0.08)
             opportunity = serp_component + ctr_component + performance_component
-            loser = perf_agg["observations"] > 0 and (perf_agg["impressions"] < 10 or perf_agg["ctr"] < 0.01)
+            loser = perf_agg["observations"] > 1 and (perf_agg["impressions"] < 10 or perf_agg["ctr"] < 0.01 or perf_agg["indexing_rate"] < 0.35)
 
             clusters.append(
                 {
@@ -95,6 +103,12 @@ class ClusterPriorityEngine:
                     "priority_score": round(opportunity, 4),
                     "decision_context": "analytics_backed" if has_analytics else "serp_only",
                     "performance": perf_agg,
+                    "entity_graph": {
+                        "city": rec["city"],
+                        "salary_band": rec["salary_band"],
+                        "rent_band": rec["rent_band"],
+                        "scenario": rec["scenario"],
+                    },
                     "eligible_for_expansion": perf_agg["ctr"] >= 0.04 and perf_agg["impressions"] >= 20 and perf_agg["indexing_rate"] >= 0.6,
                     "suppressed": loser,
                 }

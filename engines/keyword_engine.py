@@ -7,6 +7,7 @@ class KeywordEngine:
     def run(self, allowed_serps: list[dict]) -> list[dict]:
         cities = {c["city"]: c for c in load_json("data/city_index.json").get("cities", [])}
         intents = ["affordability", "survivability", "salary_sufficiency", "risk"]
+        scenario_map = {"affordability": "alone", "survivability": "roommates", "salary_sufficiency": "family", "risk": "alone"}
         out = []
         for serp in allowed_serps:
             matched_city = next((city for city in cities if city.lower() in serp["query"].lower()), None)
@@ -22,6 +23,7 @@ class KeywordEngine:
                         "salary": c["median_salary"],
                         "rent": c["median_rent"],
                         "intent": intent,
+                        "scenario": scenario_map.get(intent, "alone"),
                         "serp_difficulty": serp.get("serp_difficulty", 1),
                         "forum_ratio": serp.get("forum_ratio", 0),
                         "source_query": serp["query"],
