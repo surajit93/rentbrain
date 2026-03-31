@@ -5,6 +5,7 @@ from pathlib import Path
 
 from .common import ROOT, load_json, save_json, now_iso
 from .decision_engine import DecisionEngine
+from .data_realism_engine import DataRealismEngine
 from .uniqueness_engine import UniquenessEngine
 
 
@@ -23,12 +24,15 @@ class PageGeneratorEngine:
         threshold = cfg.get("constraints", {}).get("min_uniqueness", 0.75)
         decision = DecisionEngine()
         uniq = UniquenessEngine()
+        realism = DataRealismEngine()
         pages = []
 
         for c in clusters:
             if c.get("suppressed"):
                 continue
-            for scenario, debt_payment in self.SCENARIOS:
+            preferred = c.get("scenario")
+            scenario_plan = [s for s in self.SCENARIOS if s[0] == preferred] + [s for s in self.SCENARIOS if s[0] != preferred]
+            for scenario, debt_payment in scenario_plan:
                 if len(pages) >= max_pages:
                     break
                 salary = c["salary"]
@@ -50,8 +54,13 @@ class PageGeneratorEngine:
                     "source_query": c.get("query"),
                     "calculator": decision.evaluate(salary, rent, scenario=scenario, debt_payment=debt_payment, city_costs=city_costs),
                     "cluster_id": c.get("cluster_id"),
+                    "city_costs": city_costs,
                     "created_at": now_iso(),
                 }
+                realism_check = realism.validate_candidate({"salary": salary, "rent": rent, "city_costs": city_costs})
+                page["realism"] = realism_check
+                if not realism_check["allowed"]:
+                    continue
                 uniq_eval = uniq.evaluate(page, pages)
                 page["uniqueness_score"] = uniq_eval["score"]
                 page["uniqueness"] = uniq_eval

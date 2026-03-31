@@ -1,11 +1,12 @@
 from __future__ import annotations
 
-from .common import save_json, now_iso
+from .common import load_json, save_json, now_iso
 
 
 class DistributionEngine:
     def run(self, pages: list[dict], perf: dict | None = None):
         perf = perf or {}
+        prior = load_json("logs/distribution_plan.json")
         by_slug = {p.get("slug"): p for p in perf.get("pages", [])}
         posts = []
         feedback = {"reddit": {"impressions": 0, "clicks": 0}, "quora": {"impressions": 0, "clicks": 0}}
@@ -27,7 +28,7 @@ class DistributionEngine:
                 ),
                 "link": f"/pages/{p['slug']}.json?utm_source=reddit",
                 "slug": p["slug"],
-                "simulated_feedback": {
+                "observed_feedback": {
                     "impressions": metric.get("impressions", 0),
                     "clicks": metric.get("clicks", 0),
                 },
@@ -43,7 +44,7 @@ class DistributionEngine:
                 ),
                 "link": f"/pages/{p['slug']}.json?utm_source=quora",
                 "slug": p["slug"],
-                "simulated_feedback": {
+                "observed_feedback": {
                     "impressions": metric.get("impressions", 0),
                     "clicks": metric.get("clicks", 0),
                 },
@@ -58,5 +59,8 @@ class DistributionEngine:
             clk = feedback[channel]["clicks"]
             feedback[channel]["ctr"] = round(clk / impr, 4) if impr else 0.0
 
-        save_json("logs/distribution_plan.json", {"updated_at": now_iso(), "posts": posts, "feedback": feedback})
+        history = prior.get("history", [])
+        history.append({"at": now_iso(), "feedback": feedback})
+        history = history[-30:]
+        save_json("logs/distribution_plan.json", {"updated_at": now_iso(), "posts": posts, "feedback": feedback, "history": history})
         return posts
