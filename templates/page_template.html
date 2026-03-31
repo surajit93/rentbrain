@@ -1,0 +1,19 @@
+<h1>{{ title }}</h1>
+
+<ul>
+{% for link in links %}
+<li><a href="/{{ link }}">{{ link }}</a></li>
+{% endfor %}
+</ul>
+
+<h3>Rent Calculator</h3>
+<input id="income" />
+<button onclick="calc()">Calculate</button>
+<p id="result"></p>
+
+<script>
+function calc(){
+  let income = document.getElementById('income').value;
+  document.getElementById('result').innerText = income * 0.3;
+}
+</script>

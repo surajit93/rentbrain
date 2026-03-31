@@ -3,6 +3,12 @@ from __future__ import annotations
 from .common import save_json, now_iso
 
 
+def generate_links(current_slug, all_slugs):
+    related = [s for s in all_slugs if s != current_slug][:3]
+    parents = all_slugs[:2]
+    return parents + related
+
+
 class InternalLinkingEngine:
     def run(self, pages: list[dict], perf: dict):
         metrics = {p["slug"]: p for p in perf.get("pages", [])}
