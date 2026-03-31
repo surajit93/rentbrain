@@ -1,0 +1,51 @@
+{
+  "updated_at": "2026-03-31T10:15:22.747766+00:00",
+  "learning": {
+    "template_rank": {},
+    "cluster_rank": {},
+    "structure_rank": {},
+    "distribution_rank": {},
+    "history": [
+      {
+        "at": "2026-03-31T10:15:22.439730+00:00",
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0,
+        "impressions": 0
+      },
+      {
+        "at": "2026-03-31T10:15:22.747750+00:00",
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0,
+        "impressions": 0
+      }
+    ],
+    "patterns": {
+      "winning_clusters": [],
+      "winning_templates": [],
+      "high_ctr_threshold": 0.04,
+      "observed_cluster_count": 0,
+      "winning_structures": [],
+      "distribution_winners": []
+    },
+    "controller_profiles": [
+      {
+        "at": "2026-03-31T10:15:22.439739+00:00",
+        "budget_status": "throttle",
+        "serp_allowed": 0,
+        "generated": 0,
+        "winner_clusters": 0,
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0
+      },
+      {
+        "at": "2026-03-31T10:15:22.747759+00:00",
+        "budget_status": "throttle",
+        "serp_allowed": 0,
+        "generated": 0,
+        "winner_clusters": 0,
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0
+      }
+    ]
+  }
+}

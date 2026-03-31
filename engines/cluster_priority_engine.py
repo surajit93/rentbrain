@@ -87,6 +87,8 @@ class ClusterPriorityEngine:
             performance_component = min(0.25, perf_agg["ctr"] * 1.5 + perf_agg["indexing_rate"] * 0.08)
             opportunity = serp_component + ctr_component + performance_component
             loser = perf_agg["observations"] > 1 and (perf_agg["impressions"] < 10 or perf_agg["ctr"] < 0.01 or perf_agg["indexing_rate"] < 0.35)
+            winner_score = round(perf_agg["ctr"] * 0.45 + perf_agg["indexing_rate"] * 0.35 + min(1.0, perf_agg["impressions"] / 120) * 0.2, 4)
+            cluster_state = "winner" if winner_score >= 0.42 and not loser else ("loser" if loser else "observe")
 
             clusters.append(
                 {
@@ -109,7 +111,14 @@ class ClusterPriorityEngine:
                         "rent_band": rec["rent_band"],
                         "scenario": rec["scenario"],
                     },
-                    "eligible_for_expansion": perf_agg["ctr"] >= 0.04 and perf_agg["impressions"] >= 20 and perf_agg["indexing_rate"] >= 0.6,
+                    "metrics": {
+                        "impressions": perf_agg["impressions"],
+                        "ctr": perf_agg["ctr"],
+                        "indexing_rate": perf_agg["indexing_rate"],
+                    },
+                    "winner_score": winner_score,
+                    "cluster_state": cluster_state,
+                    "eligible_for_expansion": cluster_state == "winner",
                     "suppressed": loser,
                 }
             )

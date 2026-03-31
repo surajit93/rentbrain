@@ -1,29 +1,243 @@
 {
-  "version": 3,
-  "started_at": "2026-03-30T17:22:53.172194+00:00",
+  "version": 4,
+  "started_at": "2026-03-31T10:15:22.137761+00:00",
   "cycles": [
     {
+      "iteration": 0,
+      "time": "2026-03-31T10:15:22.137982+00:00",
+      "approvals": {
+        "data_quality": {
+          "approved": true,
+          "reason": "approved"
+        },
+        "analytics_baseline": {
+          "approved": true,
+          "reason": "approved"
+        }
+      }
+    },
+    {
       "iteration": 1,
-      "time": "2026-03-30T17:22:53.616047+00:00",
-      "blocked": true,
-      "reason": "no_eligible_serp_entries",
+      "time": "2026-03-31T10:15:22.147065+00:00",
+      "approvals": {
+        "serp_intelligence": {
+          "approved": true,
+          "reason": "approved"
+        },
+        "serp_eligibility": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "keyword_generation": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "cluster_build": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "template_select": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "crawl_budget": {
+          "approved": true,
+          "reason": "approved"
+        },
+        "generate_pages": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "optimize_ctr": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "expand_winners": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "prune": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "entity_index": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "internal_linking": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "authority_content": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "distribution": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "embed": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "backlink": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        }
+      },
       "serp_candidates": 80,
-      "serp_allowed": 0
+      "serp_allowed": 0,
+      "keywords": 0,
+      "clusters": 0,
+      "pages_generated": 0,
+      "pages_kept": 0,
+      "removed": [],
+      "winners": [],
+      "expansion_count": 0,
+      "regressions": [
+        "analytics_missing",
+        "indexing_critical",
+        "ctr_critical",
+        "impressions_stagnant"
+      ],
+      "budget": {
+        "updated_at": "2026-03-31T10:15:22.438738+00:00",
+        "indexing_rate": 0.0,
+        "impressions_trend": "unknown",
+        "status": "throttle",
+        "reason": "no_analytics_data",
+        "target_new_pages_per_day": 0,
+        "sitemap_segment": "sitemap-observe-only.xml"
+      },
+      "entities": 0,
+      "links": 0,
+      "authority_pages": 0,
+      "distribution_posts": 0,
+      "embed_assets": 0,
+      "backlink_strategy": {},
+      "data_realism": {
+        "updated_at": "2026-03-31T10:15:22.438988+00:00",
+        "checked": 0,
+        "blocked": [],
+        "decision_allowed": true
+      },
+      "pre_cycle_decision_allowed": false,
+      "post_cycle_decision_allowed": false
     },
     {
       "iteration": 2,
-      "time": "2026-03-30T17:22:53.940304+00:00",
-      "blocked": true,
-      "reason": "no_eligible_serp_entries",
+      "time": "2026-03-31T10:15:22.440038+00:00",
+      "approvals": {
+        "serp_intelligence": {
+          "approved": true,
+          "reason": "approved"
+        },
+        "serp_eligibility": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "keyword_generation": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "cluster_build": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "template_select": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "crawl_budget": {
+          "approved": true,
+          "reason": "approved"
+        },
+        "generate_pages": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "optimize_ctr": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "expand_winners": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "prune": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "entity_index": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "internal_linking": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "authority_content": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "distribution": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "embed": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        },
+        "backlink": {
+          "approved": false,
+          "reason": "blocked_unknown_signal"
+        }
+      },
       "serp_candidates": 80,
-      "serp_allowed": 0
+      "serp_allowed": 0,
+      "keywords": 0,
+      "clusters": 0,
+      "pages_generated": 0,
+      "pages_kept": 0,
+      "removed": [],
+      "winners": [],
+      "expansion_count": 0,
+      "regressions": [
+        "analytics_missing",
+        "indexing_critical",
+        "ctr_critical",
+        "impressions_stagnant"
+      ],
+      "budget": {
+        "updated_at": "2026-03-31T10:15:22.746905+00:00",
+        "indexing_rate": 0.0,
+        "impressions_trend": "unknown",
+        "status": "throttle",
+        "reason": "no_analytics_data",
+        "target_new_pages_per_day": 0,
+        "sitemap_segment": "sitemap-observe-only.xml"
+      },
+      "entities": 0,
+      "links": 0,
+      "authority_pages": 0,
+      "distribution_posts": 0,
+      "embed_assets": 0,
+      "backlink_strategy": {},
+      "data_realism": {
+        "updated_at": "2026-03-31T10:15:22.747106+00:00",
+        "checked": 0,
+        "blocked": [],
+        "decision_allowed": true
+      },
+      "pre_cycle_decision_allowed": false,
+      "post_cycle_decision_allowed": false
     }
   ],
   "status": "constrained",
-  "last_run": "2026-03-30T17:22:53.940769+00:00",
+  "last_run": "2026-03-31T10:15:22.748319+00:00",
   "scale_allowed": false,
   "data_quality": {
-    "updated_at": "2026-03-30T17:22:53.179262+00:00",
+    "updated_at": "2026-03-31T10:15:22.145732+00:00",
     "state_files": 50,
     "missing_states": [],
     "missing_fields": [],
@@ -231,6 +445,59 @@
         "mid": 1
       }
     },
-    "valid": true
+    "valid": true,
+    "decision_allowed": true
+  },
+  "learning": {
+    "template_rank": {},
+    "cluster_rank": {},
+    "structure_rank": {},
+    "distribution_rank": {},
+    "history": [
+      {
+        "at": "2026-03-31T10:15:22.439730+00:00",
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0,
+        "impressions": 0
+      },
+      {
+        "at": "2026-03-31T10:15:22.747750+00:00",
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0,
+        "impressions": 0
+      }
+    ],
+    "patterns": {
+      "winning_clusters": [],
+      "winning_templates": [],
+      "high_ctr_threshold": 0.04,
+      "observed_cluster_count": 0,
+      "winning_structures": [],
+      "distribution_winners": []
+    },
+    "controller_profiles": [
+      {
+        "at": "2026-03-31T10:15:22.439739+00:00",
+        "budget_status": "throttle",
+        "serp_allowed": 0,
+        "generated": 0,
+        "winner_clusters": 0,
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0
+      },
+      {
+        "at": "2026-03-31T10:15:22.747759+00:00",
+        "budget_status": "throttle",
+        "serp_allowed": 0,
+        "generated": 0,
+        "winner_clusters": 0,
+        "site_ctr": 0.0,
+        "indexing_rate": 0.0
+      }
+    ]
+  },
+  "controller": {
+    "global_authority": true,
+    "unknown_signal_policy": "block"
   }
 }

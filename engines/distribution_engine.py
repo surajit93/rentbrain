@@ -8,6 +8,11 @@ class DistributionEngine:
         perf = perf or {}
         prior = load_json("logs/distribution_plan.json")
         by_slug = {p.get("slug"): p for p in perf.get("pages", [])}
+        prior_feedback = prior.get("feedback", {})
+        channel_bias = {
+            "reddit": float(prior_feedback.get("reddit", {}).get("ctr", 0.0)),
+            "quora": float(prior_feedback.get("quora", {}).get("ctr", 0.0)),
+        }
         posts = []
         feedback = {"reddit": {"impressions": 0, "clicks": 0}, "quora": {"impressions": 0, "clicks": 0}}
 
@@ -32,6 +37,7 @@ class DistributionEngine:
                     "impressions": metric.get("impressions", 0),
                     "clicks": metric.get("clicks", 0),
                 },
+                "post_score": round(0.5 + channel_bias["reddit"] + metric.get("ctr", 0) * 0.5, 4),
             }
             quora = {
                 "channel": "quora",
@@ -48,6 +54,7 @@ class DistributionEngine:
                     "impressions": metric.get("impressions", 0),
                     "clicks": metric.get("clicks", 0),
                 },
+                "post_score": round(0.5 + channel_bias["quora"] + metric.get("ctr", 0) * 0.5, 4),
             }
             posts.extend([reddit, quora])
             for channel in ["reddit", "quora"]:
@@ -62,5 +69,15 @@ class DistributionEngine:
         history = prior.get("history", [])
         history.append({"at": now_iso(), "feedback": feedback})
         history = history[-30:]
-        save_json("logs/distribution_plan.json", {"updated_at": now_iso(), "posts": posts, "feedback": feedback, "history": history})
+        posts.sort(key=lambda p: p.get("post_score", 0), reverse=True)
+        save_json(
+            "logs/distribution_plan.json",
+            {
+                "updated_at": now_iso(),
+                "posts": posts,
+                "feedback": feedback,
+                "history": history,
+                "adaptive_channel_order": sorted(channel_bias, key=lambda c: channel_bias[c], reverse=True),
+            },
+        )
         return posts
