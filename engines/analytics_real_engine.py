@@ -44,6 +44,9 @@ class AnalyticsRealEngine:
             )
         return [r for r in out if r.get("slug")]
 
+    def normalize_metrics(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return self.normalize_gsc_data(rows)
+
     def map_page_performance(self, normalized: list[dict[str, Any]]) -> dict[str, Any]:
         agg: dict[str, dict[str, Any]] = defaultdict(lambda: {"impressions": 0, "clicks": 0, "positions": [], "queries": 0})
         for row in normalized:
@@ -69,10 +72,18 @@ class AnalyticsRealEngine:
             )
         return {"updated_at": now_iso(), "pages": sorted(mapped, key=lambda x: x["impressions"], reverse=True)}
 
+    def map_page_to_query(self, normalized: list[dict[str, Any]]) -> dict[str, Any]:
+        mapping: dict[str, set[str]] = defaultdict(set)
+        for row in normalized:
+            mapping[row["slug"]].add(str(row.get("query", "")).strip())
+        rows = [{"slug": slug, "queries": sorted([q for q in queries if q])} for slug, queries in mapping.items()]
+        return {"updated_at": now_iso(), "page_query_map": rows}
+
     def run(self, site_url: str) -> dict[str, Any]:
         fetched = self.fetch_gsc_data(site_url)
-        normalized = self.normalize_gsc_data(fetched.get("rows", [])) if fetched.get("source_status") == "ok" else []
+        normalized = self.normalize_metrics(fetched.get("rows", [])) if fetched.get("source_status") == "ok" else []
         performance = self.map_page_performance(normalized)
+        page_query_map = self.map_page_to_query(normalized)
         output = {
             "updated_at": now_iso(),
             "site_url": site_url,
@@ -80,6 +91,7 @@ class AnalyticsRealEngine:
             "source_path": fetched.get("path"),
             "rows": len(normalized),
             "pages": performance.get("pages", []),
+            "page_query_map": page_query_map.get("page_query_map", []),
         }
         save_json("logs/gsc_enriched.json", output)
         return output

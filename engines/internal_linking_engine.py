@@ -41,3 +41,6 @@ class InternalLinkingEngine:
             p["internal_links_v2"] = adjacency.get(page.get("slug"), [])[:8]
             enriched.append(p)
         return enriched
+
+    def optimize_internal_links(self, pages: list[dict], link_graph: dict) -> list[dict]:
+        return self.inject_internal_links(pages, link_graph)

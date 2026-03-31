@@ -22,6 +22,9 @@ class AuthorityGrowthEngine:
         save_json("indexes/authority_score_v2.json", out)
         return out
 
+    def compute_domain_score(self) -> dict:
+        return self.compute_authority_score()
+
     def track_link_velocity(self) -> dict:
         score = load_json("indexes/authority_score_v2.json")
         prior = load_json("indexes/link_velocity_v2.json")
@@ -35,3 +38,6 @@ class AuthorityGrowthEngine:
         out = {"updated_at": now_iso(), "velocity": velocity, "history": history}
         save_json("indexes/link_velocity_v2.json", out)
         return out
+
+    def track_growth_velocity(self) -> dict:
+        return self.track_link_velocity()

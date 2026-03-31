@@ -30,6 +30,17 @@ def merge_with_existing_serp(ddg_results: list[dict], google_results: list[dict]
     return merged
 
 
+def normalize_signals(row: dict) -> dict:
+    blended = row.get("serp_difficulty_blended", row.get("serp_difficulty", 1.0))
+    forum = row.get("google_forum_ratio", row.get("forum_ratio", 0.0))
+    authority = row.get("google_authority_count", row.get("high_authority_count", 0))
+    normalized = dict(row)
+    normalized["difficulty_normalized"] = round(min(1.0, max(0.0, float(blended or 0.0))), 3)
+    normalized["forum_ratio_normalized"] = round(min(1.0, max(0.0, float(forum or 0.0))), 3)
+    normalized["authority_count_normalized"] = int(max(0, authority or 0))
+    return normalized
+
+
 class SerpMergedEngine:
     def __init__(self):
         self.legacy = SerpIntelligenceEngine()
@@ -37,6 +48,6 @@ class SerpMergedEngine:
     def run(self, queries: list[dict]) -> list[dict]:
         ddg = self.legacy.run(queries)
         google = [fetch_google_serp((q if isinstance(q, str) else q.get("query", ""))) for q in queries]
-        merged = merge_with_existing_serp(ddg, google)
+        merged = [normalize_signals(r) for r in merge_with_existing_serp(ddg, google)]
         save_json("indexes/serp_index_v2.json", {"updated_at": now_iso(), "provider": "ddg+google", "queries": merged})
         return merged

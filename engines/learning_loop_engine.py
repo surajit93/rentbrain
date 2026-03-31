@@ -14,15 +14,24 @@ class LearningLoopEngine:
         save_json("indexes/learning_history_v2.json", doc)
         return doc
 
+    def store_performance_history(self) -> dict:
+        return self.store_historical_performance()
+
     def detect_winning_patterns(self) -> dict:
         perf = load_json("indexes/performance_index.json")
         winners = [p for p in perf.get("pages", []) if p.get("impressions", 0) >= 20 and p.get("ctr", 0) >= 0.04]
         return {"count": len(winners), "top": sorted(winners, key=lambda x: x.get("ctr", 0), reverse=True)[:25]}
 
+    def detect_high_performing_patterns(self) -> dict:
+        return self.detect_winning_patterns()
+
     def detect_losing_patterns(self) -> dict:
         perf = load_json("indexes/performance_index.json")
         losers = [p for p in perf.get("pages", []) if p.get("impressions", 0) >= 20 and p.get("ctr", 0) < 0.015]
         return {"count": len(losers), "top": sorted(losers, key=lambda x: x.get("ctr", 0))[:25]}
+
+    def detect_low_performing_patterns(self) -> dict:
+        return self.detect_losing_patterns()
 
     def adjust_strategy_signals(self) -> dict:
         winning = self.detect_winning_patterns()
@@ -36,3 +45,6 @@ class LearningLoopEngine:
         }
         save_json("indexes/strategy_signals_v2.json", signal)
         return signal
+
+    def update_strategy_inputs(self) -> dict:
+        return self.adjust_strategy_signals()
