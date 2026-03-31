@@ -24,6 +24,10 @@ from .data_realism_engine import DataRealismEngine
 from .learning_engine import LearningEngine
 
 
+def is_dead(page):
+    return page.get("impressions", 0) == 0
+
+
 class StrategyEngine:
     def __init__(self):
         self.cfg = load_json("config.json")
@@ -79,6 +83,11 @@ class StrategyEngine:
         expansions = []
         bias = learning.get("cluster_rank", {})
         for winner in winners:
+            try:
+                if is_dead(winner):
+                    continue
+            except Exception:
+                pass
             rank_boost = 1 if bias.get(winner.get("cluster_id", ""), 0) >= 0.04 else 0
             expansion_steps = 3 + rank_boost
             for i in range(expansion_steps):
@@ -133,6 +142,34 @@ class StrategyEngine:
             keywords = self._execute_if_approved(
                 cycle, "keyword_generation", {"signal_state": "ok" if serp_allowed else "unknown", "serp_allowed": len(serp_allowed)}, lambda: KeywordEngine().run(serp_allowed)
             ) or []
+            try:
+                from .gsc_engine import load_gsc
+                from . import winner_engine
+
+                gsc_data = load_gsc()
+                winners = winner_engine.get_winners(gsc_data)
+                for w in winners:
+                    new_keywords = winner_engine.generate_support_keywords(w.get("query", ""))
+                    for new_keyword in new_keywords:
+                        if not new_keyword:
+                            continue
+                        keywords.append(
+                            {
+                                "query": new_keyword,
+                                "city": w.get("city", ""),
+                                "state": w.get("state", ""),
+                                "salary": w.get("salary", 0),
+                                "rent": w.get("rent", 0),
+                                "intent": w.get("intent", "general"),
+                                "scenario": w.get("scenario", "alone"),
+                                "serp_difficulty": 1,
+                                "forum_ratio": 0,
+                                "source_query": w.get("query", ""),
+                                "eligibility": "ALLOW",
+                            }
+                        )
+            except Exception:
+                pass
             classified = QueryClassifierEngine().run(keywords) if keywords else []
 
             clusters = self._execute_if_approved(

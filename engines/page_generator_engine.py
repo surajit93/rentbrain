@@ -26,6 +26,7 @@ class PageGeneratorEngine:
         uniq = UniquenessEngine()
         realism = DataRealismEngine()
         pages = []
+        all_slugs = []
 
         for c in clusters:
             if c.get("suppressed"):
@@ -39,7 +40,25 @@ class PageGeneratorEngine:
                 rent = c["rent"]
                 slug = f"{c['city'].lower()}-{scenario}-rent-{int(rent)}-salary-{int(salary)}-{c['intent']}"
                 title = f"{c['city']} {scenario} affordability for ${int(rent)} rent on ${int(salary)} salary"
+                try:
+                    from .title_engine import optimize_title
+
+                    title = optimize_title(title)
+                except Exception:
+                    pass
                 city_costs = self._city_profile(c["state"], c["city"])
+                try:
+                    from .intent_engine import classify
+
+                    intent_class = classify(c.get("query", ""))
+                except Exception:
+                    intent_class = "general"
+                try:
+                    from .internal_linking_engine import generate_links
+
+                    links = generate_links(slug, all_slugs)
+                except Exception:
+                    links = []
                 page = {
                     "slug": slug,
                     "city": c["city"],
@@ -51,6 +70,8 @@ class PageGeneratorEngine:
                     "template": c.get("template", "decision_heavy"),
                     "layout": c.get("layout", []),
                     "title": title,
+                    "intent_class": intent_class,
+                    "links": links,
                     "source_query": c.get("query"),
                     "calculator": decision.evaluate(salary, rent, scenario=scenario, debt_payment=debt_payment, city_costs=city_costs),
                     "cluster_id": c.get("cluster_id"),
@@ -66,7 +87,17 @@ class PageGeneratorEngine:
                 page["uniqueness"] = uniq_eval
                 if uniq_eval["blocked"] or page["uniqueness_score"] < threshold or uniq_eval.get("intent_variance", 0) < 0.15:
                     continue
+                try:
+                    from .similarity_engine import is_duplicate
+
+                    existing_contents = [p.get("title", "") for p in pages]
+                    new_content = page.get("title", "")
+                    if is_duplicate(new_content, existing_contents):
+                        continue
+                except Exception:
+                    pass
                 pages.append(page)
+                all_slugs.append(slug)
                 Path(ROOT / "pages" / f"{slug}.json").write_text(json.dumps(page, indent=2))
 
         save_json("indexes/page_index.json", {"pages": pages, "updated_at": now_iso()})
