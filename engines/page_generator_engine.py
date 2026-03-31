@@ -7,6 +7,7 @@ from .common import ROOT, load_json, save_json, now_iso
 from .decision_engine import DecisionEngine
 from .data_realism_engine import DataRealismEngine
 from .uniqueness_engine import UniquenessEngine
+from .seo_intent_engine import build_city_context, build_intent_links, insight_blocks, meta_for_page
 
 
 class PageGeneratorEngine:
@@ -59,6 +60,9 @@ class PageGeneratorEngine:
                     links = generate_links(slug, all_slugs)
                 except Exception:
                     links = []
+                city_index = load_json("data/city_index.json").get("cities", [])
+                city_row = next((row for row in city_index if row.get("city") == c["city"] and row.get("state") == c["state"]), {"city": c["city"], "state": c["state"], "median_rent": rent, "median_salary": salary})
+                context = build_city_context(city_row, city_index)
                 page = {
                     "slug": slug,
                     "city": c["city"],
@@ -76,6 +80,13 @@ class PageGeneratorEngine:
                     "calculator": decision.evaluate(salary, rent, scenario=scenario, debt_payment=debt_payment, city_costs=city_costs),
                     "cluster_id": c.get("cluster_id"),
                     "city_costs": city_costs,
+                    "meta": meta_for_page(context, title, c.get("intent", "affordability")),
+                    "heading_hierarchy": {
+                        "h1": title,
+                        "h2": ["Affordability summary", "Risk signal", "Trend and comparison insights", "Related housing pages"],
+                    },
+                    "insight_blocks": insight_blocks(context, c.get("intent", "affordability")),
+                    "internal_links_v2": build_intent_links(city_row, city_index),
                     "created_at": now_iso(),
                 }
                 realism_check = realism.validate_candidate({"salary": salary, "rent": rent, "city_costs": city_costs})
