@@ -38,9 +38,12 @@ class ClusterSemanticEngine:
                 clusters.append({"cluster_id": f"semantic-{len(clusters)+1}", "centroid": list(item["embedding"]), "items": [item]})
         return clusters
 
+    def group_keywords(self, embedded_items: list[dict], threshold: float = 0.82) -> list[dict]:
+        return self.group_by_similarity(embedded_items, threshold=threshold)
+
     def build_cluster_index_v2(self, keywords: list[dict]) -> dict:
         embedded = self.generate_embeddings(keywords)
-        grouped = self.group_by_similarity(embedded)
+        grouped = self.group_keywords(embedded)
         out_clusters = []
         for cluster in grouped:
             out_clusters.append({

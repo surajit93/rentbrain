@@ -17,3 +17,12 @@ class ContentUniquenessEngine:
         eval_result["threshold"] = threshold
         eval_result["allowed"] = (not eval_result.get("blocked")) and eval_result.get("score", 0) >= threshold
         return eval_result
+
+    def block_duplicate_generation(self, candidate: dict, corpus: list[dict], threshold: float = 0.75) -> dict:
+        evaluation = self.enforce_uniqueness_threshold(candidate, corpus, threshold=threshold)
+        return {
+            "blocked": not evaluation.get("allowed", False),
+            "reason": evaluation.get("reason", "unknown"),
+            "score": evaluation.get("score", 0.0),
+            "threshold": threshold,
+        }

@@ -60,6 +60,34 @@ def fetch_google_serp(query: str) -> dict[str, Any]:
         return GoogleSerpRecord(query=query, results=[], provider=provider, source_status="error", fetch_error=str(exc), fetched_at=now_iso()).__dict__
 
 
+def fetch_serp(query: str) -> dict[str, Any]:
+    return fetch_google_serp(query)
+
+
+def extract_top_results(serp_payload: dict[str, Any]) -> list[dict[str, Any]]:
+    if not isinstance(serp_payload, dict):
+        return []
+    return list(serp_payload.get("results", []))[:10]
+
+
+def detect_big_domains(results: list[dict[str, Any]]) -> dict[str, Any]:
+    domains = [urlparse(r.get("url", "")).netloc.lower().replace("www.", "") for r in results if r.get("url")]
+    big_domains = {
+        "zillow.com",
+        "apartments.com",
+        "realtor.com",
+        "bankrate.com",
+        "nerdwallet.com",
+        "forbes.com",
+        "investopedia.com",
+        "cnbc.com",
+        "nytimes.com",
+        "wsj.com",
+    }
+    hits = [d for d in domains if d in big_domains]
+    return {"big_domain_count": len(hits), "big_domains": sorted(set(hits))}
+
+
 def extract_features(results: list[dict[str, Any]]) -> dict[str, Any]:
     domains = [urlparse(r.get("url", "")).netloc.lower().replace("www.", "") for r in results if r.get("url")]
     domains = [d for d in domains if d]
@@ -80,3 +108,11 @@ def compute_difficulty_score(results: list[dict[str, Any]]) -> float:
     forum_component = 1 - features["forum_ratio"]
     calculator_component = 0.15 if features["has_calculator"] else 0.0
     return round(min(1.0, 0.55 * authority_component + 0.35 * forum_component + calculator_component), 3)
+
+
+def compute_keyword_difficulty(results: list[dict[str, Any]]) -> float:
+    return compute_difficulty_score(results)
+
+
+def extract_serp_features(results: list[dict[str, Any]]) -> dict[str, Any]:
+    return extract_features(results)

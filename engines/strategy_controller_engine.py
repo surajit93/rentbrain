@@ -20,6 +20,9 @@ class StrategyControllerEngine:
         selected = prioritized_keywords[:max_new]
         return {"status": status, "max_new_pages": max_new, "selected_keywords": len(selected), "selected": selected}
 
+    def allocate_generation_budget(self, prioritized_keywords: list[dict]) -> dict:
+        return self.allocate_content_budget(prioritized_keywords)
+
     def decide_cluster_expansion(self, clusters: list[dict]) -> dict:
         winners = [c for c in clusters if c.get("eligible_for_expansion")]
         return {
@@ -29,10 +32,13 @@ class StrategyControllerEngine:
             "top_winners": sorted(winners, key=lambda x: x.get("priority_score", 0), reverse=True)[:15],
         }
 
+    def select_clusters_to_expand(self, clusters: list[dict]) -> dict:
+        return self.decide_cluster_expansion(clusters)
+
     def run(self, keywords: list[dict], clusters: list[dict]) -> dict:
         prioritized = self.prioritize_keywords(keywords)
-        allocation = self.allocate_content_budget(prioritized)
-        expansion = self.decide_cluster_expansion(clusters)
+        allocation = self.allocate_generation_budget(prioritized)
+        expansion = self.select_clusters_to_expand(clusters)
         out = {"updated_at": now_iso(), "allocation": allocation, "expansion": expansion}
         save_json("indexes/strategy_controller_v2.json", out)
         return out
