@@ -23,3 +23,21 @@ class InternalLinkingEngine:
 
         save_json("indexes/internal_link_index.json", {"updated_at": now_iso(), "links": links, "winner_slugs": winners, "suppressed": list(losers)})
         return links
+
+
+    def build_link_graph(self, pages: list[dict], perf: dict | None = None) -> dict:
+        perf = perf or {"pages": []}
+        links = self.run(pages, perf)
+        adjacency = {}
+        for row in links:
+            adjacency.setdefault(row["from"], []).append({"to": row["to"], "weight": row.get("weight", 0.1)})
+        return {"nodes": len(pages), "edges": len(links), "adjacency": adjacency}
+
+    def inject_internal_links(self, pages: list[dict], link_graph: dict) -> list[dict]:
+        adjacency = link_graph.get("adjacency", {}) if isinstance(link_graph, dict) else {}
+        enriched = []
+        for page in pages:
+            p = dict(page)
+            p["internal_links_v2"] = adjacency.get(page.get("slug"), [])[:8]
+            enriched.append(p)
+        return enriched
