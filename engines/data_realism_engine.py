@@ -23,6 +23,22 @@ class DataRealismEngine:
             anomalies.append("total_cost_overload")
         if baseline <= 0:
             anomalies.append("missing_city_baseline")
+        salary_dist = city_costs.get("salary_distribution", {})
+        rent_dist = city_costs.get("rent_distribution", {})
+        if salary_dist:
+            p25 = float(salary_dist.get("p25", 0))
+            p90 = float(salary_dist.get("p90", 0))
+            if p25 and p90 and (salary < p25 * 0.65 or salary > p90 * 1.45):
+                anomalies.append("salary_outlier_vs_city_distribution")
+        else:
+            anomalies.append("unknown_salary_distribution")
+        if rent_dist:
+            low = float(rent_dist.get("studio", 0))
+            high = float(rent_dist.get("three_bed", 0))
+            if low and high and (rent < low * 0.7 or rent > high * 1.45):
+                anomalies.append("rent_outlier_vs_city_distribution")
+        else:
+            anomalies.append("unknown_rent_distribution")
         return {
             "allowed": not anomalies,
             "anomalies": anomalies,

@@ -3,6 +3,8 @@ from __future__ import annotations
 import hashlib
 import math
 
+from .common import load_json, save_json, now_iso
+
 
 class UniquenessEngine:
     DIMENSIONS = 64
@@ -65,13 +67,15 @@ class UniquenessEngine:
         return 1.0
 
     def evaluate(self, candidate: dict, existing_pages: list[dict]) -> dict:
+        persisted = load_json("indexes/uniqueness_index.json").get("pages", [])
+        corpus = existing_pages + [p for p in persisted if p.get("slug") not in {e.get("slug") for e in existing_pages}]
         c_tokens = self._tokens(candidate)
         c_vec = self._embedding(c_tokens)
 
         max_similarity = 0.0
         min_structural_variation = 1.0
         min_intent_variance = 1.0
-        for page in existing_pages:
+        for page in corpus:
             p_vec = self._embedding(self._tokens(page))
             sim = self._cosine(c_vec, p_vec)
             max_similarity = max(max_similarity, sim)
@@ -97,3 +101,22 @@ class UniquenessEngine:
 
     def score(self, candidate: dict, existing_pages: list[dict]) -> float:
         return self.evaluate(candidate, existing_pages)["score"]
+
+    def save_memory(self, pages: list[dict]):
+        compact = []
+        for p in pages:
+            compact.append(
+                {
+                    "slug": p.get("slug"),
+                    "title": p.get("title"),
+                    "city": p.get("city"),
+                    "state": p.get("state"),
+                    "scenario": p.get("scenario"),
+                    "intent": p.get("intent"),
+                    "rent": p.get("rent"),
+                    "salary": p.get("salary"),
+                    "layout": p.get("layout", []),
+                    "source_query": p.get("source_query"),
+                }
+            )
+        save_json("indexes/uniqueness_index.json", {"updated_at": now_iso(), "pages": compact})

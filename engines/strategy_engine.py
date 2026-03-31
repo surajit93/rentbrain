@@ -40,6 +40,8 @@ class StrategyEngine:
     def _approve_action(self, action: str, context: dict) -> tuple[bool, str]:
         if context.get("signal_state") in {"unknown", "missing", "error"}:
             return False, "blocked_unknown_signal"
+        if action in {"data_quality", "analytics_baseline", "crawl_budget"}:
+            return True, "approved"
         if action == "serp_intelligence":
             return True, "approved"
         if action == "serp_eligibility":
@@ -51,7 +53,11 @@ class StrategyEngine:
         if action == "template_select":
             return context.get("clusters", 0) > 0, "approved" if context.get("clusters", 0) > 0 else "blocked_no_clusters"
         if action == "generate_pages":
-            allow = context.get("analytics_decision_allowed", False) and context.get("budget_status") in {"hold", "scale"}
+            allow = (
+                context.get("analytics_decision_allowed", False)
+                and context.get("budget_status") in {"hold", "scale"}
+                and context.get("cluster_ready", False)
+            )
             return allow, "approved" if allow else "blocked_generation_constraints"
         if action == "expand_winners":
             allow = context.get("budget_status") == "scale" and context.get("winner_clusters", 0) > 0 and context.get("analytics_decision_allowed", False)
@@ -86,18 +92,30 @@ class StrategyEngine:
     def run(self, cycles: int = 2):
         state = {"version": 4, "started_at": now_iso(), "cycles": []}
         learning = self.learning_engine.load()
-
-        data_quality = DataQualityEngine().run()
+        boot_cycle = {"iteration": 0, "time": now_iso(), "approvals": {}}
+        data_quality = self._execute_if_approved(
+            boot_cycle,
+            "data_quality",
+            {"signal_state": "ok"},
+            lambda: DataQualityEngine().run(),
+        ) or {"decision_allowed": False, "reason": "data_quality_not_executed"}
         if not data_quality.get("decision_allowed"):
             state["status"] = "blocked_data_quality"
             state["data_quality"] = data_quality
             state["last_run"] = now_iso()
             state["learning"] = learning
+            state["cycles"].append(boot_cycle)
             save_json("indexes/strategy.json", state)
             return state
 
         pages = load_json("indexes/page_index.json").get("pages", [])
-        perf_baseline = AnalyticsEngine().run(pages)
+        perf_baseline = self._execute_if_approved(
+            boot_cycle,
+            "analytics_baseline",
+            {"signal_state": "ok"},
+            lambda: AnalyticsEngine().run(pages),
+        ) or {"decision_allowed": False, "source": "analytics_not_executed", "site": {}}
+        state["cycles"].append(boot_cycle)
 
         for iteration in range(cycles):
             cycle = {"iteration": iteration + 1, "time": now_iso(), "approvals": {}}
@@ -125,7 +143,12 @@ class StrategyEngine:
                 cycle, "template_select", {"signal_state": "ok" if clusters else "unknown", "clusters": len(clusters)}, lambda: TemplateEngine().run(clusters, learning=learning)
             ) or []
 
-            budget = CrawlBudgetEngine().run()
+            budget = self._execute_if_approved(
+                cycle,
+                "crawl_budget",
+                {"signal_state": "ok"},
+                lambda: CrawlBudgetEngine().run(),
+            ) or {"status": "throttle", "reason": "budget_not_executed"}
             max_pages = 0 if budget["status"] == "throttle" else 20 if budget["status"] == "hold" else 60
             generated = self._execute_if_approved(
                 cycle,
@@ -134,6 +157,7 @@ class StrategyEngine:
                     "signal_state": "ok" if perf_baseline.get("decision_allowed") else "unknown",
                     "analytics_decision_allowed": perf_baseline.get("decision_allowed", False),
                     "budget_status": budget.get("status"),
+                    "cluster_ready": bool(clusters),
                 },
                 lambda: PageGeneratorEngine().run(templated, max_pages=max_pages),
             ) or []
@@ -179,7 +203,19 @@ class StrategyEngine:
             backlinks = self._execute_if_approved(cycle, "backlink", {"signal_state": "ok" if pages else "unknown", "generated_pages": len(pages)}, lambda: BacklinkEngine().run()) or {}
 
             dist_feedback = load_json("logs/distribution_plan.json").get("feedback", {})
-            learning = self.learning_engine.update(learning, pages, perf, clusters, distribution_feedback=dist_feedback)
+            learning = self.learning_engine.update(
+                learning,
+                pages,
+                perf,
+                clusters,
+                distribution_feedback=dist_feedback,
+                controller_context={
+                    "budget_status": budget.get("status"),
+                    "serp_allowed": len(serp_allowed),
+                    "generated": len(generated),
+                    "winner_clusters": len(winners),
+                },
+            )
             self.learning_engine.save_snapshot(learning)
 
             cycle.update(

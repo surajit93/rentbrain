@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T17:22:53.179262+00:00",
+  "updated_at": "2026-03-31T10:15:22.145732+00:00",
   "state_files": 50,
   "missing_states": [],
   "missing_fields": [],
@@ -207,5 +207,6 @@
       "mid": 1
     }
   },
-  "valid": true
+  "valid": true,
+  "decision_allowed": true
 }

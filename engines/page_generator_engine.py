@@ -64,10 +64,11 @@ class PageGeneratorEngine:
                 uniq_eval = uniq.evaluate(page, pages)
                 page["uniqueness_score"] = uniq_eval["score"]
                 page["uniqueness"] = uniq_eval
-                if uniq_eval["blocked"] or page["uniqueness_score"] < threshold:
+                if uniq_eval["blocked"] or page["uniqueness_score"] < threshold or uniq_eval.get("intent_variance", 0) < 0.15:
                     continue
                 pages.append(page)
                 Path(ROOT / "pages" / f"{slug}.json").write_text(json.dumps(page, indent=2))
 
         save_json("indexes/page_index.json", {"pages": pages, "updated_at": now_iso()})
+        uniq.save_memory(pages)
         return pages
